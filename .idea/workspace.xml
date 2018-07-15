@@ -2,48 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="25e3038d-d1d9-433c-8901-432192ff4bee" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/MainContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/MainContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Note.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Note.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/authentication/verify.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/authentication/verify.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/board.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/board.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/chat.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/chat.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/chat/ListChatContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/chat/ListChatContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/AcceptRequests.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/AcceptRequests.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/FindFriends.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/FindFriends.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/FriendList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/FriendList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/NotFound.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/NotFound.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/events.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/events.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/invites.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/invites.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/privatenotes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/privatenotes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/settings.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/settings.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/dashboard/timetable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/dashboard/timetable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/drawer/newchatdrawer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/drawer/newchatdrawer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/firstpage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/firstpage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/homepage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/homepage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/loginmodal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/loginmodal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/nav.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/nav.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/signupmodal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/signupmodal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/toolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/toolbars/boardtoolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/toolbars/boardtoolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/toolbars/chattoolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/toolbars/chattoolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/toolbars/msgtoolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/toolbars/msgtoolbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/store/UserStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/store/UserStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/styles/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/styles/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/styles/homepage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/styles/homepage.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/styles/quill.core.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kolaboard.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Nodejs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +21,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="profile.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/styles/profile.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -64,11 +30,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="371">
-              <caret line="201" column="57" lean-forward="true" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
+              <caret line="201" column="57" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -77,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/app/components/dashboard/profile.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="269">
-              <caret line="148" column="43" lean-forward="true" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
+              <caret line="148" column="43" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -89,7 +64,7 @@
         <entry file="file://$PROJECT_DIR$/server/models/User.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
-              <caret line="60" column="17" lean-forward="true" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+              <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -184,6 +159,7 @@
         <option value="$PROJECT_DIR$/app/store/UserStore.js" />
         <option value="$PROJECT_DIR$/app/components/dashboard/profile.jsx" />
         <option value="$PROJECT_DIR$/app/styles/profile.scss" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -306,12 +282,12 @@
       <workItem from="1531522229368" duration="13695000" />
       <workItem from="1531541607553" duration="22526000" />
       <workItem from="1531634808952" duration="1761000" />
-      <workItem from="1531637127339" duration="17642000" />
+      <workItem from="1531637127339" duration="17971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98236000" />
+    <option name="totallyTimeSpent" value="98565000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -332,10 +308,10 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.28356165" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30273974" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.30273974" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.3041096" side_tool="true" weight="0.23846154" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.18219177" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.18219177" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3328767" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -378,13 +354,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/styles/quill.core.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/lib/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -692,7 +661,7 @@
     <entry file="file://$PROJECT_DIR$/server/models/User.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="60" column="17" lean-forward="true" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
+          <caret line="60" column="17" selection-start-line="60" selection-start-column="17" selection-end-line="60" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -713,7 +682,7 @@
     <entry file="file://$PROJECT_DIR$/app/components/dashboard/profile.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
-          <caret line="148" column="43" lean-forward="true" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
+          <caret line="148" column="43" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -723,7 +692,7 @@
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
-          <caret line="201" column="57" lean-forward="true" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
+          <caret line="201" column="57" selection-start-line="201" selection-start-column="57" selection-end-line="201" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -731,6 +700,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
     </entry>
