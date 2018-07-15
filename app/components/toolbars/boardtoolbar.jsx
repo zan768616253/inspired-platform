@@ -20,8 +20,8 @@ import {
   ToolbarTitle
 } from "material-ui/Toolbar";
 import FontIcon from "material-ui/FontIcon";
-import Store from "app/store/UIstore.js";
-import ChatStore from "app/store/ChatStore.js";
+import Store from "../../store/UIstore.js";
+import ChatStore from "../../store/ChatStore.js";
 import { observer } from "mobx-react";
 
 const bottomPadding = {

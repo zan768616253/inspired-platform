@@ -1,99 +1,88 @@
-var webpack = require("webpack");
+const webpack = require("webpack");
+const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-module.exports = {
-  entry: [
-    "script!jquery/dist/jquery.min.js",
-    "script!foundation-sites/dist/foundation.min.js",
-    "./app/app.jsx"
-  ],
-  externals: {
-    jquery: "jQuery"
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
-    })
-  ],
-  output: { path: __dirname, filename: "./public/bundle.js" },
-  resolve: {
-    root: __dirname,
-    alias: {
-      Main: "app/components/main.jsx",
-      MainContainer: "app/components/MainContainer.jsx",
-      UIstore: "app/store/UIstore.js",
-      FirstPage: "app/components/firstpage.jsx",
-      Homepage: "app/components/homepage.jsx",
-      ListChatContainer: "app/components/chat/ListChatContainer.jsx",
-      LoginDialog: "app/components/loginmodal.jsx",
-      SignupDialog: "app/components/signupmodal.jsx",
-      Toolbar: "app/components/toolbar.jsx",
-      Nav: "app/components/nav.jsx",
-      DrawerOpenRightExample: "app/components/drawer.jsx",
-      NewChatDrawer: "app/components/drawer/newchatdrawer.jsx",
-      NotFound: "app/components/dashboard/NotFound.jsx",
-      Profile: "app/components/dashboard/profile.jsx",
-      Settings: "app/components/dashboard/settings.jsx",
-      Invites: "app/components/dashboard/invites.jsx",
-      FindFriends: "app/components/dashboard/FindFriends.jsx",
-      PrivateNotes: "app/components/dashboard/privatenotes.jsx",
-      FriendList: "app/components/dashboard/FriendList.jsx",
-      AcceptRequests: "app/components/dashboard/AcceptRequests.jsx",
-      Chat: "app/components/chat.jsx",
-      Board: "app/components/board.jsx",
-      Boards: "app/components/Note.jsx",
-      Chatbar: "app/components/toolbars/chattoolbar.jsx",
-      Msgbar: "app/components/toolbars/msgtoolbar.jsx",
-      TimeTable: "app/components/dashboard/timetable.jsx",
-      Events: "app/components/dashboard/events.jsx",
-      Lock: "public/assets/js/lock.min.js",
-      Boardbar: "app/components/toolbars/boardtoolbar.jsx",
-      Verify: "app/components/authentication/verify.jsx",
-      applicationStyles: "app/styles/app.scss",
-      HomepageStyles: "app/styles/homepage.scss",
-      noteStyle: "app/styles/notestyle.scss",
-      snowStyle: "app/styles/quill.snow.scss",
-      coreStyle: "app/styles/quill.core.css",
-      bubbleStyle: "app/styles/quill.bubble.css"
-    },
-    extensions: ["", ".js", ".jsx"]
-  },
-  module: {
-    loaders: [
-      {
-        loader: ["babel-loader"],
-        query: {
-          presets: ["react", "es2015", "stage-0"],
-          plugins: ["transform-decorators-legacy", "transform-class-properties"]
+let config = {
+    entry: [
+        "./app/app.jsx",
+        "./app/styles/index.scss",
+        // "./lib/foundation.min.scss",
+        // "./lib/jquery.min.js",
+        // "./lib/foundation.min.js"
+    ],
+    plugins: [
+        // new webpack.ProvidePlugin({
+        //     "$": "jquery",
+        //     "jQuery": "jquery",
+        //     "window.jQuery": "jquery"
+        // }),
+        new ExtractTextPlugin({
+            filename:'style.css',
+            allChunks: true
+        }),
+    ],
+    output: {path: __dirname + '/public', filename: 'bundle.js'},
+    resolve: {
+        alias: {
+            Main: path.resolve(__dirname, "app/components/main.jsx"),
+            MainContainer: path.resolve(__dirname, "app/components/MainContainer.jsx"),
+            UIstore: path.resolve(__dirname, "app/components/UIstore.jsx"),
+            FirstPage: path.resolve(__dirname, "app/components/firstpage.jsx"),
+            Homepage: path.resolve(__dirname, "app/components/homepage.jsx"),
+            ListChatContainer: path.resolve(__dirname, "app/components/chat/ListChatContainer.jsx"),
+            LoginDialog: path.resolve(__dirname, "app/components/loginmodal.jsx"),
+            SignupDialog: path.resolve(__dirname, "app/components/signupmodal.jsx"),
+            Toolbar: path.resolve(__dirname, "app/components/toolbar.jsx"),
+            Nav: path.resolve(__dirname, "app/components/nav.jsx"),
+            DrawerOpenRightExample: path.resolve(__dirname, "app/components/drawer.jsx"),
+            NewChatDrawer: path.resolve(__dirname, "app/components/drawer/newchatdrawer.jsx"),
+            NotFound: path.resolve(__dirname, "app/components/dashboard/NotFound.jsx"),
+            Profile: path.resolve(__dirname, "app/components/dashboard/profile.jsx"),
+            Settings: path.resolve(__dirname, "app/components/dashboard/settings.jsx"),
+            Invites: path.resolve(__dirname, "app/components/dashboard/invites.jsx"),
+            FindFriends: path.resolve(__dirname, "app/components/dashboard/FindFriends.jsx"),
+            PrivateNotes: path.resolve(__dirname, "app/components/dashboard/privatenotes.jsx"),
+            FriendList: path.resolve(__dirname, "app/components/dashboard/FriendList.jsx"),
+            AcceptRequests: path.resolve(__dirname, "app/components/dashboard/AcceptRequests.jsx"),
+            Chat: path.resolve(__dirname, "app/components/chat.jsx"),
+            Board: path.resolve(__dirname, "app/components/board.jsx"),
+            Boards: path.resolve(__dirname, "app/components/Note.jsx"),
+            Chatbar: path.resolve(__dirname, "app/components/toolbars/chattoolbar.jsx"),
+            Msgbar: path.resolve(__dirname, "app/components/toolbars/msgtoolbar.jsx"),
+            TimeTable: path.resolve(__dirname, "app/components/dashboard/timetable.jsx"),
+            Events: path.resolve(__dirname, "app/components/dashboard/events.jsx"),
+            Lock: "public/assets/js/lock.min.js",
+            Boardbar: path.resolve(__dirname, "app/components/toolbars/boardtoolbar.jsx"),
+            Verify: path.resolve(__dirname, "app/components/authentication/verify.jsx"),
+            appStyles: path.resolve(__dirname, "app/styles/index.scss"),
+            applicationStyles: path.resolve(__dirname, "app/styles/app.scss"),
+            HomepageStyles: path.resolve(__dirname, "app/styles/homepage.scss"),
+            noteStyle: path.resolve(__dirname, "app/styles/notestyle.scss"),
+            snowStyle: path.resolve(__dirname, "app/styles/quill.snow.scss"),
+            coreStyle: path.resolve(__dirname, "app/styles/quill.core.scss"),
+            bubbleStyle: path.resolve(__dirname, "app/styles/quill.bubble.css")
         },
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/
-      }
-    ]
-  },
-  devtool: "cheap-module-eval-source-map"
+        extensions: [".js", ".jsx"]
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(jsx|js)$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                query: {
+                    plugins: [ 'transform-decorators-legacy', "transform-class-properties" ],
+                    presets: ['react', 'es2015', 'stage-0'],
+                }
+            },
+            {
+                test: /\.(scss|css)$/,
+                loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
+            }
+
+        ],
+    },
+    devtool: "cheap-module-eval-source-map"
 };
 
-//   module: {
-
-//     loaders: [
-
-//       {
-
-//         loaders:['react-hot','babel-loader'],
-
-//         query: {presets: ["react", "es2015", "stage-0"]},
-
-//         test: /\.jsx?$/,
-
-//         exclude: /(node_modules|bower_components)/
-
-//       }
-
-//     ]
-
-//   },
-
-//   devtool: 'cheap-module-eval-source-map'
-
-// };
+module.exports = config;

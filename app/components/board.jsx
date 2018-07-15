@@ -4,9 +4,9 @@ import FloatingActionButton from "material-ui/FloatingActionButton";
 import ContentAdd from "material-ui/svg-icons/content/add";
 import { Scrollbars } from "react-custom-scrollbars";
 import Toolbar from "Toolbar";
-import Boards from "app/components/Note.jsx";
-import Boardbar from "app/components/toolbars/boardtoolbar.jsx";
-import Store from "app/store/UIstore.js";
+import Boards from "./Note.jsx";
+import Boardbar from "./toolbars/boardtoolbar.jsx";
+import Store from "../store/UIstore.js";
 import { observer } from "mobx-react";
 
 const align = {

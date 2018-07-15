@@ -7,26 +7,26 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
 import IconMenu from "material-ui/IconMenu";
-import Toolbar from "app/components/toolbar.jsx";
-import Boards from "app/components/Note.jsx";
+import Toolbar from "../toolbar.jsx";
+import Boards from "../Note.jsx";
 import Avatar from "material-ui/Avatar";
 import List from "material-ui/List/List";
 import ListItem from "material-ui/List/ListItem";
 import { Scrollbars } from "react-custom-scrollbars";
-import FriendshipStore from "app/store/FriendshipsStore.js";
+import FriendshipStore from "../../store/FriendshipsStore.js";
 import Badge from "material-ui/Badge";
 import NotificationsIcon from "material-ui/svg-icons/action/check-circle";
 import Dialog from "material-ui/Dialog";
 import Snackbar from "material-ui/Snackbar";
 import { observer } from "mobx-react";
-import { greenA400, red500 } from "material-ui/styles/colors";
+import {greenA400, orange500, red500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import Store from "app/store/UIstore.js";
+import Store from "../../store/UIstore.js";
 import SearchInput, { createFilter } from "react-search-input";
 import FontIcon from "material-ui/FontIcon";
 import CommunicationChatBubble from "material-ui/svg-icons/communication/chat-bubble";
-import UserStore from "app/store/UserStore.js";
-import FriendshipsStore from "app/store/FriendshipsStore.js";
+import UserStore from "../../store/UserStore.js";
+import FriendshipsStore from "../../store/FriendshipsStore.js";
 
 const KEYS_TO_FILTERS = ["email", "name", "nickname"];
 
@@ -39,7 +39,7 @@ const header = {
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400,
+    primary1Color: orange500,
     accent1Color: red500
   },
   toggle: {

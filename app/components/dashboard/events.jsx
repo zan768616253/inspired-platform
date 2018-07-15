@@ -7,16 +7,16 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
 import IconMenu from "material-ui/IconMenu";
-import Toolbar from "app/components/toolbar.jsx";
-import Boards from "app/components/Note.jsx";
+import Toolbar from "../toolbar.jsx";
+import Boards from "../Note.jsx";
 import { Scrollbars } from "react-custom-scrollbars";
 import Dialog from "material-ui/Dialog";
 import TextField from "material-ui/TextField";
-import { greenA400, red500 } from "material-ui/styles/colors";
+import {greenA400, orange500, red500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import Store from "app/store/UIstore.js";
-import UserStore from "app/store/UserStore.js";
-import EventStore from "app/store/EventStore.js";
+import Store from "../../store/UIstore.js";
+import UserStore from "../../store/UserStore.js";
+import EventStore from "../../store/EventStore.js";
 import { observer } from "mobx-react";
 import FloatingActionButton from "material-ui/FloatingActionButton";
 import ContentAdd from "material-ui/svg-icons/content/add";
@@ -48,7 +48,7 @@ const tableDisplay = {
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400,
+    primary1Color: orange500,
     accent1Color: red500
   },
   toggle: {

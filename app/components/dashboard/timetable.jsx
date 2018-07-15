@@ -5,15 +5,12 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
 import IconMenu from "material-ui/IconMenu";
-import Toolbar from "app/components/toolbar.jsx";
-import Boards from "app/components/Note.jsx";
+import Toolbar from "../toolbar.jsx";
 import Dialog from "material-ui/Dialog";
 import RaisedButton from "material-ui/RaisedButton";
-import Chat from "app/components/chat.jsx";
-import Board from "app/components/board.jsx";
-import { greenA400 } from "material-ui/styles/colors";
+import {greenA400, orange500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import Store from "app/store/UIstore.js";
+import Store from "../../store/UIstore.js";
 import TextField from "material-ui/TextField";
 
 import {
@@ -25,14 +22,14 @@ import {
   TableRow,
   TableRowColumn
 } from "material-ui/Table";
-import UserStore from "app/store/UserStore.js";
+import UserStore from "../../store/UserStore.js";
 import { observer } from "mobx-react";
 const spacing = {
   margin: 12
 };
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400
+    primary1Color: orange500
   },
   toggle: {
     thumbOnColor: "yellow",

@@ -1,7 +1,5 @@
 import React from "react";
-
 var { Link, IndexLink } = require("react-router");
-import { redirectVerify } from "auth.js";
 import { Card, CardHeader, CardTitle, CardText } from "material-ui/Card";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 
@@ -15,8 +13,7 @@ const style2 = {
   width: "160px",
   height: "40px"
 };
-import { cyan500 } from "material-ui/styles/colors";
-import { greenA400 } from "material-ui/styles/colors";
+import {cyan500, orange500} from "material-ui/styles/colors";
 
 const header = {
   textAlign: "center"
@@ -26,7 +23,7 @@ const tableDisplay = {
 };
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400
+    primary1Color: orange500
   },
   toggle: {
     thumbOnColor: "yellow",
@@ -55,7 +52,7 @@ export default class Verify extends React.Component {
                 <CardTitle title="Verify Your Email Address" />
                 <br />
                 <div className="center-block" style={{ display: "table" }}>
-                  <img src="Klogo.png" style={style2} />
+                  <img src="logo-placeholder.png" style={style2} />
                 </div>
                 <br />
                 <CardText>

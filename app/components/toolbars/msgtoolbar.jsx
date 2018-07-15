@@ -14,7 +14,8 @@ import { List, ListItem } from "material-ui/List";
 import RaisedButton from "material-ui/RaisedButton";
 import NavigationExpandMoreIcon from "material-ui/svg-icons/navigation/expand-more";
 import MenuItem from "material-ui/MenuItem";
-import UIStore from "app/store/UIstore.js";
+import UIStore from "../../store/UIstore.js";
+import { logout, userProfile } from "../../../auth.js";
 var { Link, IndexLink, browserHistory } = require("react-router");
 
 import {
@@ -45,7 +46,7 @@ export default class Msgbar extends React.Component {
     this.state = {};
     this.profile = this.profile.bind(this);
     this.settings = this.settings.bind(this);
-    this.logout = this.logout.bind(this);
+    this.logout = logout;
     this.handleToggl = this.handleToggl.bind(this);
   }
 

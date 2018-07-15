@@ -5,17 +5,12 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
 import IconMenu from "material-ui/IconMenu";
-import Toolbar from "app/components/toolbar.jsx";
-import Boards from "app/components/Note.jsx";
+import Toolbar from "../toolbar.jsx";
 import ContentMore from "material-ui/svg-icons/navigation/expand-more";
 import { Scrollbars } from "react-custom-scrollbars";
 import Linkifier from "react-linkifier";
-import Chat from "app/components/chat.jsx";
-import Board from "app/components/board.jsx";
-import Note from "app/components/Note.jsx";
-import { greenA400 } from "material-ui/styles/colors";
+import {greenA400, orange500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import Store from "app/store/UIstore.js";
 import {
   Card,
   CardActions,
@@ -27,8 +22,8 @@ import {
 import FlatButton from "material-ui/FlatButton";
 import Toggle from "material-ui/Toggle";
 import SvgIcon from "material-ui/SvgIcon";
-import UserStore from "app/store/UserStore.js";
-import ChatStore from "app/store/ChatStore.js";
+import UserStore from "../../store/UserStore.js";
+import ChatStore from "../../store/ChatStore.js";
 import { observer } from "mobx-react";
 import { map } from "mobx";
 import RaisedButton from "material-ui/RaisedButton";
@@ -47,7 +42,7 @@ const noteName = {
 };
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400
+    primary1Color: orange500
   },
   toggle: {
     thumbOnColor: "yellow",

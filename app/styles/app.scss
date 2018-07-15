@@ -1,10 +1,67 @@
 $primaryColor: #00e676;
 $secondaryColor: #009688;
-// $secondaryColor: #EDF8F5;
 $tertiaryColor: #66d7e6;
 $fourthColor: #d0e9ea;
 $fifthColor: #009688;
 $sixthColor: #dadbd3;
+
+.text--display1, .text--display2, .text--display3, h1, h2, h3 {
+  stroke: transparent;
+  fill: rgba(0,0,0,.87);
+  color: rgba(0,0,0,.87);
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 16px;
+  margin: 0;
+  padding: 0 0 8px;
+  color: rgba(0,0,0,.87);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .gu-mirror {
   position: fixed !important;
   margin: 0 !important;
@@ -13,25 +70,6 @@ $sixthColor: #dadbd3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
-
-// .hideScrollbar {
-//   overflow: scroll !important;
-//   overflow-x: hidden !important;
-// }
-
-// .hideScrollbar ::-webkit-scrollbar {
-//   width: 0px !important; /* remove scrollbar space */
-//   background: transparent !important;
-//   display: none !important; /* optional: just make scrollbar invisible */
-// }
-// /* optional: show position indicator in red */
-// .hideScrollbar ::-webkit-scrollbar-thumb {
-//   background: #ff0000;
-// }
-
-// #hideScroll::-webkit-scrollbar {
-//   display: none;
-// }
 
 .BoardClass {
   margin-bottom: 15% !important;
@@ -177,12 +215,8 @@ $sixthColor: #dadbd3;
   position: fixed;
   bottom: 0px;
   width: 33%;
-  // height: 6%;
-  // height: 6%;
   display: inline;
   margin-left: -4px;
-
-  //    right: px;
 }
 
 .fixedbutton {
@@ -203,10 +237,7 @@ $sixthColor: #dadbd3;
   margin: 0;
 }
 
-html,
-body {
-  // overflow: hidden;
-}
+
 
 .padding {
   padding-left: 0px;
@@ -222,14 +253,6 @@ p {
   color: #555;
 }
 
-// .my-div {
-//   overflow-y: scroll;
-// }
-// .scrollableDiv
-// {
-//     overflow-y: auto;
-//     max-height: 150px;
-// }
 .fullWidth {
   width: 100%;
   margin-left: auto;
@@ -251,24 +274,16 @@ p {
   background-color: #00e676 !important;
 }
 
-img {
-  width: 115px;
-  padding: 0rem 0rem;
-}
-
 .top-bar {
   width: 100%;
   position: fixed;
-  background-color: $secondaryColor;
+  background-color: transparent !important;
 }
 
 .top-bar ul {
-  background-color: $secondaryColor;
+  background-color: transparent !important;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-}
 
 // CSS
 ::selection {
@@ -280,21 +295,6 @@ a {
   color: rgba(82, 179, 217, 0.9);
 }
 
-// /* M E N U */
-// .menu {
-//     position: fixed;
-//     top: 0px;
-//     left: 0px;
-//     right: 0px;
-//     width: 100%;
-//     height: 50px;
-//     background: rgba(82,179,217,0.9);
-//     z-index: 100;
-//     -webkit-touch-callout: none;
-//     -webkit-user-select: none;
-//     -moz-user-select: none;
-//     -ms-user-select: none;
-// }
 .back {
   position: absolute;
   width: 90px;
@@ -419,39 +419,10 @@ a {
 .other .msg {
   order: 1;
   border-top-left-radius: 0px;
-  // box-shadow: -1px 2px 0px #D4D4D4;
   border: 1px solid #d4d4d4;
   border-radius: 12px;
-  // position: relative;
-  // background: white;
-  // text-align: right;
-  // min-width: 45%;
-  // padding: 10px 15px;
-  // border-radius: 6px;
-  // border: 1px solid #ccc;
-  // float: right;
-  // right: 20px;
 }
 
-// .other .msg::before {
-//     content: '';
-//     position: absolute;
-//     visibility: visible;
-//     top: -1px;
-//     right: -10px;
-//     border: 10px solid transparent;
-//     border-top: 10px solid #ccc;
-// }
-// .other .msg::after {
-//     content: '';
-//     position: absolute;
-//     visibility: visible;
-//     top: 0px;
-//     right: -8px;
-//     border: 10px solid transparent;
-//     border-top: 10px solid white;
-//     clear: both;
-// }
 .other:before {
   content: "";
   position: relative;
@@ -472,12 +443,6 @@ a {
 }
 
 .self .msg {
-  // order: 1;
-  // border-bottom-right-radius: 0px;
-  // background-color: #DCF8C6;
-  // box-shadow: 1px 2px 0px #D4D4D4;
-  // border: 1px solid #DCF8C6;
-  // border-radius: 12px;
   position: relative;
   background: #dcf8c6;
   text-align: right;
@@ -611,61 +576,6 @@ a {
   margin-right: 4px;
 }
 
-// .msg sender:before{
-//     content:"\f017";
-//     color: #ddd;
-//     font-family: FontAwesome;
-//     display: inline-block;
-//     margin-left: 4px;
-// }
-// emoji {
-//   display: inline-block;
-//   height: 18px;
-//   width: 18px;
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   margin-top: -7px;
-//   margin-right: 2px;
-//   transform: translate3d(0px, 3px, 0px);
-// }
-
-// @-webikt-keyframes pulse {
-//     from {
-//         opacity: 0;
-//     }
-//     to {
-//         opacity: 0.5;
-//     }
-// }
-// ::-webkit-scrollbar {
-//     min-width: 12px;
-//     width: 12px;
-//     max-width: 12px;
-//     min-height: 12px;
-//     height: 12px;
-//     max-height: 12px;
-//     background: #e5e5e5;
-//     box-shadow: inset 0px 50px 0px rgba(82, 179, 217, 0.9), inset 0px -52px 0px #fafafa;
-// }
-// ::-webkit-scrollbar-thumb {
-//     background: #bbb;
-//     border: none;
-//     border-radius: 100px;
-//     border: solid 3px #e5e5e5;
-//     box-shadow: inset 0px 0px 3px #999;
-// }
-// ::-webkit-scrollbar-thumb:hover {
-//     background: #b0b0b0;
-//     box-shadow: inset 0px 0px 3px #888;
-// }
-// ::-webkit-scrollbar-thumb:active {
-//     background: #aaa;
-//     box-shadow: inset 0px 0px 3px #7f7f7f;
-// }
-// ::-webkit-scrollbar-button {
-//     display: block;
-//     height: 26px;
-// }
 // /* T Y P E */
 input.textarea {
   position: fixed;
@@ -683,21 +593,3 @@ input.textarea {
   color: #555;
   font-weight: 400;
 }
-
-// .emojis {
-//   position: fixed;
-//   display: block;
-//   bottom: 8px;
-//   left: 7px;
-//   width: 34px;
-//   height: 34px;
-//   background-image: url(http://i.imgur.com/5WUpcPZ.png);
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   z-index: 100;
-//   cursor: pointer;
-// }
-
-// .emojis:active {
-//   opacity: 0.9;
-// }

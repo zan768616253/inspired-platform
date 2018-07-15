@@ -4,8 +4,8 @@ import IconButton from "material-ui/IconButton";
 import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
 import IconMenu from "material-ui/IconMenu";
 import AppBar from "material-ui/AppBar";
-import UserStore from "app/store/UserStore.js";
-import FriendshipStore from "app/store/FriendshipsStore.js";
+import UserStore from "../../store/UserStore.js";
+import FriendshipStore from "../../store/FriendshipsStore.js";
 import Snackbar from "material-ui/Snackbar";
 
 import {
@@ -32,7 +32,7 @@ import {
 } from "material-ui/Toolbar";
 import FontIcon from "material-ui/FontIcon";
 import ActionGrade from "material-ui/svg-icons/action/grade";
-import ChatStore from "app/store/ChatStore.js";
+import ChatStore from "../../store/ChatStore.js";
 import { observer } from "mobx-react";
 import Dialog from "material-ui/Dialog";
 import FlatButton from "material-ui/FlatButton";

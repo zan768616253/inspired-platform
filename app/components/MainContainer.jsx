@@ -1,9 +1,9 @@
 import React from "react";
-import Chat from "app/components/chat.jsx";
-import Board from "app/components/board.jsx";
-import ListChatContainer from "app/components/chat/ListChatContainer.jsx";
-import NewChatDrawer from "app/components/drawer/newchatdrawer.jsx";
-import ChatStore from "app/store/ChatStore.js";
+import Chat from "./chat.jsx";
+import Board from "./board.jsx";
+import ListChatContainer from "./chat/ListChatContainer.jsx";
+import NewChatDrawer from "./drawer/newchatdrawer.jsx";
+import ChatStore from "../store/ChatStore.js";
 import { observer } from "mobx-react";
 
 const style = {

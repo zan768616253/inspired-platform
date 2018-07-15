@@ -4,10 +4,9 @@ import Auth0Lock from "auth0-lock";
 const ID_TOKEN_KEY = "id_token";
 const everified = "ev";
 const userid = "uid";
-var emailverified;
-var picture;
-var user_id;
-import userstore from "app/store/UserStore.js";
+let emailverified, picture, user_id;
+
+import userstore from "./app/store/UserStore.js";
 
 const lock = new Auth0Lock(
   "xDe229e1uR9PPKZMutFVk4QZYpAVU9l6",

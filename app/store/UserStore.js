@@ -1,4 +1,4 @@
-import mobx, { computed, observable, extendObservable, autorun } from "mobx";
+import {observable, autorun } from "mobx";
 
 class UserStore {
   @observable obj = {};
@@ -6,6 +6,14 @@ class UserStore {
   @observable useraccount = "";
   @observable created_at = "";
   @observable created_at_day = "";
+  @observable avatar = "";
+  @observable phone = "";
+  @observable children_number = 1;
+  @observable hometown = "";
+  @observable expertise = "";
+  @observable culture = "";
+  @observable belief = "";
+  @observable bio = "";
   @observable desc = "";
   @observable emailverified = false;
   @observable allUsers = [];
@@ -18,8 +26,11 @@ class UserStore {
   @observable currentValue;
 }
 
-var userstore = (window.userstore = new UserStore());
+const userstore = (window.userstore = new UserStore());
 
 export default userstore;
 
-// autorun(() => console.log(userstore.obj));
+autorun(() => {
+  console.log('userstore')
+  console.log(userstore)
+})

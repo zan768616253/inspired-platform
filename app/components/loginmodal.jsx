@@ -4,8 +4,6 @@ import FlatButton from "material-ui/FlatButton";
 import RaisedButton from "material-ui/RaisedButton";
 
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import { cyan500 } from "material-ui/styles/colors";
-import { greenA400 } from "material-ui/styles/colors";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 const style = {
   width: "100%",

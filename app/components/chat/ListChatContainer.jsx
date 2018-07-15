@@ -4,10 +4,10 @@ import muiThemeable from "material-ui/styles/muiThemeable";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import Snackbar from "material-ui/Snackbar";
-import FriendshipStore from "app/store/FriendshipsStore.js";
+import FriendshipStore from "../../store/FriendshipsStore.js";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import MobileTearSheet from "app/api/MobileTearSheet.js";
+import MobileTearSheet from "../../api/MobileTearSheet.js";
 import Badge from "material-ui/Badge";
 import { List, ListItem, makeSelectable } from "material-ui/List";
 import Divider from "material-ui/Divider";
@@ -15,34 +15,33 @@ import FileFolder from "material-ui/svg-icons/file/folder";
 import Subheader from "material-ui/Subheader";
 import Avatar from "material-ui/Avatar";
 import {
-  grey400,
-  darkBlack,
-  lightBlack,
-  blue300
+    grey400,
+    darkBlack,
+    lightBlack,
+    blue300, orange500
 } from "material-ui/styles/colors";
 import IconButton from "material-ui/IconButton";
 import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
 import IconMenu from "material-ui/IconMenu";
 import MenuItem from "material-ui/MenuItem";
 import { Scrollbars } from "react-custom-scrollbars";
-import Msgbar from "app/components/toolbars/msgtoolbar.jsx";
-import Toolbar from "app/components/toolbar.jsx";
-import Boards from "app/components/Note.jsx";
-import TimeTable from "app/components/dashboard/timetable.jsx";
-import Events from "app/components/dashboard/events.jsx";
-import Main from "app/components/main.jsx";
+import Msgbar from "../toolbars/msgtoolbar.jsx";
+import Toolbar from "../toolbar.jsx";
+import Boards from "../Note.jsx";
+import TimeTable from "../dashboard/timetable.jsx";
+import Events from "../dashboard/events.jsx";
+import Main from "../main.jsx";
 import { observer } from "mobx-react";
-import Chat from "app/components/chat.jsx";
-import Board from "app/components/board.jsx";
+import Chat from "../chat.jsx";
+import Board from "../board.jsx";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import { cyan500, grey50, grey900, red500 } from "material-ui/styles/colors";
-import { greenA400 } from "material-ui/styles/colors";
-import UserStore from "app/store/UserStore.js";
-import ChatStore from "app/store/ChatStore.js";
+import UserStore from "../../store/UserStore.js";
+import ChatStore from "../../store/ChatStore.js";
 import Dialog from "material-ui/Dialog";
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400,
+    primary1Color: orange500,
     accent1Color: red500
   },
   toggle: {

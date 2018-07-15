@@ -2,11 +2,11 @@ import React from "react";
 var { Link, IndexLink } = require("react-router");
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import RaisedButton from "material-ui/RaisedButton";
-import LoginDialog from "app/components/loginmodal.jsx";
-import SignupDialog from "app/components/signupmodal.jsx";
+import LoginDialog from "./loginmodal.jsx";
+import SignupDialog from "./signupmodal.jsx";
 import muiThemeable from "material-ui/styles/muiThemeable";
 import { Scrollbars } from "react-custom-scrollbars";
-import { greenA400 } from "material-ui/styles/colors";
+import {orange500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 
 const styleimg = {
@@ -33,7 +33,7 @@ const aligncentercollaborate = {
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400
+    primary1Color: orange500
   }
 });
 
@@ -92,9 +92,9 @@ export default class Homepage extends React.Component {
     document.addEventListener("DOMContentLoaded", function() {
       Typed.new(".element", {
         strings: [
-          "<em> for teams.</em>",
-          " <em>for students.</em>",
-          "<em> for developers. </em>"
+          "<em> for thriving children.</em>",
+          "<em> for building community.</em>",
+          "<em> for better education.</em>"
         ],
         typeSpeed: 30, // typing speed
         loop: !0, // here
@@ -118,13 +118,12 @@ export default class Homepage extends React.Component {
           <div className="firstPage">
             <h2 style={style}>
               {" "}
-              A Collaboration app <strong className="element typewriteColor" />
+              A Collaboration platform <strong className="element typewriteColor" />
             </h2>
             <br />
             <br />
             <p style={aligncenter}>
-              Kolaboard lets you organize and prioritize your tasks <br />{" "}
-              making collaboration easier and more fun.
+              Parents’ education for thriving children <br />{" "}
             </p>
             <br />
 
@@ -136,7 +135,7 @@ export default class Homepage extends React.Component {
             <br />
             <br />
             <p style={aligncenter}>
-              Already using kolaboard? <a onClick={this.openLogin}>Login</a>
+              Already using Inspired Platform? <a onClick={this.openLogin}>Login</a>
             </p>
           </div>
           <br />
@@ -145,7 +144,7 @@ export default class Homepage extends React.Component {
 
           <div className="secondPage">
             <h4 style={aligncentercollaborate}>
-              Easier to communicate and collaborate<br />with noteboards
+              Easier to communicate and collaborate<br />
             </h4>
             <br />
             <br />
@@ -160,7 +159,7 @@ export default class Homepage extends React.Component {
             <br />
             <p style={aligncenter}>
               Sign Up for free and enjoy all the exclusive features<br />of
-              kolaboard
+              InsiprEd
             </p>
             <br />
             <br />
@@ -173,7 +172,7 @@ export default class Homepage extends React.Component {
             <br />
             <br />
             <p style={aligncenter}>
-              Already using kolaboard? <a onClick={this.openLogin}>Login</a>
+              Already using InspirEd? <a onClick={this.openLogin}>Login</a>
             </p>
             <br />
             <br />
@@ -185,7 +184,7 @@ export default class Homepage extends React.Component {
             </div>
             <br />
             <br />
-            <p>&copy; copyright 2017 Kolaboard</p>
+            <p>&copy; copyright 2018 Inspired</p>
           </div>
 
           {/*</Scrollbars>*/}

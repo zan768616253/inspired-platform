@@ -1,17 +1,8 @@
-var React = require("react");
-var { Link, IndexLink } = require("react-router");
+import React from 'react'
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import RaisedButton from "material-ui/RaisedButton";
-import LoginDialog from "app/components/loginmodal.jsx";
-import SignupDialog from "app/components/signupmodal.jsx";
-import FirstPage from "app/components/firstpage.jsx";
-import { AppBar, IconButton, MenuItem } from "material-ui";
-
-import muiThemeable from "material-ui/styles/muiThemeable";
-const greenbutton = {
-  backgroundColor: "#00E676"
-};
-import { browserHistory } from "react-router";
+import LoginDialog from "./loginmodal.jsx";
+import SignupDialog from "./signupmodal.jsx";
+import {orange500} from "material-ui/styles/colors";
 
 export default class NewNav extends React.Component {
   constructor(props) {
@@ -20,19 +11,19 @@ export default class NewNav extends React.Component {
   }
 
   componentWillMount() {
-    var optionsLogin = {
+    const optionsLogin = {
       languageDictionary: {
         emailInputPlaceholder: "something@youremail.com",
         title: "Log In"
       },
       allowSignUp: false,
       theme: {
-        logo: "https://image.ibb.co/mMtqJF/Klogo_Original_Green_K.png",
-        primaryColor: "#00E676"
+        logo: "cropped-logo-120.png",
+        primaryColor: orange500
       }
     };
 
-    var optionsSignup = {
+    const optionsSignup = {
       languageDictionary: {
         emailInputPlaceholder: "something@youremail.com",
         title: "Sign Up"
@@ -40,8 +31,8 @@ export default class NewNav extends React.Component {
       allowLogin: false,
 
       theme: {
-        logo: "https://image.ibb.co/mMtqJF/Klogo_Original_Green_K.png",
-        primaryColor: "#00E676"
+        logo: "cropped-logo-120.png",
+        primaryColor: orange500
       }
     };
 
@@ -73,7 +64,7 @@ export default class NewNav extends React.Component {
           <div className="top-bar-left">
             <ul className="menu">
               <li>
-                <img src="Klogo.png" style={style} />
+                <img src="logo-placeholder.png" style={style} />
               </li>
             </ul>
           </div>

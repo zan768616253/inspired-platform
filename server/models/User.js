@@ -57,6 +57,40 @@ var UserSchema = new Schema({
   uId: {
     type: String
   },
+  avatar: {
+    type: String,
+    default: "",
+    trim: true
+  },
+  phone: {
+    type: String,
+    default: "",
+    trim: true
+  },
+  childrennumber: {
+    type: Number,
+    default: 1
+  },
+  hometown: {
+    type: String,
+    default: "",
+    trim: true
+  },
+  expertise: {
+    type: String,
+    default: "",
+    trim: true
+  },
+  culture: {
+    type: String,
+    default: "",
+    trim: true
+  },
+  belief: {
+    type: String,
+    default: "",
+    trim: true
+  },
   emailnotif: {
     type: Boolean
   },

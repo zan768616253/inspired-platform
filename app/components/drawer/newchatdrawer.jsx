@@ -2,13 +2,13 @@ import React from "react";
 import { AppBar, Drawer } from "material-ui";
 import MenuItem from "material-ui/MenuItem";
 import RaisedButton from "material-ui/RaisedButton";
-import UIStore from "app/store/UIstore.js";
+import UIStore from "../../store/UIstore.js";
 import { observer } from "mobx-react";
 import NavigationClose from "material-ui/svg-icons/navigation/close";
 import IconButton from "material-ui/IconButton";
 import { Scrollbars } from "react-custom-scrollbars";
-import UserStore from "app/store/UserStore.js";
-import ChatStore from "app/store/ChatStore.js";
+import UserStore from "../../store/UserStore.js";
+import ChatStore from "../../store/ChatStore.js";
 import Avatar from "material-ui/Avatar";
 import Chip from "material-ui/Chip";
 import SearchInput, { createFilter } from "react-search-input";
@@ -21,7 +21,7 @@ import ListItem from "material-ui/List/ListItem";
 import TextField from "material-ui/TextField";
 
 const KEYS_TO_FILTERS = ["user_id_name", "other_id_name"];
-import FriendshipsStore from "app/store/FriendshipsStore.js";
+import FriendshipsStore from "../../store/FriendshipsStore.js";
 const tableDisplay = {
   display: "table"
 };

@@ -5,14 +5,10 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
 import IconMenu from "material-ui/IconMenu";
-import Toolbar from "app/components/toolbar.jsx";
-import Boards from "app/components/Note.jsx";
-import Chat from "app/components/chat.jsx";
-import Board from "app/components/board.jsx";
-import { greenA400, red500 } from "material-ui/styles/colors";
+import Toolbar from "../toolbar.jsx";
+import {orange500, red500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import Store from "app/store/UIstore.js";
-import UserStore from "app/store/UserStore.js";
+import UserStore from "../../store/UserStore.js";
 import RaisedButton from "material-ui/RaisedButton";
 import Dialog from "material-ui/Dialog";
 import FlatButton from "material-ui/FlatButton";
@@ -31,7 +27,7 @@ import Avatar from "material-ui/Avatar";
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400,
+    primary1Color: orange500,
     accent1Color: red500
   },
   toggle: {

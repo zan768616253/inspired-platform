@@ -7,20 +7,20 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
 import IconMenu from "material-ui/IconMenu";
-import Toolbar from "app/components/toolbar.jsx";
-import Boards from "app/components/Note.jsx";
+import Toolbar from "../toolbar.jsx";
+import Boards from "../Note.jsx";
 import List from "material-ui/List/List";
 import Avatar from "material-ui/Avatar";
-import FriendshipStore from "app/store/FriendshipsStore.js";
+import FriendshipStore from "../../store/FriendshipsStore.js";
 import Dialog from "material-ui/Dialog";
 import Snackbar from "material-ui/Snackbar";
 import ListItem from "material-ui/List/ListItem";
 import Badge from "material-ui/Badge";
-import { greenA400, red500 } from "material-ui/styles/colors";
+import {greenA400, orange500, red500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import Store from "app/store/UIstore.js";
-import FriendshipsStore from "app/store/FriendshipsStore.js";
-import UserStore from "app/store/UserStore.js";
+import Store from "../../store/UIstore.js";
+import FriendshipsStore from "../../store/FriendshipsStore.js";
+import UserStore from "../../store/UserStore.js";
 import { observer } from "mobx-react";
 import { Scrollbars } from "react-custom-scrollbars";
 
@@ -36,7 +36,7 @@ const KEYS_TO_FILTERS = [
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400,
+    primary1Color: orange500,
     accent1Color: red500
   },
   toggle: {

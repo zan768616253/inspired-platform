@@ -7,26 +7,25 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
 import IconButton from "material-ui/IconButton";
 import IconMenu from "material-ui/IconMenu";
-import Toolbar from "app/components/toolbar.jsx";
-import Boards from "app/components/Note.jsx";
-import { greenA400 } from "material-ui/styles/colors";
+import Toolbar from "../toolbar.jsx";
+import Boards from "../Note.jsx";
+import {greenA400, orange500} from "material-ui/styles/colors";
 import { lightBlue500, blue500 } from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import Store from "app/store/UIstore.js";
 import { Tabs, Tab } from "material-ui/Tabs";
 import FontIcon from "material-ui/FontIcon";
 import MapsPersonPin from "material-ui/svg-icons/maps/person-pin";
-import FindFriends from "app/components/dashboard/FindFriends.jsx";
-import AcceptRequests from "app/components/dashboard/AcceptRequests.jsx";
-import FriendList from "app/components/dashboard/FriendList.jsx";
-import UserStore from "app/store/UserStore.js";
+import FindFriends from "../dashboard/FindFriends.jsx";
+import AcceptRequests from "../dashboard/AcceptRequests.jsx";
+import FriendList from "../dashboard/FriendList.jsx";
+import UserStore from "../../store/UserStore.js";
 import Badge from "material-ui/Badge";
-import FriendshipsStore from "app/store/FriendshipsStore.js";
+import FriendshipsStore from "../../store/FriendshipsStore.js";
 import { observer } from "mobx-react";
-import UIStore from "app/store/UIstore.js";
+import UIStore from "../../store/UIstore.js";
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: greenA400,
+    primary1Color: orange500,
     primary2Color: lightBlue500,
     secondary1Color: lightBlue500,
     accent1Color: blue500
