@@ -1,10 +1,15 @@
-@import "./quill.core";
-@import "./quill.snow";
+//@import "./quill.core";
+//@import "./quill.snow";
 @import "./rc-cropping";
 @import "./rc-dialog";
+@import "./notestyle";
 
 @import "./app";
-@import "./homepage";
-@import "./homeNav";
-@import "./profile";
-@import "./notestyle";
+@import "../pages/LandingPage/homepage";
+@import "../components/UserHeader/index.module";
+@import "../pages/ProfilePage/index.module";
+@import "../components/RoomList/index.module";
+@import "../pages/MainPage/main";
+@import "../components/CreateRoomForm/index.module";
+@import "../components/RoomHeader/index.module";
+@import "../components/MessageList/index.module";

@@ -31,6 +31,4 @@ const userstore = (window.userstore = new UserStore());
 export default userstore;
 
 autorun(() => {
-  console.log('userstore')
-  console.log(userstore)
 })

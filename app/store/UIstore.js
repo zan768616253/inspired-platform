@@ -1,4 +1,4 @@
-import mobx, { observable } from "mobx";
+import { observable } from "mobx";
 
 class Store {
   @observable full = "";
@@ -18,8 +18,9 @@ class Store {
   @observable msgdetails = false;
   @observable goToInvites = false;
   @observable invitescount = 0;
-
   // @observable fullscreen = !
+
+  @observable showParticipants = false;
 }
 
 var store = (window.store = new Store());

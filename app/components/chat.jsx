@@ -259,7 +259,7 @@ export default class Chat extends React.Component {
         picture: UserStore.obj.picture,
         sendTo: ChatStore.groupname
       });
-      socket.on("chat messagey", function(msg) {
+      socket.on("chat message", function(msg) {
         if (
           chatstore.msgs[chatstore.msgs.length - 1].message != msg.message ||
           chatstore.msgs[chatstore.msgs.length - 1].from != msg.from ||

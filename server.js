@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const expressSession = require("express-session");
 const cookieParser = require("cookie-parser");
 const multer = require('multer');
+const EventProxy = require('eventproxy')
 
 const User = require("./server/models/User.js");
 const Friendships = require("./server/models/Friendships.js");
@@ -482,7 +483,7 @@ io.on("connection", function(socket) {
       time: time,
       picture: data.picture
     };
-    socket.broadcast.emit("chat messagey", msg);
+    socket.broadcast.emit("chat message", msg);
   });
 
   socket.on("Join room", function(data) {
@@ -989,9 +990,11 @@ io.on("connection", function(socket) {
       socket.emit("remainingchatlist", docs);
     });
   });
+
   socket.on("create group event", function(data) {
+    const ep = new EventProxy()
     let _id;
-    var mydata = {
+    const mydata = {
       groupname: data.groupname,
       avatarletter: data.avatarletter,
       conversation: [],
@@ -1000,48 +1003,55 @@ io.on("connection", function(socket) {
       admin_id: data.id,
       created_on: data.created_on
     };
-    var room = new rooms(mydata);
+    const room = new rooms(mydata);
 
-    rooms.find({}, function(err, docs) {
-      room.save(function(err, docs) {
-        if (err) {
+    const participants = JSON.parse(data.mapping);
+    const owner = participants[0]
+
+    room.save(function(err, docs) {
+      if (err) {
           console.log(err);
-        } else {
+      } else {
           _id = docs._id;
+          ep.emit('room_save', _id)
+      }
+    });
 
-          var participants = JSON.parse(data.mapping);
-          var val = 0;
-          for (var i = 0; i < participants.length; i++) {
-            User.findOneAndUpdate(
-              { user_id: participants[i].user_id },
-              {
+    ep.all('room_save', _id => {
+        User.findOneAndUpdate(
+            { user_id: owner.user_id },
+            {
                 $push: {
-                  rooms: {
-                    roomId: _id,
-                    roomName: data.groupname,
-                    pic: data.avatarletter,
-                    read_notes_count: val,
-                    read_count: val,
-                    total_count: val,
-                    total_notes_count: val
-                  }
+                    rooms: {
+                        roomId: _id,
+                        roomName: data.groupname,
+                        pic: data.avatarletter,
+                        read_notes_count: 0,
+                        read_count: 0,
+                        total_count: 0,
+                        total_notes_count: 0
+                    }
                 }
-              },
-              function(err) {
-                if (err) console.log(err);
+            },
+            (err, user) => {
+                if (err)
+                    console.log(err);
                 else {
+                    ep.emit('update_user_rooms', true)
                 }
+            }
+        );
+    })
+
+      ep.all('update_user_rooms', () => {
+          User.findOne(
+              { user_id: owner.user_id },
+              'rooms',
+              (err, rooms) => {
+                  socket.emit("refresh group list", rooms)
               }
-            );
-          }
-        }
-      });
-    });
-    User.find({
-      user_id: data.id
-    }).then(docs => {
-      socket.emit("refresh group list", docs);
-    });
+          )
+      })
   });
   socket.on("msg delete", function(data) {
     rooms

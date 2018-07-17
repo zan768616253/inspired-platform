@@ -1,0 +1,108 @@
+.message-list {
+  flex: 1 1 100%;
+  padding: 1rem;
+  border-bottom: 2rem solid #fafafa;
+  margin: 0;
+  display: flex;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.message-list > wrapper- {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.empty {
+  margin: auto;
+  text-align: center;
+  color: #b6b6b6;
+}
+
+.empty > * + * {
+  margin-top: 1rem;
+}
+
+.empty > span {
+  font-size: 3rem;
+}
+
+.empty > p {
+  font-size: 1rem;
+  line-height: 150%;
+  max-width: 40ex;
+}
+
+.message {
+  position: relative;
+  display: flex;
+  flex: none;
+  font-size: 16px;
+  padding-top: 1rem;
+}
+
+.message:not(:last-child) {
+  border-top: 1px solid #f2f2f2;
+  margin-top: 1rem;
+}
+
+.message > img {
+  flex: none;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.38rem;
+}
+
+.message > div > img,
+.message > div > video,
+.message > div > audio {
+  width: 30rem;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  min-width: 0;
+}
+
+.message > * + * {
+  margin-left: 0.38rem;
+}
+
+.message > div {
+  margin-left: 1rem;
+}
+
+.message > div > p,
+.message > div > a {
+  padding-top: 0.5rem;
+  max-width: 100%;
+  word-break: break-word;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 150%;
+  max-width: 100ex;
+}
+
+.message > div a {
+  color: #006eff;
+}
+
+.message > div > span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 0.62rem;
+  color: #b6b6b6;
+  margin: 0;
+}
+
+.online::before {
+  display: block;
+  content: '';
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #42b72a;
+  border-radius: 50%;
+  margin-right: 0.38rem;
+}

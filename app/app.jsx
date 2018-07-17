@@ -7,7 +7,8 @@ var {
   browserHistory,
   IndexRoute
 } = require("react-router");
-var Main = require("Main");
+
+import Main from './pages/MainPage/main'
 import injectTapEventPlugin from "react-tap-event-plugin";
 import FirstPage from "./components/firstpage.jsx";
 import Verify from "./components/authentication/verify.jsx";
@@ -15,7 +16,7 @@ import { requireAuth, requireVerification, redirect } from "../auth.js";
 import NotFound from "./components/dashboard/NotFound.jsx";
 import TimeTable from "./components/dashboard/timetable.jsx";
 import Settings from "./components/dashboard/settings.jsx";
-import Profile from "./components/dashboard/profile.jsx";
+import Profile from "./pages/ProfilePage/profile.jsx";
 import PrivateNotes from "./components/dashboard/privatenotes.jsx";
 import Events from "./components/dashboard/events.jsx";
 import Invites from "././components/dashboard/invites.jsx";

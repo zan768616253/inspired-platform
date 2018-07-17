@@ -1,8 +1,4 @@
-import Drawer from "material-ui/Drawer";
 import RaisedButton from "material-ui/RaisedButton";
-import muiThemeable from "material-ui/styles/muiThemeable";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
 import Snackbar from "material-ui/Snackbar";
 import FriendshipStore from "../../store/FriendshipsStore.js";
 import React, { Component } from "react";
@@ -11,14 +7,10 @@ import MobileTearSheet from "../../api/MobileTearSheet.js";
 import Badge from "material-ui/Badge";
 import { List, ListItem, makeSelectable } from "material-ui/List";
 import Divider from "material-ui/Divider";
-import FileFolder from "material-ui/svg-icons/file/folder";
 import Subheader from "material-ui/Subheader";
 import Avatar from "material-ui/Avatar";
 import {
-    grey400,
-    darkBlack,
-    lightBlack,
-    blue300, orange500
+    grey400, darkBlack, orange500, red500
 } from "material-ui/styles/colors";
 import IconButton from "material-ui/IconButton";
 import MoreVertIcon from "material-ui/svg-icons/navigation/more-vert";
@@ -26,16 +18,8 @@ import IconMenu from "material-ui/IconMenu";
 import MenuItem from "material-ui/MenuItem";
 import { Scrollbars } from "react-custom-scrollbars";
 import Msgbar from "../toolbars/msgtoolbar.jsx";
-import Toolbar from "../toolbar.jsx";
-import Boards from "../Note.jsx";
-import TimeTable from "../dashboard/timetable.jsx";
-import Events from "../dashboard/events.jsx";
-import Main from "../main.jsx";
 import { observer } from "mobx-react";
-import Chat from "../chat.jsx";
-import Board from "../board.jsx";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
-import { cyan500, grey50, grey900, red500 } from "material-ui/styles/colors";
 import UserStore from "../../store/UserStore.js";
 import ChatStore from "../../store/ChatStore.js";
 import Dialog from "material-ui/Dialog";
@@ -160,14 +144,12 @@ export default class ListChatContainer extends React.Component {
       ChatStore.admin_id = data[0].admin_id;
       ChatStore.created_on = data[0].created_on;
 
-      var data = {
-        user_id: UserStore.obj.user_id,
-        _id: Users._id,
-        count: ChatStore.readcount.toString(),
-        notescount: ChatStore.notescount.toString()
-      };
-
-      socket.emit("readcountmsg", data);
+      socket.emit("readcountmsg", {
+          user_id: UserStore.obj.user_id,
+          _id: Users._id,
+          count: ChatStore.readcount.toString(),
+          notescount: ChatStore.notescount.toString()
+      });
     });
   }
   componentDidMount() {
@@ -214,18 +196,8 @@ export default class ListChatContainer extends React.Component {
     };
     socket.emit("manipulate group", data1);
     this.setState({
-      openDelete: false,
-      openleavesnack: true
-    });
-
-    setTimeout(
-      function() {
-        this.setState({
-          openleavesnack: false
-        });
-      }.bind(this),
-      1500
-    ); //
+      openDelete: false
+    })
   };
 
   handleDeleteClose = () => {
@@ -262,13 +234,6 @@ export default class ListChatContainer extends React.Component {
           <div className="margin" style={style}>
             <Msgbar />
             <Subheader>Today</Subheader>
-            <Snackbar
-              open={this.state.openleavesnack}
-              message={
-                "You have left the " + ChatStore.leavegroupname + " group"
-              }
-              autoHideDuration={1500}
-            />
             <Scrollbars
               autoHeightMin={0}
               style={{ height: "100vh" }}
@@ -408,18 +373,6 @@ export default class ListChatContainer extends React.Component {
                 Are you sure you want to leave the group? This action cannot be
                 reversed.
               </Dialog>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
             </Scrollbars>
           </div>
           );{" "}
