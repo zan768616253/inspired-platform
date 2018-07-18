@@ -33,7 +33,8 @@ class ChatStore {
   @observable totalmsgscount;
   @observable leavegroupname = "";
   @observable roomInfo;
-  // @observable fullscreen = !
+
+  @observable findUsers = [];
 }
 
 var chatstore = (window.chatstore = new ChatStore());

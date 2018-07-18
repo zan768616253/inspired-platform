@@ -21,6 +21,8 @@ class Store {
   // @observable fullscreen = !
 
   @observable showParticipants = false;
+  @observable showInvites = false;
+  @observable sidebarOpen = false;
 }
 
 var store = (window.store = new Store());

@@ -416,7 +416,7 @@ export default class ToolbarExamplesSimple extends React.Component {
               <List>
                 <ListItem
                   disabled={true}
-                  leftAvatar={<Avatar src={UserStore.obj.picture} />}
+                  leftAvatar={<Avatar src={UserStore.obj.avatar ? '/api/user/avatar/' + UserStore.obj.avatar : UserStore.obj.picture} />}
                   primaryText={UserStore.userrealname}
                 />
               </List>

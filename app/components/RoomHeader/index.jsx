@@ -12,7 +12,22 @@ export default class RoomHeader extends React.Component {
     }
 
     handleShowParticipantsButtonOnClick () {
+        UIStore.showInvites = (UIStore.showInvites && !UIStore.showParticipants) ? false : UIStore.showInvites
         UIStore.showParticipants = !UIStore.showParticipants
+    }
+
+    handleShowInvitesButtonOnClick () {
+        ChatStore.findUsers = []
+        UIStore.showParticipants = (UIStore.showParticipants && !UIStore.showInvites) ? false : UIStore.showParticipants
+        UIStore.showInvites = !UIStore.showInvites
+    }
+
+    handleDeleteButtonOnClick () {
+
+    }
+
+    handleQuitRoomButtonOnClick () {
+
     }
 
     render() {
@@ -21,12 +36,15 @@ export default class RoomHeader extends React.Component {
 
         return (
             <header className='room-header'>
-                <button>
+                <button onClick={() => {
+                    console.log(UIStore.sidebarOpen)
+                    UIStore.sidebarOpen = !UIStore.sidebarOpen
+                    console.log(UIStore.sidebarOpen)
+                }}>
                     <svg>
                         <use xlinkHref="index.svg#menu" />
                     </svg>
                 </button>
-                <h1>{roomName}</h1>
                 {(roomName && participants) && (
                     <div onClick={() => this.handleShowParticipantsButtonOnClick()}>
                         <span>{participants.length}</span>
@@ -35,6 +53,18 @@ export default class RoomHeader extends React.Component {
                         </svg>
                     </div>
                 )}
+                <h1>{roomName}</h1>
+                {(roomName && participants) && (
+                    <div className='room-invite-container' onClick={() => this.handleShowInvitesButtonOnClick()}>
+                        <span>+</span>
+                    </div>
+                )}
+                {(roomName && participants) && (
+                    <div className='room-delete-container'>
+                        <span>DELETE</span>
+                    </div>
+                )}
+
             </header>
         )
     }

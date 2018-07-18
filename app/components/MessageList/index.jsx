@@ -1,9 +1,10 @@
 import React from 'react'
 import { Message } from './Message'
 import ChatStore from "../../store/ChatStore";
+import UserStore from "../../store/ChatStore";
 
 const emptyList = (
-    <div className={style.empty}>
+    <div className='empty'>
     <span role="img" aria-label="post">
       📝
     </span>
@@ -27,9 +28,20 @@ export default class MessageList extends React.Component {
 
     render() {
         const messages = ChatStore.msgs
+        const user = (UserStore && UserStore.obj) ? UserStore.obj.user_id : ''
+        const createConvo = this.props.createConvo
+
         return (
             <ul id="messages" className='message-list'>
-
+                {Object.keys(messages).length > 0 ? (
+                    <wrapper->
+                        {Object.keys(messages)
+                            .reverse()
+                            .map(k => Message({user, createConvo})(messages[k]))}
+                    </wrapper->
+                ) : (
+                    emptyList
+                )}
             </ul>
         )
     }

@@ -298,7 +298,6 @@ app.post("/api/user/acceptrequestadd", function(req, res) {
 
 app.get("/api/userall", function(req, res) {
   User.find({}, function(err, users) {
-    var userMap = {};
     res.send(users);
   });
 });
@@ -1532,6 +1531,15 @@ io.on("connection", function(socket) {
       }
     );
   });
+
+  socket.on('search users', (data) => {
+      User.find(
+          { email: data },
+          (err, docs) => {
+              socket.emit('find users', docs);
+          }
+      );
+  })
 
   function updateUsernames() {
     io.sockets.emit("get users", users);
