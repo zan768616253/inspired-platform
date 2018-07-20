@@ -26,8 +26,7 @@ var roomsSchema = new Schema({
       from: String,
       message: String,
       favourite: Boolean,
-      date: String,
-      time: String,
+      time: { type : Date, default : Date.now },
       picture: String
     }
   ],

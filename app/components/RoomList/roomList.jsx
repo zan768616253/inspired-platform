@@ -1,5 +1,6 @@
 import React from 'react'
 import {observer} from "mobx-react/index";
+import moment from 'moment'
 
 import UserStore from "../../store/UserStore.js";
 import ChatStore from "../../store/ChatStore.js";
@@ -26,73 +27,80 @@ export default class RoomList extends React.Component {
     componentDidMount() {
         socket.on("msgs", function(data) {
             ChatStore.msgs = data.msg;
+
+            ChatStore.msgs[ChatStore.groupId] = {
+                read: data.msg,
+                unread: []
+            }
+
         });
         socket.on("dbnotes", function(data) {
             ChatStore.notes = data.dbnotes;
         });
-        socket.on('refresh group list', data => {
-            UserStore.obj.rooms = data.rooms
-            console.log(UserStore.obj.rooms)
-        })
     }
 
     handleRoomOnClick = (Users) => {
-        ChatStore.btnClick = true;
-        const roomId = ChatStore.groupId = Users.roomId;
-        ChatStore.groupname = Users.roomName;
-        ChatStore.groupavatar = Users.pic;
-        ChatStore.totalmsgscount = Users.total_count;
-        ChatStore.totalnotescount = Users.total_notes_count;
+        if (ChatStore.groupId !== Users.roomId) {
 
-        socket.emit("Join room", ChatStore.groupname)
-        socket.emit("note map", roomId)
+            if (ChatStore.groupId.trim()) {
+                this.leaveCurrentRoomSession()
+            }
 
-        socket.on('recieving listchat rooms', (data) => {
-            ChatStore.participants = data[0].participants;
-            ChatStore.remainparticipants = data[0].remainparticipants;
-            const remain = ChatStore.remainparticipants;
-            const mappedlength = FriendshipStore.mappedFriends.length;
+            ChatStore.btnClick = true;
+            const roomId = ChatStore.groupId = Users.roomId;
+            ChatStore.groupname = Users.roomName;
+            ChatStore.groupavatar = Users.pic;
+            ChatStore.totalmsgscount = Users.total_count;
+            ChatStore.totalnotescount = Users.total_notes_count;
 
-            socket.emit("read sync", UserStore.obj.user_id);
+            socket.emit("Join room", ChatStore.groupname)
+            socket.emit("note map", roomId)
 
-            socket.on("sync success", function(data) {
-                UserStore.obj.rooms = data[0].rooms;
-            });
+            socket.on('recieving listchat rooms', (data) => {
+                ChatStore.participants = data[0].participants;
+                ChatStore.remainparticipants = data[0].remainparticipants;
+                const remain = ChatStore.remainparticipants;
+                const mappedlength = FriendshipStore.mappedFriends.length;
 
-            remain.forEach(function(a) {
-                for (let i = 0; i < mappedlength; i++) {
-                    if (a.user_id == FriendshipStore.mappedFriends[i].user_id) {
-                        FriendshipStore.mappedFriends[i].present = true;
+                socket.emit("read sync", UserStore.obj.user_id);
+
+                socket.on("sync success", function(data) {
+                    UserStore.obj.rooms = data[0].rooms;
+                });
+
+                remain.forEach(function(a) {
+                    for (let i = 0; i < mappedlength; i++) {
+                        if (a.user_id == FriendshipStore.mappedFriends[i].user_id) {
+                            FriendshipStore.mappedFriends[i].present = true;
+                        }
                     }
-                }
-            });
+                });
 
-            ChatStore.readcount = Object.keys(data[0].conversation).length;
-            ChatStore.notescount = Object.keys(data[0].notes).length;
-            ChatStore.admin_id = data[0].admin_id;
-            ChatStore.created_on = data[0].created_on;
+                ChatStore.readcount = Object.keys(data[0].conversation).length;
+                ChatStore.notescount = Object.keys(data[0].notes).length;
+                ChatStore.admin_id = data[0].admin_id;
+                ChatStore.created_on = data[0].created_on;
 
-            const d = {
-                user_id: UserStore.obj.user_id,
-                _id: Users._id,
-                count: ChatStore.readcount.toString(),
-                notescount: ChatStore.notescount.toString()
-            };
+                const d = {
+                    user_id: UserStore.obj.user_id,
+                    _id: Users._id,
+                    count: ChatStore.readcount.toString(),
+                    notescount: ChatStore.notescount.toString()
+                };
 
-            socket.emit("readcountmsg", d);
-        })
+                socket.emit("readcountmsg", d);
+            })
+        }
     }
 
-    handleLeaveRoomSession = (Users) => {
-        this.setState({
-            openDelete: true
-        });
-        const data = {
-            user_id: UserStore.obj.user_id,
-            roomId: Users._id
-        };
-        ChatStore.leaveinfo = data;
-        ChatStore.leavegroupname = Users.roomName;
+    leaveCurrentRoomSession = () => {
+        const user_id = UserStore.obj.user_id
+        const room_id = ChatStore.groupId
+        const d = {
+            user_id: user_id,
+            room_id: room_id
+        }
+        socket.emit("Leave room session", d);
     }
 
     handleLeaveRoom = () => {
@@ -102,10 +110,7 @@ export default class RoomList extends React.Component {
             UserStore.obj.rooms = data[0].rooms;
         });
         const d = new Date(); // for now
-        d.getHours(); // => 9
-        d.getMinutes(); // =>  30
-        d.getSeconds(); // => 51
-        //console.log(d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds());
+
         const time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
         const today = new Date();
         let dd = today.getDate();

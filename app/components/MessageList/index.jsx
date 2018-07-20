@@ -1,7 +1,11 @@
 import React from 'react'
-import { Message } from './Message'
+import {observer} from "mobx-react/index";
+import _ from 'lodash'
+
+import Message from './Message'
 import ChatStore from "../../store/ChatStore";
 import UserStore from "../../store/ChatStore";
+
 
 const emptyList = (
     <div className='empty'>
@@ -13,6 +17,7 @@ const emptyList = (
     </div>
 )
 
+@observer
 export default class MessageList extends React.Component {
 
     componentDidMount() {
@@ -24,20 +29,57 @@ export default class MessageList extends React.Component {
         socket.on("chat msgs", data => {
             ChatStore.msgs = data[0].conversation;
         })
+
+        socket.on("chat message", function(messages) {
+            const result = _.find(ChatStore.msgs, msg => {
+                return msg.roomId = messages.roomId
+            })
+
+            if (messages.roomId === ChatStore.groupId) {
+                if (result) {
+                    console.log(ChatStore.msgs)
+                    const index = ChatStore.msgs.indexOf(result)
+                    ChatStore.msgs[index].read.push(msg)
+                } else {
+                    ChatStore.msgs[messages.roomId] = {
+                        read:[msg],
+                        unread:[]
+                    }
+                }
+            } else {
+                if (result) {
+                    ChatStore.msgs[messages.roomId].unread.push(msg)
+                } else {
+                    ChatStore.msgs[messages.roomId] = {
+                        read:[],
+                        unread:[msg]
+                    }
+                }
+            }
+
+        });
     }
 
     render() {
-        const messages = ChatStore.msgs
+        let read = []
+        if (ChatStore.msgs[ChatStore.groupId]) {
+            read = ChatStore.msgs[ChatStore.groupId].read.push(...ChatStore.msgs[ChatStore.groupId].unread)
+            ChatStore.msgs[ChatStore.groupId].unread = []
+        }
+
+        const messages = read
         const user = (UserStore && UserStore.obj) ? UserStore.obj.user_id : ''
         const createConvo = this.props.createConvo
 
         return (
             <ul id="messages" className='message-list'>
-                {Object.keys(messages).length > 0 ? (
+                {messages.length > 0 ? (
                     <wrapper->
-                        {Object.keys(messages)
-                            .reverse()
-                            .map(k => Message({user, createConvo})(messages[k]))}
+                        {messages.reverse().map(message => {
+                            return (
+                                <Message message={message} />
+                            )
+                        })}
                     </wrapper->
                 ) : (
                     emptyList

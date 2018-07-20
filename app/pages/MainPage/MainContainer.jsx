@@ -18,21 +18,32 @@ import UIStore from '../../store/UIstore'
 @observer
 export default class MainContainer extends React.Component {
 
+    componentDidMount() {
+        socket.on("returning participants", function(data) {
+            ChatStore.remainparticipants = data[0].remainparticipants;
+            ChatStore.participants = data[0].participants;
+        });
+        // socket.on("returning message group", function(data) {
+        //     ChatStore.msgs = data[0].conversation;
+        //
+        // });
+    }
+
     createConvo(options) {
-        if (options.user.id !== this.state.user.id) {
-            const exists = this.state.user.rooms.find(
-                x =>
-                    x.name === options.user.id + this.state.user.id ||
-                    x.name === this.state.user.id + options.user.id
-            )
-            exists
-                ? this.actions.joinRoom(exists)
-                : this.actions.createRoom({
-                    name: this.state.user.id + options.user.id,
-                    addUserIds: [options.user.id],
-                    private: true,
-                })
-        }
+        // if (options.user.id !== this.state.user.id) {
+        //     const exists = this.state.user.rooms.find(
+        //         x =>
+        //             x.name === options.user.id + this.state.user.id ||
+        //             x.name === this.state.user.id + options.user.id
+        //     )
+        //     exists
+        //         ? this.actions.joinRoom(exists)
+        //         : this.actions.createRoom({
+        //             name: this.state.user.id + options.user.id,
+        //             addUserIds: [options.user.id],
+        //             private: true,
+        //         })
+        // }
     }
 
     render() {

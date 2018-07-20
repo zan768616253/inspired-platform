@@ -2,6 +2,7 @@ import React from 'react'
 
 export default class FileInput extends React.Component {
 
+
     render() {
         return(
             <div className='file-input-container'>
@@ -10,7 +11,7 @@ export default class FileInput extends React.Component {
                 </svg>
                 <input
                     className='file-input' type="file"
-                    onCHange={e => {
+                    onChange={e => {
 
                     }}
                 />

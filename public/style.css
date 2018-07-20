@@ -1817,11 +1817,8 @@ main section:not(.dragging) > input[type='file'] {
     background-color: #28a745;
     border-color: #28a745;
     margin-right: 0.4rem;
-    padding: 0.62rem 1rem; }
-    .room-header .room-invite-container span {
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 600; }
+    padding: 0.62rem 1rem;
+    color: #fff; }
 
 .room-header button {
   background: transparent;
