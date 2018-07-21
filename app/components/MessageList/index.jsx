@@ -1,6 +1,7 @@
 import React from 'react'
 import {observer} from "mobx-react/index";
 import _ from 'lodash'
+import moment from 'moment'
 
 import Message from './Message'
 import ChatStore from "../../store/ChatStore";
@@ -27,47 +28,62 @@ export default class MessageList extends React.Component {
         socket.emit("retrieve msgs", d);
 
         socket.on("chat msgs", data => {
-            ChatStore.msgs = data[0].conversation;
-        })
-
-        socket.on("chat message", function(messages) {
             const result = _.find(ChatStore.msgs, msg => {
-                return msg.roomId = messages.roomId
+                return msg.roomId = ChatStore.groupId
             })
 
-            if (messages.roomId === ChatStore.groupId) {
+            if (result) {
+                ChatStore.msgs[ChatStore.groupId].read = data.conversation
+            } else {
+                ChatStore.msgs[ChatStore.groupId] = {
+                    read: data.conversation,
+                    unread: []
+                }
+            }
+
+            ChatStore.updateTime = moment()
+        })
+
+        socket.on("chat message", function(message) {
+            const result = ChatStore.msgs[message.roomId]
+
+            if (message.roomId === ChatStore.groupId) {
+
                 if (result) {
-                    console.log(ChatStore.msgs)
-                    const index = ChatStore.msgs.indexOf(result)
-                    ChatStore.msgs[index].read.push(msg)
+                    ChatStore.msgs[ChatStore.groupId].read.push(message)
                 } else {
-                    ChatStore.msgs[messages.roomId] = {
-                        read:[msg],
+                    ChatStore.msgs[ChatStore.groupId] = {
+                        read:[message],
                         unread:[]
                     }
                 }
             } else {
                 if (result) {
-                    ChatStore.msgs[messages.roomId].unread.push(msg)
+                    ChatStore.msgs[message.roomId].unread.push(message)
                 } else {
-                    ChatStore.msgs[messages.roomId] = {
+                    ChatStore.msgs[message.roomId] = {
                         read:[],
-                        unread:[msg]
+                        unread:[message]
                     }
                 }
             }
 
+            ChatStore.updateTime = moment()
         });
     }
 
     render() {
-        let read = []
+        let items = [], read, unread
         if (ChatStore.msgs[ChatStore.groupId]) {
-            read = ChatStore.msgs[ChatStore.groupId].read.push(...ChatStore.msgs[ChatStore.groupId].unread)
+            read = ChatStore.msgs[ChatStore.groupId].read
+            unread = ChatStore.msgs[ChatStore.groupId].unread
+            items = read.concat(unread)
             ChatStore.msgs[ChatStore.groupId].unread = []
+            console.log(ChatStore.msgs[ChatStore.groupId])
         }
 
-        const messages = read
+        const updateTime = ChatStore.updateTime
+        const messages = items
         const user = (UserStore && UserStore.obj) ? UserStore.obj.user_id : ''
         const createConvo = this.props.createConvo
 

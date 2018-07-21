@@ -5,6 +5,7 @@ import moment from 'moment'
 import UserStore from "../../store/UserStore.js";
 import ChatStore from "../../store/ChatStore.js";
 import FriendshipStore from "../../store/FriendshipsStore";
+import _ from "lodash";
 
 const Icon = () => (
     <svg>
@@ -25,18 +26,7 @@ export default class RoomList extends React.Component {
     }
 
     componentDidMount() {
-        socket.on("msgs", function(data) {
-            ChatStore.msgs = data.msg;
 
-            ChatStore.msgs[ChatStore.groupId] = {
-                read: data.msg,
-                unread: []
-            }
-
-        });
-        socket.on("dbnotes", function(data) {
-            ChatStore.notes = data.dbnotes;
-        });
     }
 
     handleRoomOnClick = (Users) => {
@@ -57,8 +47,8 @@ export default class RoomList extends React.Component {
             socket.emit("note map", roomId)
 
             socket.on('recieving listchat rooms', (data) => {
-                ChatStore.participants = data[0].participants;
-                ChatStore.remainparticipants = data[0].remainparticipants;
+                ChatStore.participants = data.participants;
+                ChatStore.remainparticipants = data.remainparticipants;
                 const remain = ChatStore.remainparticipants;
                 const mappedlength = FriendshipStore.mappedFriends.length;
 
@@ -76,10 +66,10 @@ export default class RoomList extends React.Component {
                     }
                 });
 
-                ChatStore.readcount = Object.keys(data[0].conversation).length;
-                ChatStore.notescount = Object.keys(data[0].notes).length;
-                ChatStore.admin_id = data[0].admin_id;
-                ChatStore.created_on = data[0].created_on;
+                ChatStore.readcount = Object.keys(data.conversation).length;
+                ChatStore.notescount = Object.keys(data.notes).length;
+                ChatStore.admin_id = data.admin_id;
+                ChatStore.created_on = data.created_on;
 
                 const d = {
                     user_id: UserStore.obj.user_id,
@@ -102,44 +92,6 @@ export default class RoomList extends React.Component {
         }
         socket.emit("Leave room session", d);
     }
-
-    handleLeaveRoom = () => {
-        const data = ChatStore.leaveinfo;
-        socket.emit("room leave", ChatStore.leaveinfo);
-        socket.on("remaininggroups", function(data) {
-            UserStore.obj.rooms = data[0].rooms;
-        });
-        const d = new Date(); // for now
-
-        const time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-        const today = new Date();
-        let dd = today.getDate();
-        let mm = today.getMonth() + 1; //January is 0!
-        let yyyy = today.getFullYear();
-
-        dd = dd < 10 ? "0" + dd : dd;
-        mm = mm < 10 ? "0" + mm : mm;
-
-        const date = mm + "/" + dd + "/" + yyyy;
-
-        socket.emit("manipulate group", {
-            from: UserStore.userrealname,
-            message: "HAS LEFT THE GROUP",
-            date: date,
-            time: time,
-            roomId: ChatStore.groupId,
-            user_name: UserStore.userrealname,
-            user_id: UserStore.obj.user_id
-        })
-
-        this.setState({
-            openDelete: false
-        })
-    }
-
-    handleDeleteClose = () => {
-        this.setState({ openDelete: false });
-    };
 
     render() {
         let rooms = UserStore.obj && UserStore.obj.rooms && UserStore.obj.rooms.length ? UserStore.obj.rooms : []

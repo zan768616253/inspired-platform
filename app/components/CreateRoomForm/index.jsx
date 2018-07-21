@@ -1,7 +1,7 @@
 import React from 'react'
 import UserStore from "../../store/UserStore";
 
-let mapping = [];
+
 
 export default class CreateRoomForm extends React.Component {
 
@@ -16,7 +16,7 @@ export default class CreateRoomForm extends React.Component {
             user_id: UserStore.obj.user_id
         }
 
-        mapping.push(ownerInfo);
+        let mapping = [ownerInfo];
 
         const groupName = this.refs.groupname.value
 
@@ -47,7 +47,11 @@ export default class CreateRoomForm extends React.Component {
                     e.preventDefault()
                     this.handleCreateButtonOnClick()
                 }}>
-                <input placeholder="Create a Room" ref="groupname"/>
+                <input placeholder="Create a Room" ref="groupname" onClick={e => {
+                    if (e.key === 'Enter') {
+                        return null
+                    }
+                }}/>
                 <button>
                     <input type="checkbox" />
                     <svg>

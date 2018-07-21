@@ -479,20 +479,63 @@ io.on("connection", function (socket) {
     });
 
     socket.on("add User to Group", function (data) {
-        var d = new Date(); // for now
-        var time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1;
-        var yyyy = today.getFullYear();
+        const ep = new EventProxy()
 
-        if (dd < 10) {
-            dd = "0" + dd;
-        }
-        if (mm < 10) {
-            mm = "0" + mm;
-        }
-        var date = mm + "/" + dd + "/" + yyyy;
+        ep.all('get_room', 'get_user', (room, user) => {
+            socket.emit("returning participants", room)
+            socket.emit("returning message group", room)
+            io.emit("returning message group for target", user)
+        })
+
+        ep.on('room_update', () => {
+            rooms.findOne({_id: data.roomId}, function (err, room) {
+                ep.emit('get_room', room)
+            });
+
+            rooms.update(
+                {_id: data.roomId},
+                {
+                    $push: {
+                        conversation: {
+                            from: data.name,
+                            message: data.message,
+                            favourite: false,
+                            picture: data.picture,
+                            roomId: data.roomId
+                        }
+                    }
+                },
+                function (err) {
+                    if (err)
+                        console.log(err);
+
+                    let val = 0;
+                    User.findOneAndUpdate(
+                        {user_id: data.user_id},
+                        {
+                            $push: {
+                                rooms: {
+                                    roomId: data.roomId,
+                                    roomName: data.roomName,
+                                    pic: data.pic,
+                                    read_notes_count: val,
+                                    read_count: val,
+                                    total_count: data.msgs_count,
+                                    total_notes_count: data.notes_count
+                                }
+                            }
+                        },
+                        {new: true},
+                        function (err, doc) {
+                            if (err)
+                                console.log(err);
+                            ep.emit('get_user', doc)
+                        }
+                    )
+                }
+            )
+        })
+
         rooms.update(
             {_id: data.roomId},
             {
@@ -505,62 +548,16 @@ io.on("connection", function (socket) {
                     }
                 }
             },
-            function (err, docs) {
-                if (err) console.log(err);
+            function (err) {
+                if (err)
+                    console.log(err);
                 else {
-                    rooms.find({_id: data.roomId}, function (err, docs) {
-                        socket.emit("returning participants", docs);
-                    });
-
-                    rooms.update(
-                        {_id: data.roomId},
-                        {
-                            $push: {
-                                conversation: {
-                                    from: data.name,
-                                    message: data.message,
-                                    favourite: false,
-                                    date: date,
-                                    time: time,
-                                    picture: data.picture
-                                }
-                            }
-                        },
-                        function (err) {
-                            if (err) console.log(err);
-                            else {
-                                rooms.find({_id: data.roomId}, function (err, docs) {
-                                    socket.emit("returning message group", docs);
-                                });
-                            }
-                            let val = 0;
-                            User.findOneAndUpdate(
-                                {user_id: data.user_id},
-                                {
-                                    $push: {
-                                        rooms: {
-                                            roomId: data.roomId,
-                                            roomName: data.roomName,
-                                            pic: data.pic,
-                                            read_notes_count: val,
-                                            read_count: val,
-                                            total_count: data.msgs_count,
-                                            total_notes_count: data.notes_count
-                                        }
-                                    }
-                                },
-                                function (err) {
-                                    if (err) console.log(err);
-                                    else {
-                                    }
-                                }
-                            );
-                        }
-                    );
+                    ep.emit('room_update', true)
                 }
             }
         );
     });
+
     socket.on("remove User from Group", function (data) {
         var d = new Date(); // for now
         d.getHours();
@@ -598,9 +595,8 @@ io.on("connection", function (socket) {
                                     from: data.from,
                                     message: data.message,
                                     favourite: false,
-                                    date: date,
-                                    time: time,
-                                    picture: data.picture
+                                    picture: data.picture,
+                                    roomId: data.roomId
                                 }
                             }
                         },
@@ -1146,13 +1142,13 @@ io.on("connection", function (socket) {
     });
 
     socket.on("note map", function (data) {
-        rooms.find({_id: data}, function (err, rooms) {
+        rooms.findOne({_id: data}, function (err, room) {
             if (err) {
                 console.log(err);
             } else {
-                socket.emit("recieving listchat rooms", rooms);
-                socket.emit("msgs", {msg: rooms[0].conversation});
-                socket.emit("dbnotes", {dbnotes: rooms[0].notes});
+                socket.emit("recieving listchat rooms", room)
+                socket.emit("msgs", room)
+                socket.emit("dbnotes", room)
             }
         });
     });
@@ -1371,10 +1367,10 @@ io.on("connection", function (socket) {
     });
 
     socket.on("retrieve msgs", function (data) {
-        rooms.find({_id: data.roomId}, function (err, rooms) {
+        rooms.findOne({_id: data.roomId}, function (err, room) {
             if (err) {
             } else {
-                socket.emit("chat msgs", rooms);
+                socket.emit("chat msgs", room);
             }
         });
     });
@@ -1474,9 +1470,8 @@ io.on("connection", function (socket) {
                         from: data.from,
                         message: data.message,
                         favourite: false,
-                        date: data.date,
-                        time: data.time,
-                        picture: data.picture
+                        picture: data.picture,
+                        roomId: data.roomId
                     }
                 }
             },

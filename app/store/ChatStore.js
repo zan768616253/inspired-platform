@@ -7,7 +7,7 @@ class ChatStore {
   @observable created_on = "";
   @observable groupId = "";
   @observable roomData = [];
-  @observable msgs = [];
+  @observable msgs = {};
   @observable chipContent = [];
   @observable notes = [];
   @observable participants = [];
@@ -35,6 +35,7 @@ class ChatStore {
   @observable roomInfo;
 
   @observable findUsers = [];
+  @observable updateTime = -1;
 }
 
 var chatstore = (window.chatstore = new ChatStore());

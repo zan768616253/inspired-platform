@@ -44,7 +44,6 @@ let config = {
             PrivateNotes: path.resolve(__dirname, "app/components/dashboard/privatenotes.jsx"),
             FriendList: path.resolve(__dirname, "app/components/dashboard/FriendList.jsx"),
             AcceptRequests: path.resolve(__dirname, "app/components/dashboard/AcceptRequests.jsx"),
-            Chat: path.resolve(__dirname, "app/components/chat.jsx"),
             Board: path.resolve(__dirname, "app/components/board.jsx"),
             Boards: path.resolve(__dirname, "app/components/Note.jsx"),
             Chatbar: path.resolve(__dirname, "app/components/toolbars/chattoolbar.jsx"),

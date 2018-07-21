@@ -13,20 +13,52 @@ import InvitingUserList from '../../components/UserList/InvitingUserList'
 import UserStore from '../../store/UserStore'
 import ChatStore from "../../store/ChatStore"
 import UIStore from '../../store/UIstore'
+import _ from "lodash";
 
 
 @observer
 export default class MainContainer extends React.Component {
 
     componentDidMount() {
-        socket.on("returning participants", function(data) {
-            ChatStore.remainparticipants = data[0].remainparticipants;
-            ChatStore.participants = data[0].participants;
+        socket.on("returning participants", data => {
+            ChatStore.remainparticipants = data.remainparticipants;
+            ChatStore.participants = data.participants;
         });
-        // socket.on("returning message group", function(data) {
-        //     ChatStore.msgs = data[0].conversation;
-        //
-        // });
+        socket.on("returning message group", data => {
+            const result = ChatStore.msgs[ChatStore.groupId]
+
+            if (result) {
+                ChatStore.msgs[ChatStore.groupId].read = data.conversation
+            } else {
+                ChatStore.msgs[ChatStore.groupId] = {
+                    read: data.msg,
+                    unread: []
+                }
+            }
+        })
+        socket.on("returning message group for target", data => {
+            if (data.user_id) {
+                UserStore.obj.rooms = data.rooms
+            }
+        })
+        socket.on("refresh group list", data => {
+            UserStore.obj.rooms = data.rooms
+        })
+        socket.on("msgs", function(data) {
+            const groupId = ChatStore.groupId
+
+            if (ChatStore.msgs[groupId]) {
+                ChatStore.msgs[ChatStore.groupId].read = data.conversation
+            } else {
+                ChatStore.msgs[ChatStore.groupId] = {
+                    read: data.conversation,
+                    unread: []
+                }
+            }
+        });
+        socket.on("dbnotes", function(data) {
+            ChatStore.notes = data.notes;
+        });
     }
 
     createConvo(options) {
