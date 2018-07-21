@@ -22,54 +22,10 @@ const emptyList = (
 export default class MessageList extends React.Component {
 
     componentDidMount() {
-        const d = {
-            roomId: ChatStore.groupId
-        };
-        socket.emit("retrieve msgs", d);
-
-        socket.on("chat msgs", data => {
-            const result = _.find(ChatStore.msgs, msg => {
-                return msg.roomId = ChatStore.groupId
-            })
-
-            if (result) {
-                ChatStore.msgs[ChatStore.groupId].read = data.conversation
-            } else {
-                ChatStore.msgs[ChatStore.groupId] = {
-                    read: data.conversation,
-                    unread: []
-                }
-            }
-
-            ChatStore.updateTime = moment()
-        })
-
-        socket.on("chat message", function(message) {
-            const result = ChatStore.msgs[message.roomId]
-
-            if (message.roomId === ChatStore.groupId) {
-
-                if (result) {
-                    ChatStore.msgs[ChatStore.groupId].read.push(message)
-                } else {
-                    ChatStore.msgs[ChatStore.groupId] = {
-                        read:[message],
-                        unread:[]
-                    }
-                }
-            } else {
-                if (result) {
-                    ChatStore.msgs[message.roomId].unread.push(message)
-                } else {
-                    ChatStore.msgs[message.roomId] = {
-                        read:[],
-                        unread:[message]
-                    }
-                }
-            }
-
-            ChatStore.updateTime = moment()
-        });
+        // const d = {
+        //     roomId: ChatStore.groupId
+        // }
+        // socket.emit("retrieve msgs", d)
     }
 
     render() {

@@ -26,6 +26,7 @@ export default class ExistingUserList extends React.Component {
             <ul className='user-list'>
                 {userList.map(user => {
                     const isAdmin = user.user_id === UserStore.obj.user_id
+                    const avatar = user.avatar ? '/api/user/avatar/' + user.avatar : user.picture
                     return (
                         <li
                             key={user.user_id}
@@ -33,7 +34,7 @@ export default class ExistingUserList extends React.Component {
                             onClick={e => this.props.createConvo({ user })}
                             style={{ order: user.state === 'online' && -1 }}
                         >
-                            <img src={user.picture} alt={user.name} />
+                            <img src={avatar} />
                             <p>{user.name}</p>
                             <a onClick={() => {
                                 this.handleRemoveButtOnClick(user)

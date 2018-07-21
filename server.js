@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 const multer = require('multer');
 const EventProxy = require('eventproxy')
 const moment = require('moment')
+const _ = require('lodash')
 
 const User = require("./server/models/User.js");
 const Friendships = require("./server/models/Friendships.js");
@@ -406,6 +407,61 @@ app.get("/api/user", function (req, res) {
     });
 });
 
+app.get("/api/notification", (req, res) => {
+
+    User.findOne(
+        {user_id: myuserid},
+        "rooms",
+        (err, results) => {
+            if (err) {
+                console.log(err)
+            } else {
+                const ep = new EventProxy()
+                const rs = results.rooms
+
+                rs.forEach(room => {
+                    const room_id = room.roomId
+                    rooms.findOne(
+                        {_id: room_id},
+                        "conversation",
+                        (err, r) => {
+                            if (err) {
+                                console.log(err)
+                            } else {
+                                ep.emit('get_conversation', {roomId: room_id, conversation: r.conversation})
+                            }
+                        }
+                    )
+                })
+
+                ep.after('get_conversation', rs.length, conversations => {
+                    const notifications = _.map(conversations, c => {
+                        const roomId = c.roomId
+                        const roomFound = rs.find(r => {
+                            return r.roomId = roomId
+                        })
+                        if (roomFound) {
+                            const leave_time = roomFound.leave_time
+                            const unreads = _.filter(c.conversation, cc => {
+                                return cc.time >= leave_time
+                            })
+                            const reads = _.filter(c.conversation, cc => {
+                                return cc.time < leave_time
+                            })
+
+                            return {roomId: roomId, unread: unreads, read: reads}
+                        }
+                    })
+
+                    res.send(notifications);
+                })
+            }
+        }
+    )
+
+
+})
+
 app.get("*", function (request, response) {
     response.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
@@ -559,23 +615,6 @@ io.on("connection", function (socket) {
     });
 
     socket.on("remove User from Group", function (data) {
-        var d = new Date(); // for now
-        d.getHours();
-        d.getMinutes();
-        d.getSeconds();
-        var time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-        var today = new Date();
-        var dd = today.getDate();
-        var mm = today.getMonth() + 1;
-        var yyyy = today.getFullYear();
-
-        if (dd < 10) {
-            dd = "0" + dd;
-        }
-        if (mm < 10) {
-            mm = "0" + mm;
-        }
-        var date = mm + "/" + dd + "/" + yyyy;
         rooms.findOneAndUpdate(
             {_id: data.roomId},
             {$pull: {participants: {user_id: data.user_id}}},

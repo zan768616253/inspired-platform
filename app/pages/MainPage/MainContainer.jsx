@@ -13,6 +13,7 @@ import InvitingUserList from '../../components/UserList/InvitingUserList'
 import UserStore from '../../store/UserStore'
 import ChatStore from "../../store/ChatStore"
 import UIStore from '../../store/UIstore'
+import moment from "moment/moment";
 import _ from "lodash";
 
 
@@ -44,10 +45,27 @@ export default class MainContainer extends React.Component {
         socket.on("refresh group list", data => {
             UserStore.obj.rooms = data.rooms
         })
-        socket.on("msgs", function(data) {
-            const groupId = ChatStore.groupId
+        // socket.on("msgs", function(data) {
+        //     const groupId = ChatStore.groupId
+        //
+        //     if (ChatStore.msgs[groupId]) {
+        //         ChatStore.msgs[ChatStore.groupId].read = data.conversation
+        //     } else {
+        //         ChatStore.msgs[ChatStore.groupId] = {
+        //             read: data.conversation,
+        //             unread: []
+        //         }
+        //     }
+        // });
+        // socket.on("dbnotes", function(data) {
+        //     ChatStore.notes = data.notes;
+        // });
+        socket.on("chat msgs", data => {
+            const result = _.find(ChatStore.msgs, msg => {
+                return msg.roomId = ChatStore.groupId
+            })
 
-            if (ChatStore.msgs[groupId]) {
+            if (result) {
                 ChatStore.msgs[ChatStore.groupId].read = data.conversation
             } else {
                 ChatStore.msgs[ChatStore.groupId] = {
@@ -55,27 +73,39 @@ export default class MainContainer extends React.Component {
                     unread: []
                 }
             }
-        });
-        socket.on("dbnotes", function(data) {
-            ChatStore.notes = data.notes;
-        });
+
+            ChatStore.updateTime = moment()
+        })
+
+        socket.on("chat message", function(message) {
+            const result = ChatStore.msgs[message.roomId]
+
+            if (message.roomId === ChatStore.groupId) {
+
+                if (result) {
+                    ChatStore.msgs[ChatStore.groupId].read.push(message)
+                } else {
+                    ChatStore.msgs[ChatStore.groupId] = {
+                        read:[message],
+                        unread:[]
+                    }
+                }
+            } else {
+                if (result) {
+                    ChatStore.msgs[message.roomId].unread.push(message)
+                } else {
+                    ChatStore.msgs[message.roomId] = {
+                        read:[],
+                        unread:[message]
+                    }
+                }
+            }
+
+            ChatStore.updateTime = moment()
+        })
     }
 
     createConvo(options) {
-        // if (options.user.id !== this.state.user.id) {
-        //     const exists = this.state.user.rooms.find(
-        //         x =>
-        //             x.name === options.user.id + this.state.user.id ||
-        //             x.name === this.state.user.id + options.user.id
-        //     )
-        //     exists
-        //         ? this.actions.joinRoom(exists)
-        //         : this.actions.createRoom({
-        //             name: this.state.user.id + options.user.id,
-        //             addUserIds: [options.user.id],
-        //             private: true,
-        //         })
-        // }
     }
 
     render() {

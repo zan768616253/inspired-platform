@@ -54,8 +54,8 @@ export default class InvitingUserList extends React.Component {
 
                 </li>
                 {userList.map(user => {
-                    console.log(ChatStore.participants)
                     const isInGroup = !!ChatStore.participants.find(participant => participant.user_id === user.user_id)
+                    const avatar = user.avatar ? '/api/user/avatar/' + user.avatar : user.picture
                     return (
                         <li
                             key={user.user_id}
@@ -63,7 +63,7 @@ export default class InvitingUserList extends React.Component {
                             onClick={() => this.props.createConvo({ user })}
                             style={{ order: user.state === 'online' && -1 }}
                         >
-                            <img src={user.picture} alt={user.name} />
+                            <img src={avatar} />
                             <p>{user.name}</p>
 
                             {!isInGroup && <a onClick={() => {

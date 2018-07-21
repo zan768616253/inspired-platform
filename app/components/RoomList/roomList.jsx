@@ -5,7 +5,6 @@ import moment from 'moment'
 import UserStore from "../../store/UserStore.js";
 import ChatStore from "../../store/ChatStore.js";
 import FriendshipStore from "../../store/FriendshipsStore";
-import _ from "lodash";
 
 const Icon = () => (
     <svg>
@@ -19,14 +18,32 @@ export default class RoomList extends React.Component {
     constructor(props) {
         super(props);
         this.handleRoomOnClick = this.handleRoomOnClick.bind(this);
-        this.state = {
-            data: [],
-            openDelete: false
-        };
     }
 
     componentDidMount() {
+        this.getNotification()
+    }
 
+    getNotification(user_id) {
+        $.ajax({
+            type: "GET",
+            url: "/api/notification"
+        })
+        .done(function(data) {
+            // ChatStore.initialNotification = data
+            data.forEach(notification => {
+                const roomId = notification.roomId
+                ChatStore.msgs[roomId] = {}
+                ChatStore.msgs[roomId].read = notification.read
+                ChatStore.msgs[roomId].unread = notification.unread
+
+                ChatStore.updateTime = moment()
+            })
+
+
+        })
+        .fail(function(jqXhr) {
+        })
     }
 
     handleRoomOnClick = (Users) => {
@@ -36,7 +53,6 @@ export default class RoomList extends React.Component {
                 this.leaveCurrentRoomSession()
             }
 
-            ChatStore.btnClick = true;
             const roomId = ChatStore.groupId = Users.roomId;
             ChatStore.groupname = Users.roomName;
             ChatStore.groupavatar = Users.pic;
@@ -52,15 +68,9 @@ export default class RoomList extends React.Component {
                 const remain = ChatStore.remainparticipants;
                 const mappedlength = FriendshipStore.mappedFriends.length;
 
-                socket.emit("read sync", UserStore.obj.user_id);
-
-                socket.on("sync success", function(data) {
-                    UserStore.obj.rooms = data[0].rooms;
-                });
-
                 remain.forEach(function(a) {
                     for (let i = 0; i < mappedlength; i++) {
-                        if (a.user_id == FriendshipStore.mappedFriends[i].user_id) {
+                        if (a.user_id === FriendshipStore.mappedFriends[i].user_id) {
                             FriendshipStore.mappedFriends[i].present = true;
                         }
                     }
@@ -70,15 +80,6 @@ export default class RoomList extends React.Component {
                 ChatStore.notescount = Object.keys(data.notes).length;
                 ChatStore.admin_id = data.admin_id;
                 ChatStore.created_on = data.created_on;
-
-                const d = {
-                    user_id: UserStore.obj.user_id,
-                    _id: Users._id,
-                    count: ChatStore.readcount.toString(),
-                    notescount: ChatStore.notescount.toString()
-                };
-
-                socket.emit("readcountmsg", d);
             })
         }
     }
@@ -94,24 +95,26 @@ export default class RoomList extends React.Component {
     }
 
     render() {
+        const updateTime = ChatStore.updateTime
         let rooms = UserStore.obj && UserStore.obj.rooms && UserStore.obj.rooms.length ? UserStore.obj.rooms : []
 
         return (
             <ul className='room-list'>
-                {rooms.map(Users => {
+                {rooms.map(room => {
+                    const unread_number = ChatStore.msgs[room.roomId] ? ChatStore.msgs[room.roomId].unread.length : 0
                     return (
                         <li
-                            key={Users._id}
-                            disabled={Users._id === ChatStore.groupId}
-                            onClick={e => this.handleRoomOnClick(Users)}
+                            key={room.roomId}
+                            disabled={room.roomId === ChatStore.groupId}
+                            onClick={() => this.handleRoomOnClick(room)}
                         >
                             {Icon()}
                             <col->
-                                <p>{Users.roomName}</p>
+                                <p>{room.roomName}</p>
                                 <span>{'this is the last message'}</span>
                             </col->
-                            {Users._id !== ChatStore.groupId ? (
-                                <label>99</label>
+                            {room.roomId !== ChatStore.groupId ? (
+                                <label>{unread_number ? unread_number : ''}</label>
                             ) : null}
                         </li>
                     )

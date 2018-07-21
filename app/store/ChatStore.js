@@ -36,6 +36,8 @@ class ChatStore {
 
   @observable findUsers = [];
   @observable updateTime = -1;
+
+  @observable initialNotification = true
 }
 
 var chatstore = (window.chatstore = new ChatStore());
