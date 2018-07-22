@@ -56,7 +56,7 @@ export default class RoomList extends React.Component {
             const roomId = ChatStore.groupId = Users.roomId;
             ChatStore.groupname = Users.roomName;
             ChatStore.groupavatar = Users.pic;
-            ChatStore.totalmsgscount = Users.total_count;
+            ChatStore.totalmsgscount = Users.total_count2;
             ChatStore.totalnotescount = Users.total_notes_count;
 
             socket.emit("Join room", ChatStore.groupname)
