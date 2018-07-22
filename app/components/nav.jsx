@@ -20,7 +20,12 @@ export default class NewNav extends React.Component {
       theme: {
         logo: "cropped-logo-120.png",
         primaryColor: orange500
-      }
+      },
+        auth: {
+            params: {
+                scope: 'openid profile email'
+            }
+        }
     };
 
     const optionsSignup = {
@@ -33,17 +38,22 @@ export default class NewNav extends React.Component {
       theme: {
         logo: "cropped-logo-120.png",
         primaryColor: orange500
-      }
+      },
+        auth: {
+            params: {
+                scope: 'openid profile email'
+            }
+        }
     };
 
     this.lockLogin = new Auth0Lock(
-      "xDe229e1uR9PPKZMutFVk4QZYpAVU9l6",
-      "kolaboard.auth0.com",
+        "g0q1IC0FNMWQRnoT2KoRB6k4prFoKY4S",
+        "inspireducation.auth0.com",
       optionsLogin
     );
     this.lockSignup = new Auth0Lock(
-      "xDe229e1uR9PPKZMutFVk4QZYpAVU9l6",
-      "kolaboard.auth0.com",
+        "g0q1IC0FNMWQRnoT2KoRB6k4prFoKY4S",
+        "inspireducation.auth0.com",
       optionsSignup
     );
   }

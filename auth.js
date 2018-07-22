@@ -9,12 +9,13 @@ let emailverified, picture, user_id;
 import userstore from "./app/store/UserStore.js";
 
 const lock = new Auth0Lock(
-  "xDe229e1uR9PPKZMutFVk4QZYpAVU9l6",
-  "kolaboard.auth0.com",
+    "g0q1IC0FNMWQRnoT2KoRB6k4prFoKY4S",
+    "inspireducation.auth0.com",
   {
     auth: {
       redirectUrl: `${window.location.origin}`,
-      responseType: "token"
+      responseType: "token",
+        scope: 'openid profile email'
     }
   }
 );
@@ -29,10 +30,21 @@ lock.on("authenticated", authResult => {
     localStorage.setItem("profile", JSON.stringify(profile));
     userstore.obj = JSON.stringify(profile);
 
-    user_id = profile["user_id"];
+    user_id = profile["user_id"] = profile['sub'];
     emailverified = profile["email_verified"];
     picture = profile["picture"];
 
+    const providerInfos = profile.sub.split('|')
+
+    const identities = [{
+        connection: providerInfos[0],
+        isSocial: true,
+        user_id: providerInfos[1],
+    }]
+
+    profile.identities = identities
+
+    localStorage.setItem("profile", JSON.stringify(profile));
     localStorage.setItem("ev", emailverified);
     localStorage.setItem("userid", user_id);
 
@@ -70,6 +82,16 @@ export function redirectVerify(nextState, replace) {
       if (error) {
         return;
       }
+      profile.user_id = profile.sub
+      const providerInfos = profile.sub.split('|')
+
+      const identities = [{
+        connection: providerInfos[0],
+        isSocial: true,
+        user_id: providerInfos[1],
+      }]
+
+      profile.identities = identities
       localStorage.setItem("profile", JSON.stringify(profile));
       emailverified = profile["email_verified"];
       localStorage.setItem("ev", emailverified);

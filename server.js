@@ -416,45 +416,49 @@ app.get("/api/notification", (req, res) => {
             if (err) {
                 console.log(err)
             } else {
-                const ep = new EventProxy()
-                const rs = results.rooms
+                if (results) {
+                    const ep = new EventProxy()
+                    const rs = results.rooms || []
 
-                rs.forEach(room => {
-                    const room_id = room.roomId
-                    rooms.findOne(
-                        {_id: room_id},
-                        "conversation",
-                        (err, r) => {
-                            if (err) {
-                                console.log(err)
-                            } else {
-                                ep.emit('get_conversation', {roomId: room_id, conversation: r.conversation})
+                    rs.forEach(room => {
+                        const room_id = room.roomId
+                        rooms.findOne(
+                            {_id: room_id},
+                            "conversation",
+                            (err, r) => {
+                                if (err) {
+                                    console.log(err)
+                                } else {
+                                    ep.emit('get_conversation', {roomId: room_id, conversation: r.conversation})
+                                }
                             }
-                        }
-                    )
-                })
-
-                ep.after('get_conversation', rs.length, conversations => {
-                    const notifications = _.map(conversations, c => {
-                        const roomId = c.roomId
-                        const roomFound = rs.find(r => {
-                            return r.roomId = roomId
-                        })
-                        if (roomFound) {
-                            const leave_time = roomFound.leave_time
-                            const unreads = _.filter(c.conversation, cc => {
-                                return cc.time >= leave_time
-                            })
-                            const reads = _.filter(c.conversation, cc => {
-                                return cc.time < leave_time
-                            })
-
-                            return {roomId: roomId, unread: unreads, read: reads}
-                        }
+                        )
                     })
 
-                    res.send(notifications);
-                })
+                    ep.after('get_conversation', rs.length, conversations => {
+                        const notifications = _.map(conversations, c => {
+                            const roomId = c.roomId
+                            const roomFound = rs.find(r => {
+                                return r.roomId = roomId
+                            })
+                            if (roomFound) {
+                                const leave_time = roomFound.leave_time
+                                const unreads = _.filter(c.conversation, cc => {
+                                    return cc.time >= leave_time
+                                })
+                                const reads = _.filter(c.conversation, cc => {
+                                    return cc.time < leave_time
+                                })
+
+                                return {roomId: roomId, unread: unreads, read: reads}
+                            }
+                        })
+
+                        res.send(notifications);
+                    })
+                } else {
+                    res.send([]);
+                }
             }
         }
     )
