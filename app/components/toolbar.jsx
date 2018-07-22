@@ -386,22 +386,22 @@ export default class ToolbarExamplesSimple extends React.Component {
     return (
       <div>
         <Toolbar className='homeNavBar'>
-          <ToolbarGroup>
-            <IconButton
-              touch={true}
-              tooltipPosition="bottom-center"
-              onClick={this.handleToggle}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 18 18"
-              >
-                <path d="M2 13.5h14V12H2v1.5zm0-4h14V8H2v1.5zM2 4v1.5h14V4H2z" />
-              </svg>
-            </IconButton>
-          </ToolbarGroup>
+          {/*<ToolbarGroup>*/}
+            {/*<IconButton*/}
+              {/*touch={true}*/}
+              {/*tooltipPosition="bottom-center"*/}
+              {/*onClick={this.handleToggle}*/}
+            {/*>*/}
+              {/*<svg*/}
+                {/*xmlns="http://www.w3.org/2000/svg"*/}
+                {/*width="32"*/}
+                {/*height="32"*/}
+                {/*viewBox="0 0 18 18"*/}
+              {/*>*/}
+                {/*<path d="M2 13.5h14V12H2v1.5zm0-4h14V8H2v1.5zM2 4v1.5h14V4H2z" />*/}
+              {/*</svg>*/}
+            {/*</IconButton>*/}
+          {/*</ToolbarGroup>*/}
           <ToolbarGroup>
             <img
               src="logo-placeholder.png"
@@ -444,24 +444,6 @@ export default class ToolbarExamplesSimple extends React.Component {
           onRequestClose={this.handleDialogClose}
         >
           Are you sure you want to Log Out?
-        </Dialog>
-        <Dialog
-          title="Welcome to InspirEd"
-          modal={false}
-          open={Store.goToInvites}
-          onRequestClose={this.handleDialogInvitesClose}
-        >
-          Since you have no friends, Lets head over to Invites to find and add
-          new friends
-          <br />
-          <br />
-          <br />
-          <RaisedButton
-            label="Go to Invites"
-            primary={true}
-            onTouchTap={this.goToInvites}
-            style={buttonMargin}
-          />
         </Dialog>
 
         <Drawer open={this.state.open} containerStyle={{ height: "100%" }}>

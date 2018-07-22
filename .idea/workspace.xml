@@ -52,11 +52,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="auth.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="121" column="10" lean-forward="true" selection-start-line="121" selection-start-column="10" selection-end-line="121" selection-end-column="10" />
+            <state relative-caret-position="136">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -64,11 +64,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="toolbar.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/components/toolbar.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="388" selection-start-line="388" selection-end-line="403" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="nav.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/nav.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+            <state relative-caret-position="255">
+              <caret line="49" selection-start-line="49" selection-end-line="50" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -93,8 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>id</find>
-      <find>user</find>
       <find>UserStore.obj.user_id</find>
       <find>userId</find>
       <find>lodash</find>
@@ -121,16 +128,18 @@
       <find>issocial</find>
       <find>&quot;profile&quot;</find>
       <find>redirectVerify</find>
-      <find>localStorage.setItem</find>
       <find>ID_TOKEN_KEY</find>
+      <find>Since you have no friends, Lets head over to Invites to find and add</find>
+      <find>localStorage.setItem</find>
+      <find>homeNavBar</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/server</dir>
       <dir>$PROJECT_DIR$/app/styles</dir>
       <dir>$PROJECT_DIR$/node_modules/rc-cropping</dir>
       <dir>$PROJECT_DIR$/app/components</dir>
-      <dir>$PROJECT_DIR$/app</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/app</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -163,7 +172,6 @@
         <option value="$PROJECT_DIR$/app/styles/app.scss" />
         <option value="$PROJECT_DIR$/app/components/RoomHeader/roomHeader.jsx" />
         <option value="$PROJECT_DIR$/app/components/MessageList/index.module.scss" />
-        <option value="$PROJECT_DIR$/app/components/toolbar.jsx" />
         <option value="$PROJECT_DIR$/app/components/CreateMessageForm/index.module.scss" />
         <option value="$PROJECT_DIR$/app/pages/MainPage/main.scss" />
         <option value="$PROJECT_DIR$/app/components/UserList/index.jsx" />
@@ -187,9 +195,10 @@
         <option value="$PROJECT_DIR$/app/store/ChatStore.js" />
         <option value="$PROJECT_DIR$/app/components/MessageList/index.jsx" />
         <option value="$PROJECT_DIR$/app/components/RoomList/roomList.jsx" />
+        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/app/components/nav.jsx" />
         <option value="$PROJECT_DIR$/auth.js" />
-        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/app/components/toolbar.jsx" />
       </list>
     </option>
   </component>
@@ -214,9 +223,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="456" />
+    <option name="x" value="512" />
     <option name="y" value="24" />
-    <option name="width" value="1143" />
+    <option name="width" value="1087" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -325,7 +334,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245330000" />
+    <option name="totallyTimeSpent" value="247153000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,19 +346,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="456" y="24" width="1143" height="876" extended-state="4" />
+    <frame x="512" y="24" width="1087" height="876" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6958904" visible="true" weight="0.2669643" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6958904" visible="true" weight="0.28101504" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.28356165" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28356165" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28356165" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.3041096" side_tool="true" weight="0.23846154" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3931507" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16438356" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32328767" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -580,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/toolbar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="77" selection-start-line="77" selection-end-line="77" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/dashboard/privatenotes.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -764,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/nav.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -778,13 +773,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/nav.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="49" selection-start-line="49" selection-end-line="50" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" column="10" lean-forward="true" selection-start-line="121" selection-start-column="10" selection-end-line="121" selection-end-column="10" />
+        <state relative-caret-position="136">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/toolbar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="388" selection-start-line="388" selection-end-line="403" selection-end-column="28" />
         </state>
       </provider>
     </entry>
