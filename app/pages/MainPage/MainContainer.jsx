@@ -29,7 +29,7 @@ export default class MainContainer extends React.Component {
             const result = ChatStore.msgs[ChatStore.groupId]
 
             if (result) {
-                ChatStore.msgs[ChatStore.groupId].read = data.conversation
+                ChatStore.msgs[ChatStore.groupId].read = data.conversation || []
             } else {
                 ChatStore.msgs[ChatStore.groupId] = {
                     read: data.msg,
@@ -45,31 +45,17 @@ export default class MainContainer extends React.Component {
         socket.on("refresh group list", data => {
             UserStore.obj.rooms = data.rooms
         })
-        // socket.on("msgs", function(data) {
-        //     const groupId = ChatStore.groupId
-        //
-        //     if (ChatStore.msgs[groupId]) {
-        //         ChatStore.msgs[ChatStore.groupId].read = data.conversation
-        //     } else {
-        //         ChatStore.msgs[ChatStore.groupId] = {
-        //             read: data.conversation,
-        //             unread: []
-        //         }
-        //     }
-        // });
-        // socket.on("dbnotes", function(data) {
-        //     ChatStore.notes = data.notes;
-        // });
+
         socket.on("chat msgs", data => {
             const result = _.find(ChatStore.msgs, msg => {
                 return msg.roomId = ChatStore.groupId
             })
 
             if (result) {
-                ChatStore.msgs[ChatStore.groupId].read = data.conversation
+                ChatStore.msgs[ChatStore.groupId].read = data.conversation || []
             } else {
                 ChatStore.msgs[ChatStore.groupId] = {
-                    read: data.conversation,
+                    read: data.conversation || [],
                     unread: []
                 }
             }

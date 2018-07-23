@@ -1799,6 +1799,8 @@ main section:not(.dragging) > input[type='file'] {
   width: 2rem;
   height: 2rem;
   fill: #006eff; }
+  .create-room-form svg.fail {
+    fill: red; }
 
 .create-room-form input[type='checkbox']:not(:checked) + svg {
   opacity: 0.38; }

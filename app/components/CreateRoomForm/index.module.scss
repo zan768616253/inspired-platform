@@ -44,7 +44,11 @@
 .create-room-form svg {
   width: 2rem;
   height: 2rem;
+
   fill: #006eff;
+  &.fail {
+    fill: red;
+  }
 }
 
 .create-room-form input[type='checkbox']:not(:checked) + svg {

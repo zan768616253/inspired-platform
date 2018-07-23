@@ -39,8 +39,8 @@
             <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/server.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="260">
-                    <caret line="443" column="44" lean-forward="true" selection-start-line="443" selection-start-column="44" selection-end-line="443" selection-end-column="44" />
+                  <state relative-caret-position="266">
+                    <caret line="987" column="46" selection-start-line="987" selection-start-column="46" selection-end-line="987" selection-end-column="46" />
                   </state>
                 </provider>
               </entry>
@@ -52,38 +52,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="toolbar.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/toolbar.jsx">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/components/CreateRoomForm/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="427" column="76" lean-forward="true" selection-start-line="427" selection-start-column="76" selection-end-line="427" selection-end-column="76" />
+            <state relative-caret-position="387">
+              <caret line="73" column="45" lean-forward="true" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.module.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/RoomList/index.module.scss">
+      <file leaf-file-name="groupList.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/models/groupList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            <state relative-caret-position="305">
+              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/styles/app.scss">
+      <file leaf-file-name="Message.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/MessageList/Message.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+            <state relative-caret-position="408">
+              <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.module.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/components/MessageList/index.module.scss">
+      <file leaf-file-name="InvitingUserList.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/UserList/InvitingUserList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            <state relative-caret-position="731">
+              <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,15 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;chat msgs&quot;</find>
-      <find>unread_number</find>
-      <find>&quot;returning participants&quot;</find>
-      <find>ChatStore.participants</find>
-      <find>participants</find>
-      <find>dbnotes</find>
-      <find>ChatStore.btnClick</find>
-      <find>btnClick</find>
-      <find>auth0-js</find>
       <find>api/user</find>
       <find>'profile'</find>
       <find>issocial</find>
@@ -136,8 +136,17 @@
       <find>leftmost</find>
       <find>100% -</find>
       <find>.search-bar</find>
-      <find>.user-list</find>
       <find>message-list</find>
+      <find>ChatStore.groupId].read</find>
+      <find>.read =</find>
+      <find>[ChatStore.groupId].read =</find>
+      <find>AS BEEN ADDED TO THE GROUP</find>
+      <find>room_update</find>
+      <find>_id</find>
+      <find>.create-room-form svg</find>
+      <find>setsta</find>
+      <find>sets</find>
+      <find>.user-list</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/server</dir>
@@ -171,7 +180,6 @@
         <option value="$PROJECT_DIR$/app/components/chat/ListChatContainer.jsx" />
         <option value="$PROJECT_DIR$/app/components/ProfilePage/profile.jsx" />
         <option value="$PROJECT_DIR$/app/components/MainPage/MainContainer.jsx" />
-        <option value="$PROJECT_DIR$/app/components/CreateRoomForm/index.module.scss" />
         <option value="$PROJECT_DIR$/app/components/RoomHeader/roomHeader.jsx" />
         <option value="$PROJECT_DIR$/app/components/CreateMessageForm/index.module.scss" />
         <option value="$PROJECT_DIR$/app/pages/MainPage/main.scss" />
@@ -183,21 +191,16 @@
         <option value="$PROJECT_DIR$/app/components/RoomHeader/index.module.scss" />
         <option value="$PROJECT_DIR$/app/components/chat.jsx" />
         <option value="$PROJECT_DIR$/app/components/CreateMessageForm/FileInput.jsx" />
-        <option value="$PROJECT_DIR$/server/models/groupList.js" />
         <option value="$PROJECT_DIR$/app/components/CreateMessageForm/index.jsx" />
         <option value="$PROJECT_DIR$/server/models/User.js" />
         <option value="$PROJECT_DIR$/app/components/MessageList/Message.jsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
-        <option value="$PROJECT_DIR$/app/components/UserList/InvitingUserList.jsx" />
         <option value="$PROJECT_DIR$/app/components/UserList/ExistingUserList.jsx" />
-        <option value="$PROJECT_DIR$/app/pages/MainPage/MainContainer.jsx" />
         <option value="$PROJECT_DIR$/app/store/ChatStore.js" />
         <option value="$PROJECT_DIR$/app/components/MessageList/index.jsx" />
         <option value="$PROJECT_DIR$/app/components/RoomList/roomList.jsx" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/app/components/nav.jsx" />
         <option value="$PROJECT_DIR$/auth.js" />
-        <option value="$PROJECT_DIR$/app/components/CreateRoomForm/index.jsx" />
         <option value="$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx" />
         <option value="$PROJECT_DIR$/app/pages/ProfilePage/index.module.scss" />
         <option value="$PROJECT_DIR$/app/components/toolbar.jsx" />
@@ -205,6 +208,12 @@
         <option value="$PROJECT_DIR$/app/components/UserList/index.module.scss" />
         <option value="$PROJECT_DIR$/app/styles/app.scss" />
         <option value="$PROJECT_DIR$/app/components/MessageList/index.module.scss" />
+        <option value="$PROJECT_DIR$/server/models/groupList.js" />
+        <option value="$PROJECT_DIR$/app/components/UserList/InvitingUserList.jsx" />
+        <option value="$PROJECT_DIR$/app/pages/MainPage/MainContainer.jsx" />
+        <option value="$PROJECT_DIR$/app/components/CreateRoomForm/index.module.scss" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/app/components/CreateRoomForm/index.jsx" />
       </list>
     </option>
   </component>
@@ -229,9 +238,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="35" />
+    <option name="x" value="319" />
     <option name="y" value="24" />
-    <option name="width" value="964" />
+    <option name="width" value="1261" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -256,6 +265,19 @@
               <item name="kolaboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="kolaboard" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kolaboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kolaboard" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="CreateRoomForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kolaboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kolaboard" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -264,6 +286,17 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="kolaboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kolaboard" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kolaboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kolaboard" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -271,7 +304,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="roomli&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/RoomList/roomList.jsx&#10;chat.&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/chat.jsx&#10;socket&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/node_modules/socket.io&#10;nav&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/nav.jsx&#10;profile&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/dashboard/profile.jsx&#10;signup&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/signupmodal.jsx&#10;signu&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/signupmodal.jsx&#10;logout&#9;null&#9;null&#10;logou&#9;null&#9;null&#10;msg&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/toolbars/msgtoolbar.jsx&#10;foundation.min.js&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/node_modules/foundation-sites/dist/foundation.min.js&#10;jquery.min.js&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/node_modules/jquery/dist/jquery.min.js&#10;applicationStyles&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="Message&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/MessageList/Message.jsx&#10;roomli&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/RoomList/roomList.jsx&#10;chat.&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/chat.jsx&#10;socket&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/node_modules/socket.io&#10;nav&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/nav.jsx&#10;profile&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/dashboard/profile.jsx&#10;signup&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/signupmodal.jsx&#10;signu&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/signupmodal.jsx&#10;logout&#9;null&#9;null&#10;logou&#9;null&#9;null&#10;msg&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/app/components/toolbars/msgtoolbar.jsx&#10;foundation.min.js&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/node_modules/foundation-sites/dist/foundation.min.js&#10;jquery.min.js&#9;FILE&#9;file:///home/zan/Projects/Javascript/kolaboard/node_modules/jquery/dist/jquery.min.js&#10;applicationStyles&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editorconfig.notification" value="spaces" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tmp/react-slack-clone" />
@@ -341,7 +374,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253568000" />
+    <option name="totallyTimeSpent" value="258934000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,19 +386,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="35" y="24" width="964" height="876" extended-state="4" />
+    <frame x="319" y="24" width="1261" height="876" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6958904" visible="true" weight="0.21891604" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6958904" visible="true" weight="0.16639742" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.28356165" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28356165" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28356165" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.3041096" side_tool="true" weight="0.23846154" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.23972602" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.23972602" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32328767" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -420,28 +453,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server.js</url>
-          <line>599</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server.js</url>
           <line>504</line>
           <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server.js</url>
-          <line>632</line>
+          <line>612</line>
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server.js</url>
-          <line>621</line>
+          <line>601</line>
           <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/server.js</url>
-          <line>1008</line>
-          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/server.js</url>
@@ -449,8 +472,14 @@
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/server.js</url>
+          <line>483</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="57" />
+      <option name="time" value="58" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -480,13 +509,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/CreateRoomForm/index.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-389">
-          <caret column="1" lean-forward="true" selection-start-column="1" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -610,16 +632,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/api/MobileTearSheet.js" />
-    <entry file="file://$PROJECT_DIR$/app/components/UserList/InvitingUserList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="57" column="20" lean-forward="true" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="97" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/UserList/ExistingUserList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
@@ -630,27 +642,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/models/groupList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/dashboard/events.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="163" selection-start-line="163" selection-end-line="171" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/MessageList/Message.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,16 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/MainPage/MainContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/RoomList/roomList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1616">
@@ -724,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="443" column="44" lean-forward="true" selection-start-line="443" selection-start-column="44" selection-end-line="443" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/nav.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -744,16 +722,6 @@
           <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/CreateRoomForm/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -782,6 +750,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/CreateRoomForm/index.module.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="987" column="46" selection-start-line="987" selection-start-column="46" selection-end-line="987" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/groupList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/UserList/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -789,10 +778,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/RoomList/index.module.scss">
+    <entry file="file://$PROJECT_DIR$/app/components/UserList/InvitingUserList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="49" column="21" lean-forward="true" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/MessageList/Message.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="43" lean-forward="true" selection-start-line="24" selection-start-column="43" selection-end-line="24" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/MainPage/MainContainer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/MessageList/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -803,10 +822,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/MessageList/index.module.scss">
+    <entry file="file://$PROJECT_DIR$/app/components/RoomList/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/CreateRoomForm/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="73" column="45" lean-forward="true" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

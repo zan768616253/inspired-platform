@@ -24,6 +24,7 @@ var roomsSchema = new Schema({
   conversation: [
     {
       from: String,
+      user_name: String,
       message: String,
       favourite: Boolean,
       time: { type : Date, default : Date.now },

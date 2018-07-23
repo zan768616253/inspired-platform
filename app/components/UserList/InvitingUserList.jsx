@@ -33,8 +33,6 @@ export default class InvitingUserList extends React.Component {
             pic: ChatStore.groupavatar, //GROUP PIC
             notes_count: ChatStore.totalmsgscount,
             msgs_count: ChatStore.totalnotescount,
-            from: UserStore.userrealname,
-            message: "HAS BEEN ADDED TO THE GROUP"
         }
 
         socket.emit("add User to Group", data)

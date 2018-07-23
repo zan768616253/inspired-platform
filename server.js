@@ -552,46 +552,26 @@ io.on("connection", function (socket) {
                 ep.emit('get_room', room)
             });
 
-            rooms.update(
-                {_id: data.roomId},
+            User.findOneAndUpdate(
+                {user_id: data.user_id},
                 {
                     $push: {
-                        conversation: {
-                            from: data.name,
-                            message: data.message,
-                            favourite: false,
-                            picture: data.picture,
-                            roomId: data.roomId
+                        rooms: {
+                            roomId: data.roomId,
+                            roomName: data.roomName,
+                            pic: data.pic,
+                            read_notes_count: val,
+                            read_count: val,
+                            total_count: data.msgs_count,
+                            total_notes_count: data.notes_count
                         }
                     }
                 },
-                function (err) {
+                {new: true},
+                function (err, doc) {
                     if (err)
                         console.log(err);
-
-                    let val = 0;
-                    User.findOneAndUpdate(
-                        {user_id: data.user_id},
-                        {
-                            $push: {
-                                rooms: {
-                                    roomId: data.roomId,
-                                    roomName: data.roomName,
-                                    pic: data.pic,
-                                    read_notes_count: val,
-                                    read_count: val,
-                                    total_count: data.msgs_count,
-                                    total_notes_count: data.notes_count
-                                }
-                            }
-                        },
-                        {new: true},
-                        function (err, doc) {
-                            if (err)
-                                console.log(err);
-                            ep.emit('get_user', doc)
-                        }
-                    )
+                    ep.emit('get_user', doc)
                 }
             )
         })
@@ -995,28 +975,48 @@ io.on("connection", function (socket) {
     socket.on("create group event", function (data) {
         const ep = new EventProxy()
         let _id;
-        const mydata = {
-            groupname: data.groupname,
-            avatarletter: data.avatarletter,
-            conversation: [],
-            participants: JSON.parse(data.mapping),
-            remainparticipants: JSON.parse(data.mapping),
-            admin_id: data.id,
-            created_on: data.created_on
-        };
-        const room = new rooms(mydata);
-
         const participants = JSON.parse(data.mapping);
         const owner = participants[0]
 
-        room.save(function (err, docs) {
+        rooms.findOne({groupname: data.groupname}, (err, doc) => {
             if (err) {
-                console.log(err);
+                console.log(err)
             } else {
-                _id = docs._id;
-                ep.emit('room_save', _id)
+                if (doc) {
+                    ep.emit('room_exist', true)
+                } else {
+                    ep.emit('room_not_exist', true)
+                }
             }
-        });
+        })
+
+        ep.all('room_exist', () => {
+            socket.emit("group exist", true)
+        })
+
+        ep.all('room_not_exist', () => {
+            const mydata = {
+                groupname: data.groupname,
+                avatarletter: data.avatarletter,
+                conversation: [],
+                participants: JSON.parse(data.mapping),
+                remainparticipants: JSON.parse(data.mapping),
+                admin_id: data.id,
+                created_on: data.created_on
+            };
+            const room = new rooms(mydata);
+
+            room.save(function (err, docs) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    _id = docs._id;
+                    ep.emit('room_save', _id)
+                }
+            })
+        })
+
+
 
         ep.all('room_save', _id => {
             User.findOneAndUpdate(

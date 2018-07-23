@@ -7,6 +7,17 @@ export default class CreateRoomForm extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            create_room: true
+        }
+    }
+
+    componentDidMount() {
+        socket.on('group exist', () => {
+            this.setState({
+                create_room: false
+            })
+        })
     }
 
     handleCreateButtonOnClick = () => {
@@ -44,6 +55,7 @@ export default class CreateRoomForm extends React.Component {
     }
 
     render () {
+        const svgClassName = this.state.create_room ? '' : 'fail'
         return (
             <form className='create-room-form'
                 onSubmit={e => {
@@ -54,6 +66,9 @@ export default class CreateRoomForm extends React.Component {
                     if (e.key === 'Enter') {
                         return null
                     }
+                    this.setState({
+                        create_room: true
+                    })
                 }}/>
                 <button>
                     <input type="checkbox" />
@@ -62,7 +77,7 @@ export default class CreateRoomForm extends React.Component {
                     </svg>
                 </button>
                 <button type="submit">
-                    <svg>
+                    <svg className={svgClassName}>
                         <use xlinkHref="index.svg#add" />
                     </svg>
                 </button>
