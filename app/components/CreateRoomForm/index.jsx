@@ -10,34 +10,37 @@ export default class CreateRoomForm extends React.Component {
     }
 
     handleCreateButtonOnClick = () => {
-        const ownerInfo = {
-            name: UserStore.userrealname,
-            picture: UserStore.obj.avatar ? '/api/user/avatar/' + UserStore.obj.avatar : UserStore.obj.picture,
-            user_id: UserStore.obj.user_id
+
+        const groupName = this.refs.groupname.value.trim()
+
+        if (groupName) {
+            const ownerInfo = {
+                name: UserStore.userrealname,
+                picture: UserStore.obj.avatar ? '/api/user/avatar/' + UserStore.obj.avatar : UserStore.obj.picture,
+                user_id: UserStore.obj.user_id
+            }
+
+            let mapping = [ownerInfo];
+
+            const today = new Date()
+            const yyyy = today.getFullYear()
+            let dd = today.getDate()
+            let mm = today.getMonth() + 1; //January is 0!
+
+            dd = dd < 10 ? "0" + dd : dd;
+            mm = mm < 10 ? "0" + mm : mm;
+
+            const date = dd + "-" + mm + "-" + yyyy
+            const d = {
+                id: UserStore.obj.user_id,
+                groupname: groupName,
+                avatarletter: 'E',
+                mapping: JSON.stringify(mapping),
+                created_on: date
+            }
+            this.refs.groupname.value = ''
+            socket.emit("create group event", d)
         }
-
-        let mapping = [ownerInfo];
-
-        const groupName = this.refs.groupname.value
-
-        const today = new Date()
-        const yyyy = today.getFullYear()
-        let dd = today.getDate()
-        let mm = today.getMonth() + 1; //January is 0!
-
-        dd = dd < 10 ? "0" + dd : dd;
-        mm = mm < 10 ? "0" + mm : mm;
-
-        const date = dd + "-" + mm + "-" + yyyy
-        const d = {
-            id: UserStore.obj.user_id,
-            groupname: groupName,
-            avatarletter: 'E',
-            mapping: JSON.stringify(mapping),
-            created_on: date
-        }
-        this.refs.groupname.value = ''
-        socket.emit("create group event", d)
     }
 
     render () {

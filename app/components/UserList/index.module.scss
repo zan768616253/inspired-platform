@@ -5,10 +5,10 @@
   background: #fff;
   margin: 0;
   padding: 0;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   width: 24rem;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
 .user-list > li {
@@ -30,8 +30,10 @@
     > input {
       position: relative;
       border: 0;
-      margin: 0 0.8rem;
+      padding: 0 0.8rem;
       height: 3.4rem;
+      width: 100%;
+      box-sizing: border-box;
     }
   }
 

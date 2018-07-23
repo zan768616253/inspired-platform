@@ -1325,6 +1325,9 @@ input {
   min-width: 0;
   flex: none; }
 
+input {
+  background-color: white; }
+
 img,
 svg {
   display: block;
@@ -1529,7 +1532,8 @@ main {
                 white-space: normal; }
                 .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--lcol .inner-col .profile-content-item > p {
                   margin: 0 0 16px;
-                  padding: 0; }
+                  padding: 0;
+                  height: 1.5rem; }
                 .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--lcol .inner-col .profile-content-item .editable {
                   font-style: italic;
                   color: grey; }
@@ -1625,10 +1629,11 @@ main {
 .room-list {
   padding: 0;
   margin: 0;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  height: calc(100% - 8.4rem);
+  overflow-y: auto; }
 
 .room-list li {
   flex: none;
@@ -1858,10 +1863,10 @@ main section:not(.dragging) > input[type='file'] {
 .message-list {
   flex: 1 1 100%;
   padding: 1rem;
-  border-bottom: 2rem solid #fafafa;
   margin: 0;
   display: flex;
-  overflow-y: scroll;
+  overflow-y: auto;
+  border: none;
   -webkit-overflow-scrolling: touch; }
 
 .message-list > wrapper- {
@@ -1999,10 +2004,10 @@ main section:not(.dragging) > input[type='file'] {
   background: #fff;
   margin: 0;
   padding: 0;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   width: 24rem;
-  border-left: 1px solid rgba(0, 0, 0, 0.1); }
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-y: auto; }
 
 .user-list > li {
   flex: none;
@@ -2021,8 +2026,10 @@ main section:not(.dragging) > input[type='file'] {
     .user-list > li.search-bar > input {
       position: relative;
       border: 0;
-      margin: 0 0.8rem;
-      height: 3.4rem; }
+      padding: 0 0.8rem;
+      height: 3.4rem;
+      width: 100%;
+      box-sizing: border-box; }
   .user-list > li > a {
     position: relative;
     display: block;

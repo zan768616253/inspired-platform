@@ -131,6 +131,16 @@ export default class ToolbarExamplesSimple extends React.Component {
     Store.dashboard = false;
     browserHistory.replace("/profile");
   }
+  platform() {
+      Store.app = false;
+      Store.events = false;
+      Store.timetable = false;
+      Store.invites = false;
+
+      Store.privatenote = false;
+      Store.dashboard = false;
+      browserHistory.replace("/app");
+  }
   settings() {
     Store.app = false;
     Store.events = false;
@@ -386,22 +396,6 @@ export default class ToolbarExamplesSimple extends React.Component {
     return (
       <div>
         <Toolbar className='homeNavBar'>
-          {/*<ToolbarGroup>*/}
-            {/*<IconButton*/}
-              {/*touch={true}*/}
-              {/*tooltipPosition="bottom-center"*/}
-              {/*onClick={this.handleToggle}*/}
-            {/*>*/}
-              {/*<svg*/}
-                {/*xmlns="http://www.w3.org/2000/svg"*/}
-                {/*width="32"*/}
-                {/*height="32"*/}
-                {/*viewBox="0 0 18 18"*/}
-              {/*>*/}
-                {/*<path d="M2 13.5h14V12H2v1.5zm0-4h14V8H2v1.5zM2 4v1.5h14V4H2z" />*/}
-              {/*</svg>*/}
-            {/*</IconButton>*/}
-          {/*</ToolbarGroup>*/}
           <ToolbarGroup>
             <img
               src="logo-placeholder.png"
@@ -429,6 +423,7 @@ export default class ToolbarExamplesSimple extends React.Component {
                     </IconButton>
                   }
                 >
+                  <MenuItem primaryText="Platform" onClick={this.platform} />
                   <MenuItem primaryText="Profile" onClick={this.profile} />
                   <MenuItem primaryText="Log Out" onClick={this.logmeout} />
                 </IconMenu>
