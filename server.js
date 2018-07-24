@@ -560,8 +560,8 @@ io.on("connection", function (socket) {
                             roomId: data.roomId,
                             roomName: data.roomName,
                             pic: data.pic,
-                            read_notes_count: val,
-                            read_count: val,
+                            read_notes_count: 0,
+                            read_count: 0,
                             total_count: data.msgs_count,
                             total_notes_count: data.notes_count
                         }
