@@ -47,34 +47,7 @@ const userRealName = {
     fontSize: "18px",
     textAlign: "center"
 };
-const wordwrap = {
-    wordWrap: "breakWord",
-    overflow: "hidden"
-};
 
-const savebtn = {
-    bottom: "1px"
-};
-const pinstyle = {
-    width: "22px",
-    height: "22px",
-    margin: "0 50px",
-    display: "inline-block",
-    transform: "rotate(330deg)"
-};
-const customContentStyle = {
-    width: "30%",
-    maxWidth: "none"
-};
-
-const paddingIcon = {
-    paddingBottom: "48px"
-};
-
-const menuStyle = {
-    height: "20px",
-    width: "20px"
-};
 @observer
 export default class ToolbarExamplesSimple extends React.Component {
     constructor(props) {
@@ -333,18 +306,6 @@ export default class ToolbarExamplesSimple extends React.Component {
             };
         } else if (Store.app == false) {
             var backgroundhover = {
-                backgroundColor: "#FFFFFF"
-            };
-        }
-
-        // EVENTS ROUTE
-
-        if (Store.events == true) {
-            var backgroundhoverevents = {
-                backgroundColor: "#E8E8E8"
-            };
-        } else if (Store.events == false) {
-            var backgroundhoverevents = {
                 backgroundColor: "#FFFFFF"
             };
         }

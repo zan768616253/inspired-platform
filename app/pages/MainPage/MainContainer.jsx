@@ -16,7 +16,6 @@ import UIStore from '../../store/UIstore'
 import moment from "moment/moment";
 import _ from "lodash";
 
-
 @observer
 export default class MainContainer extends React.Component {
 
