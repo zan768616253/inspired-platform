@@ -56,6 +56,7 @@ export default class MainContainer extends React.Component {
                     unread: []
                 }
             }
+            ChatStore.updateTime = moment()
         });
         // socket.on("dbnotes", function(data) {
         //     ChatStore.notes = data.notes;
@@ -109,23 +110,29 @@ export default class MainContainer extends React.Component {
     }
 
     render() {
+        const role = UserStore.obj.role
+        const isOwner = role === 1
 
+        const userList = ChatStore.participants ? ChatStore.participants : []
+        const user_id = UserStore.obj.user_id
+        const participant = _.find(userList, _.matchesProperty('user_id', user_id))
+        const groupRole = participant ? participant.role : 99
 
         return (
             <main>
                 <aside data-open={UIStore.sidebarOpen}>
                     <UserHeader />
                     <RoomList />
-                    <CreateRoomForm />
+                    {isOwner && <CreateRoomForm />}
                 </aside>
                 <section>
-                    <Roomheader />
+                    <Roomheader role = {groupRole}/>
                     {ChatStore.groupId && <row->
                         <col->
                             <MessageList createConvo={this.createConvo}/>
                             <CreateMessageForm />
                         </col->
-                        {UIStore.showParticipants && <ExistingUserList createConvo={this.createConvo} />}
+                        {UIStore.showParticipants && <ExistingUserList createConvo={this.createConvo} role = {groupRole} />}
                         {UIStore.showInvites && <InvitingUserList createConvo={this.createConvo} />}
                     </row->
                     }

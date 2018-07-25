@@ -35,7 +35,6 @@ export default class MessageList extends React.Component {
             unread = ChatStore.msgs[ChatStore.groupId].unread
             items = read.concat(unread)
             ChatStore.msgs[ChatStore.groupId].unread = []
-            console.log(ChatStore.msgs[ChatStore.groupId])
         }
 
         const updateTime = ChatStore.updateTime

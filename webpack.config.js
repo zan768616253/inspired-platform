@@ -5,17 +5,9 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 let config = {
     entry: [
         "./app/app.jsx",
-        "./app/styles/index.scss",
-        // "./lib/foundation.min.scss",
-        // "./lib/jquery.min.js",
-        // "./lib/foundation.min.js"
+        "./app/styles/index.scss"
     ],
     plugins: [
-        // new webpack.ProvidePlugin({
-        //     "$": "jquery",
-        //     "jQuery": "jquery",
-        //     "window.jQuery": "jquery"
-        // }),
         new ExtractTextPlugin({
             filename:'style.css',
             allChunks: true

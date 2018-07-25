@@ -24,6 +24,7 @@ class UserStore {
   @observable currentFunction;
   @observable currentId;
   @observable currentValue;
+  @observable role;
 }
 
 const userstore = (window.userstore = new UserStore());

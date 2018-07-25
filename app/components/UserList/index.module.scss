@@ -40,7 +40,15 @@
   > a {
     position: relative;
     display: block;
-    margin-left: auto
+    margin-left: auto;
+
+    &.delete {
+      margin-left: 10px;
+    }
+
+    &.admin > i{
+      color: orange;
+    }
   }
 
   img {

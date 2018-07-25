@@ -601,50 +601,26 @@ io.on("connection", function (socket) {
     socket.on("remove User from Group", function (data) {
         rooms.findOneAndUpdate(
             {_id: data.roomId},
-            {$pull: {participants: {user_id: data.user_id}}},
-            function (err, docs) {
+            {$pull: {participants: {user_id: data.user_id}}
+        },
+            function (err, doc) {
                 if (err)
                     console.log(err);
                 else {
-                    rooms.find({_id: data.roomId}, function (err, docs) {
-                        socket.emit("returning participants", docs);
-                    });
-                    let val = 0;
-                    rooms.update(
-                        {_id: data.roomId},
-                        {
-                            $push: {
-                                conversation: {
-                                    from: data.from,
-                                    message: data.message,
-                                    favourite: false,
-                                    picture: data.picture,
-                                    roomId: data.roomId
-                                }
-                            }
-                        },
-                        function (err) {
-                            if (err)
-                                console.log(err);
-                            else {
-                                rooms.find({_id: data.roomId}, function (err, docs) {
-                                    socket.emit("returning message group", docs);
-                                });
+                    socket.emit("returning participants", doc);
+                    socket.emit("returning message group", doc);
 
-                                User.findOneAndUpdate(
-                                    {
-                                        user_id: data.user_id
-                                    },
-                                    {$pull: {rooms: {roomId: data.roomId}}}
-                                )
-                                    .then(docs => {
-                                    })
-                                    .catch(err => {
-                                        console.log(err.stack);
-                                    });
-                            }
-                        }
-                    );
+                    User.findOneAndUpdate(
+                        {
+                            user_id: data.user_id
+                        },
+                        {$pull: {rooms: {roomId: data.roomId}}}
+                    )
+                    .then(docs => {
+                    })
+                    .catch(err => {
+                        console.log(err.stack);
+                    });
                 }
             }
         );
@@ -1562,6 +1538,22 @@ io.on("connection", function (socket) {
         .catch(err => {
             console.log(err.stack);
         });
+    })
+
+    socket.on('assign administrator', data => {
+        rooms.findOneAndUpdate(
+            {_id: data.roomId, "participants.user_id": data.user_id},
+            {
+                $set: {
+                    "participants.$.role": data.role
+                }
+            },
+            {new: true},
+        ).then(doc => {
+            socket.emit("returning participants", doc)
+        }).catch(err => {
+            console.log(err.stack)
+        })
     })
 
     function updateUsernames() {

@@ -28,7 +28,8 @@ export default class CreateRoomForm extends React.Component {
             const ownerInfo = {
                 name: UserStore.userrealname,
                 picture: UserStore.obj.avatar ? '/api/user/avatar/' + UserStore.obj.avatar : UserStore.obj.picture,
-                user_id: UserStore.obj.user_id
+                user_id: UserStore.obj.user_id,
+                role: 1
             }
 
             let mapping = [ownerInfo];

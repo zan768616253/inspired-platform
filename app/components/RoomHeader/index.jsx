@@ -54,16 +54,16 @@ export default class RoomHeader extends React.Component {
                     </div>
                 )}
                 <h1>{roomName}</h1>
-                {(roomName && participants) && (
+                {(roomName && participants && this.props.role < 3) && (
                     <div className='room-invite-container' onClick={() => this.handleShowInvitesButtonOnClick()}>
                         <i className="fa fa-plus" aria-hidden="true" />
                     </div>
                 )}
-                {(roomName && participants) && (
-                    <div className='room-delete-container'>
-                        <span>DELETE</span>
-                    </div>
-                )}
+                {/*{(roomName && participants) && (*/}
+                    {/*<div className='room-delete-container'>*/}
+                        {/*<span>DELETE</span>*/}
+                    {/*</div>*/}
+                {/*)}*/}
 
             </header>
         )

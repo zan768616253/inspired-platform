@@ -3,9 +3,7 @@ var ReactDOM = require("react-dom");
 var {
   Route,
   Router,
-  hashHistory,
   browserHistory,
-  IndexRoute
 } = require("react-router");
 
 import Main from './pages/MainPage/main'

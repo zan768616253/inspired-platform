@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import {observer} from "mobx-react/index";
 
 import ChatStore from "../../store/ChatStore.js";
@@ -19,14 +20,30 @@ export default class ExistingUserList extends React.Component {
         socket.emit("remove User from Group", data);
     }
 
+    handleAssignButtOnClick(user) {
+        const role = user.role === 2 ? 3 : 2
+        const data = {
+            user_id: user.user_id,
+            roomId: ChatStore.groupId,
+            role: role
+        }
+        socket.emit('assign administrator', data)
+    }
+
     render() {
         const userList = ChatStore.participants ? ChatStore.participants : []
+        // const user_id = UserStore.obj.user_id
+        // const participant = _.find(userList, _.matchesProperty('user_id', user_id))
+        // const role = participant.role
 
+        const role = this.props.role
         return (
             <ul className='user-list'>
                 {userList.map(user => {
-                    const isAdmin = user.user_id === UserStore.obj.user_id
+                    const showRemove = (user.role !== 1) && (role < (user.role || 3))
+                    const showAssign = (role < 3) && (role < (user.role || 3))
                     const avatar = user.avatar ? '/api/user/avatar/' + user.avatar : user.picture
+                    const adminClass = user.role < 3 ? 'admin' : ''
                     return (
                         <li
                             key={user.user_id}
@@ -36,11 +53,16 @@ export default class ExistingUserList extends React.Component {
                         >
                             <img src={avatar} />
                             <p>{user.name}</p>
-                            <a onClick={() => {
+                            {showAssign && <a className={'assign ' + adminClass} onClick={() => {
+                                this.handleAssignButtOnClick(user)
+                            }}>
+                                <i className="fa fa-user-circle" aria-hidden="true" />
+                            </a>}
+                            {showRemove && <a className='delete' onClick={() => {
                                 this.handleRemoveButtOnClick(user)
                             }}>
                                 <i className="fa fa-minus-square" aria-hidden="true" />
-                            </a>
+                            </a>}
                         </li>
                     )}
                 )}

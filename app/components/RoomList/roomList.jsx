@@ -63,23 +63,19 @@ export default class RoomList extends React.Component {
             socket.emit("note map", roomId)
 
             socket.on('recieving listchat rooms', (data) => {
+
                 ChatStore.participants = data.participants;
                 ChatStore.remainparticipants = data.remainparticipants;
-                const remain = ChatStore.remainparticipants;
-                const mappedlength = FriendshipStore.mappedFriends.length;
+                const groupId = ChatStore.groupId
 
-                remain.forEach(function(a) {
-                    for (let i = 0; i < mappedlength; i++) {
-                        if (a.user_id === FriendshipStore.mappedFriends[i].user_id) {
-                            FriendshipStore.mappedFriends[i].present = true;
-                        }
+                if (ChatStore.msgs[groupId]) {
+                    ChatStore.msgs[ChatStore.groupId].read = data.conversation
+                } else {
+                    ChatStore.msgs[ChatStore.groupId] = {
+                        read: data.conversation,
+                        unread: []
                     }
-                });
-
-                ChatStore.readcount = Object.keys(data.conversation).length;
-                ChatStore.notescount = Object.keys(data.notes).length;
-                ChatStore.admin_id = data.admin_id;
-                ChatStore.created_on = data.created_on;
+                }
             })
         }
     }

@@ -91,6 +91,10 @@ var UserSchema = new Schema({
         default: "",
         trim: true
     },
+    role: {
+        type: Number,
+        default: 3
+    },
     emailnotif: {
         type: Boolean
     },

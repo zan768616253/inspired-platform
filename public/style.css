@@ -2036,6 +2036,10 @@ main section:not(.dragging) > input[type='file'] {
     position: relative;
     display: block;
     margin-left: auto; }
+    .user-list > li > a.delete {
+      margin-left: 10px; }
+    .user-list > li > a.admin > i {
+      color: orange; }
   .user-list > li img {
     width: 1.38rem;
     height: 1.38rem;
