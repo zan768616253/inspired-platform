@@ -62,11 +62,7 @@ export default class NewNav extends React.Component {
       margin: 12,
       width: "275px",
       height: "45px"
-    };
-
-    const colormodal = {
-      backgroundColor: "#00E676"
-    };
+    }
 
     return (
       <MuiThemeProvider>

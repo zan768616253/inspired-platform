@@ -1,6 +1,6 @@
 import React from "react";
 var { IndexLink } = require("react-router");
-import { Card, CardHeader, CardTitle, CardText } from "material-ui/Card";
+import { Card, CardTitle, CardText } from "material-ui/Card";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
@@ -12,14 +12,8 @@ const style2 = {
   width: "160px",
   height: "40px"
 };
-import {cyan500, orange500} from "material-ui/styles/colors";
+import {orange500} from "material-ui/styles/colors";
 
-const header = {
-  textAlign: "center"
-};
-const tableDisplay = {
-  display: "table"
-};
 const muiTheme = getMuiTheme({
   palette: {
     primary1Color: orange500

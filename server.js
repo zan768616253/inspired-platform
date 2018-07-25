@@ -9,6 +9,7 @@ const multer = require('multer');
 const EventProxy = require('eventproxy')
 const moment = require('moment')
 const _ = require('lodash')
+const compression = require('compression')
 
 const User = require("./server/models/User.js");
 const Friendships = require("./server/models/Friendships.js");
@@ -31,6 +32,14 @@ connections = [];
 
 mongoose.connect("mongodb://localhost/kola");
 const gfs = Grid(mongoose.connection.db, mongoose.mongo);
+
+// app.use(compression());
+
+app.get('/bundle.js', function (req, res, next) {
+    req.url = req.url + '.gz';
+    res.set('Content-Encoding', 'gzip');
+    next();
+});
 
 // must use cookieParser before expressSession
 app.use(bodyParser.json());
@@ -81,9 +90,6 @@ const upload = multer({
 }).single('file');
 
 server.listen(PORT);
-
-app.get("/", function (req, res) {
-});
 
 app.post("/api/user", function (req, res) {
     var user = new User(req.body);
@@ -1173,7 +1179,7 @@ io.on("connection", function (socket) {
     });
 
     socket.on("HandleOpen", function (data) {
-        if (data.currentFunction == "M") {
+        if (data.currentFunction === "M") {
             User.findOneAndUpdate(
                 {
                     user_id: data.user_id,
@@ -1195,7 +1201,7 @@ io.on("connection", function (socket) {
                 .catch(err => {
                     console.log(err.stack);
                 });
-        } else if (data.currentFunction == "T") {
+        } else if (data.currentFunction === "T") {
             User.findOneAndUpdate(
                 {
                     user_id: data.user_id,
