@@ -93,7 +93,7 @@
     <findStrings>
       <find>groupId</find>
       <find>groupid</find>
-      <find>ocket.on(&quot;msgs&quot;, fun</find>
+      <find />
       <find>msgs&quot;</find>
       <find>drawer</find>
       <find>backgroundhoverevents</find>
@@ -120,7 +120,7 @@
       <find>media</find>
       <find>showPrivateNotes</find>
       <find>max-width</find>
-      <find>.room-header button</find>
+      <find />
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/server</dir>
@@ -212,9 +212,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="413" />
+    <option name="x" value="840" />
     <option name="y" value="24" />
-    <option name="width" value="1245" />
+    <option name="width" value="818" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
