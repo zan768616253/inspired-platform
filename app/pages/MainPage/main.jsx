@@ -1,6 +1,6 @@
 var React = require("react");
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import Toolbar from "../../components/toolbar.jsx";
+import Toolbar from "../../components/ToolBar/toolbar.jsx";
 import MainContainer from "./MainContainer";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import {orange500, red500} from "material-ui/styles/colors";

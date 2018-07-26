@@ -1830,7 +1830,8 @@ main section:not(.dragging) > input[type='file'] {
 .room-header button {
   background: transparent;
   border: 0;
-  padding: 0; }
+  padding: 0;
+  margin-left: 20px; }
 
 .room-header h1 {
   font-size: 1.38rem;
@@ -2068,3 +2069,38 @@ main section:not(.dragging) > input[type='file'] {
     width: 18rem;
     box-shadow: 0 0.38rem 0.62rem rgba(0, 0, 0, 0.1);
     max-height: 62vh; } }
+
+.homeNavBar .tootlebar-right-container {
+  display: flex;
+  align-items: center; }
+  .homeNavBar .tootlebar-right-container .tootlebar-right-link {
+    display: block;
+    position: relative;
+    height: auto;
+    width: auto;
+    cursor: pointer; }
+    .homeNavBar .tootlebar-right-container .tootlebar-right-link > img {
+      position: relative;
+      height: 30px;
+      width: 30px;
+      margin: 0 8px;
+      opacity: 0.6; }
+      .homeNavBar .tootlebar-right-container .tootlebar-right-link > img.exit {
+        height: 28px;
+        width: 28px; }
+
+.homeNavBar .main-logo {
+  display: block;
+  height: 45px;
+  width: auto; }
+
+.homeNavBar .small-logo {
+  display: none;
+  height: 45px;
+  width: auto; }
+
+@media (max-width: 640px) {
+  .homeNavBar .main-logo {
+    display: none; }
+  .homeNavBar .small-logo {
+    display: block; } }

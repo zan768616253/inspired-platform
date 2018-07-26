@@ -1,0 +1,50 @@
+.homeNavBar {
+  .tootlebar-right-container {
+    display: flex;
+    align-items: center;
+
+    .tootlebar-right-link {
+      display: block;
+      position: relative;
+      height: auto;
+      width: auto;
+      cursor: pointer;
+
+      > img {
+        position: relative;
+        height: 30px;
+        width: 30px;
+        margin: 0 8px;
+        opacity: 0.6;
+
+        &.exit {
+          height: 28px;
+          width: 28px;
+        }
+      }
+    }
+  }
+
+  .main-logo {
+    display: block;
+    height: 45px;
+    width: auto;
+  }
+
+  .small-logo {
+    display: none;
+    height: 45px;
+    width: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .homeNavBar {
+    .main-logo {
+      display: none;
+    }
+    .small-logo {
+      display: block;
+    }
+  }
+}

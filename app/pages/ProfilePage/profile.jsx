@@ -1,7 +1,7 @@
 import React from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import IconButton from "material-ui/IconButton";
-import Toolbar from "../../components/toolbar.jsx";
+import Toolbar from "../../components/ToolBar/toolbar.jsx";
 import { Scrollbars } from "react-custom-scrollbars";
 import Avatar from "material-ui/Avatar";
 import {orange500, red500} from "material-ui/styles/colors";
