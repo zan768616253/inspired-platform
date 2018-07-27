@@ -9,6 +9,12 @@ const time = string => {
 }
 
 class Attachment extends React.Component {
+
+    render() {
+        return (
+            <img src={this.props.src} />
+        )
+    }
 }
 
 export default class Message extends React.Component {
@@ -26,16 +32,13 @@ export default class Message extends React.Component {
                 />
                 <div>
                     <span className=''>{`${message.user_name} | ${time(message.time)}`}</span>
-                    <p>
+                    {message.attachment ? (
+                        <Attachment
+                            src={message.attachment}
+                        />
+                    ) : <p>
                         <Linkify properties={{ target: '_blank' }}>{this.props.message.message}</Linkify>
-                    </p>
-                    {/*{message.attachment ? (*/}
-                        {/*<Attachment*/}
-                            {/*user={user}*/}
-                            {/*link={message.attachment.link}*/}
-                            {/*type={message.attachment.type}*/}
-                        {/*/>*/}
-                    {/*) : null}*/}
+                    </p>}
                 </div>
             </li>
         )

@@ -28,7 +28,8 @@ var roomsSchema = new Schema({
       message: String,
       favourite: Boolean,
       time: { type : Date, default : Date.now },
-      picture: String
+      picture: String,
+      attachment: { type : String, default : '' }
     }
   ],
   notes: [

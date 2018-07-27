@@ -5,7 +5,6 @@
   align-items: center;
   border-top: 1px solid #e0e0e0;
   height: 3.6rem;
-  display: flex;
   width: 100%;
 }
 
@@ -35,6 +34,10 @@
 
 .file-input-container {
   position: relative;
+
+  > svg.fail {
+    fill: red
+  }
 }
 
 .file-input {

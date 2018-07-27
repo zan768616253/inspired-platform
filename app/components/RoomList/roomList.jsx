@@ -21,13 +21,13 @@ export default class RoomList extends React.Component {
     }
 
     componentDidMount() {
-        this.getNotification()
+        this.getNotification(UserStore.obj.user_id)
     }
 
     getNotification(user_id) {
         $.ajax({
             type: "GET",
-            url: "/api/notification"
+            url: "/api/notification/" + user_id
         })
         .done(function(data) {
             // ChatStore.initialNotification = data

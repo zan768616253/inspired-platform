@@ -64,7 +64,10 @@ export default class InvitingUserList extends React.Component {
                             <img src={avatar} />
                             <p>{user.name}</p>
 
-                            {!isInGroup && <a onClick={() => {
+                            <a className='assign'>
+                                <i className="fa fa-id-card" aria-hidden="true" />
+                            </a>
+                            {!isInGroup && <a className='delete' onClick={() => {
                                     this.handleAddButtOnClick(user)
                                 }}>
                                     <i className="fa fa-plus-square" aria-hidden="true" />

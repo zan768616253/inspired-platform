@@ -11,7 +11,7 @@ export default class CreateMessageForm extends React.Component {
 
         const d = {
             user_name: UserStore.obj.name,
-            msg: message,
+            message: message,
             roomId: roomId,
             picture: UserStore.obj.picture,
             avatar: UserStore.obj.avatar,

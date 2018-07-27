@@ -1963,7 +1963,6 @@ main section:not(.dragging) > input[type='file'] {
   align-items: center;
   border-top: 1px solid #e0e0e0;
   height: 3.6rem;
-  display: flex;
   width: 100%; }
 
 .create-message-form input:first-child {
@@ -1988,6 +1987,8 @@ main section:not(.dragging) > input[type='file'] {
 
 .file-input-container {
   position: relative; }
+  .file-input-container > svg.fail {
+    fill: red; }
 
 .file-input {
   flex: none;
@@ -2070,34 +2071,34 @@ main section:not(.dragging) > input[type='file'] {
     box-shadow: 0 0.38rem 0.62rem rgba(0, 0, 0, 0.1);
     max-height: 62vh; } }
 
-.homeNavBar .tootlebar-right-container {
-  display: flex;
-  align-items: center; }
-  .homeNavBar .tootlebar-right-container .tootlebar-right-link {
-    display: block;
-    position: relative;
-    height: auto;
-    width: auto;
-    cursor: pointer; }
-    .homeNavBar .tootlebar-right-container .tootlebar-right-link > img {
+.homeNavBar {
+  padding: 18px; }
+  .homeNavBar .tootlebar-right-container {
+    display: flex;
+    align-items: center; }
+    .homeNavBar .tootlebar-right-container .tootlebar-right-link {
+      display: block;
       position: relative;
-      height: 30px;
-      width: 30px;
-      margin: 0 8px;
-      opacity: 0.6; }
-      .homeNavBar .tootlebar-right-container .tootlebar-right-link > img.exit {
-        height: 28px;
-        width: 28px; }
-
-.homeNavBar .main-logo {
-  display: block;
-  height: 45px;
-  width: auto; }
-
-.homeNavBar .small-logo {
-  display: none;
-  height: 45px;
-  width: auto; }
+      height: auto;
+      width: auto;
+      cursor: pointer; }
+      .homeNavBar .tootlebar-right-container .tootlebar-right-link > img {
+        position: relative;
+        height: 30px;
+        width: 30px;
+        margin: 0 8px;
+        opacity: 0.6; }
+        .homeNavBar .tootlebar-right-container .tootlebar-right-link > img.exit {
+          height: 28px;
+          width: 28px; }
+  .homeNavBar .main-logo {
+    display: block;
+    height: 45px;
+    width: auto; }
+  .homeNavBar .small-logo {
+    display: none;
+    height: 45px;
+    width: auto; }
 
 @media (max-width: 640px) {
   .homeNavBar .main-logo {

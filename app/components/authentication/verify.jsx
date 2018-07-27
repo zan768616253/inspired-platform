@@ -4,9 +4,7 @@ import { Card, CardTitle, CardText } from "material-ui/Card";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-const style = {
-  height: "100%"
-};
+
 const style2 = {
   margin: 12,
   width: "160px",
@@ -32,7 +30,6 @@ export default class Verify extends React.Component {
   constructor(props) {
     super(props);
   }
-  state = {};
 
   render() {
     return (

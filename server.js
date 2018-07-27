@@ -9,7 +9,6 @@ const multer = require('multer');
 const EventProxy = require('eventproxy')
 const moment = require('moment')
 const _ = require('lodash')
-const compression = require('compression')
 
 const User = require("./server/models/User.js");
 const Friendships = require("./server/models/Friendships.js");
@@ -25,7 +24,7 @@ const PORT = process.env.PORT || 3000;
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
-let user_id_server, users, connections, room, myuserid;
+let users, connections;
 
 users = [];
 connections = [];
@@ -92,20 +91,23 @@ const upload = multer({
 server.listen(PORT);
 
 app.post("/api/user", function (req, res) {
-    var user = new User(req.body);
-    user.obj = req.body;
-    user_id_server = req.body.user_id;
-    myuserid = req.body.user_id;
-    res.cookie("name", "express");
-    req.session.userId = req.body.user_id;
-    user.uId = req.body.identities[0].user_id;
-    User.find({user_id: req.params.user_id}, function (err, docs) {
-        if (docs.length) {
+    const ep = new EventProxy()
+
+    const user = new User(req.body)
+
+    ep.on('find no user', () => {
+        user.save(function (err, u) {
+            if (u) {
+                res.send(u)
+            }
+        });
+    })
+
+    User.findOne({user_id: req.body.user_id}, function (err, doc) {
+        if (doc) {
+            res.send(doc)
         } else {
-            user.save(function (err) {
-                if (err) {
-                }
-            });
+            ep.emit('find no user')
         }
     });
 });
@@ -194,6 +196,11 @@ app.post("/api/user/updateinfo", (req, res) => {
     )
 })
 
+app.post("/api/chat/uploadimage", upload, (req, res) => {
+    const fileName = req.file.filename
+    res.send({filename: fileName})
+})
+
 app.post("/api/user/updateavatar", upload, (req, res) => {
     const fileName = req.file.filename
     const user_id = req.file.originalname
@@ -209,10 +216,24 @@ app.post("/api/user/updateavatar", upload, (req, res) => {
     )
 })
 
-app.get('/api/user/avatar/:filename', function (req, res) {
+app.get('/api/message/image/:filename', (req, res) => {
     gfs.files.findOne({filename: req.params.filename}, (err, file) => {
         if (file) {
-            var readstream = gfs.createReadStream({
+            const readstream = gfs.createReadStream({
+                filename: file.filename
+            });
+            res.set('Content-Type', file.contentType)
+            readstream.pipe(res)
+        } else {
+            res.send({error: 500})
+        }
+    })
+})
+
+app.get('/api/user/avatar/:filename', (req, res) => {
+    gfs.files.findOne({filename: req.params.filename}, (err, file) => {
+        if (file) {
+            const readstream = gfs.createReadStream({
                 filename: file.filename
             });
             res.set('Content-Type', file.contentType)
@@ -319,49 +340,11 @@ app.get("/api/getEvents", function (req, res) {
             res.send(events);
         });
 });
-app.get("/api/user/friendrequest", function (req, res) {
-    Friendships.find({}, function (err, friendship) {
-        res.send(friendship);
-    });
-});
-
-app.get("/api/user/acceptrequest", function (req, res) {
-    Friendships.find({status: "pending", other_id: myuserid}, function (
-        err,
-        friendship
-    ) {
-        res.send(friendship);
-    });
-});
-
-app.get("/api/user/friendList", function (req, res) {
-    Friendships.find(
-        {
-            $or: [
-                {status: "friend", other_id: myuserid},
-                {status: "friend", user_id: myuserid}
-            ]
-        },
-        function (err, friendship) {
-            res.send(friendship);
-        }
-    );
-});
 
 app.get("/api/user/groupList", function (req, res) {
     rooms.find({}, function (err, rooms) {
         res.send(rooms);
     });
-});
-
-app.get("/api/user/friendlist", function (req, res) {
-    Friendships.find().or([
-        {$and: [{status: "friend"}, {other_id: myuserid}]},
-        {$and: [{status: "friend"}, {user_id: myuserid}]}
-    ]),
-        function (err, friendship) {
-            res.send(JSON.stringify(friendship));
-        };
 });
 
 app.get("/api/userbyuId/:uId", function (req, res) {
@@ -413,10 +396,10 @@ app.get("/api/user", function (req, res) {
     });
 });
 
-app.get("/api/notification", (req, res) => {
+app.get("/api/notification/:user_id", (req, res) => {
 
     User.findOne(
-        {user_id: myuserid},
+        {user_id: req.params.user_id},
         "rooms",
         (err, results) => {
             if (err) {
@@ -494,31 +477,33 @@ io.on("connection", function (socket) {
                     conversation: {
                         from: socket.username,
                         user_name: data.user_name,
-                        message: data.msg,
+                        message: data.message,
                         favourite: false,
                         picture: data.picture,
-                        roomId: data.roomId
+                        roomId: data.roomId,
+                        attachment: data.attachment || ''
                     }
                 }
             },
             function (err) {
-                if (err) console.log(err);
+                if (err)
+                    console.log(err);
                 else {
+                    var msg = {
+                        from: socket.username,
+                        user_name: data.user_name,
+                        message: data.message,
+                        favourite: false,
+                        picture: data.picture,
+                        avatar: data.avatar,
+                        roomId: data.roomId,
+                        attachment: data.attachment || ''
+                    };
+
+                    io.emit("chat message", msg)
                 }
             }
         );
-
-        var msg = {
-            from: socket.username,
-            user_name: data.user_name,
-            message: data.msg,
-            favourite: false,
-            picture: data.picture,
-            avatar: data.avatar,
-            roomId: data.roomId
-        };
-
-        io.emit("chat message", msg)
     });
 
     socket.on("Join room", function (data) {

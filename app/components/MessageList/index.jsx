@@ -1,7 +1,5 @@
 import React from 'react'
 import {observer} from "mobx-react/index";
-import _ from 'lodash'
-import moment from 'moment'
 
 import Message from './Message'
 import ChatStore from "../../store/ChatStore";
@@ -20,13 +18,6 @@ const emptyList = (
 
 @observer
 export default class MessageList extends React.Component {
-
-    componentDidMount() {
-        // const d = {
-        //     roomId: ChatStore.groupId
-        // }
-        // socket.emit("retrieve msgs", d)
-    }
 
     render() {
         let items = [], read, unread
