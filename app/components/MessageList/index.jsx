@@ -19,6 +19,20 @@ const emptyList = (
 @observer
 export default class MessageList extends React.Component {
 
+    componentDidMount() {
+    }
+
+    componentDidUpdate() {
+        this.scrollToBottom();
+    }
+
+    scrollToBottom = () => {
+        const wrapper = this.refs.messageWrapper
+        if (wrapper) {
+            wrapper.scrollIntoView({behavior: "smooth", block: "end"})
+        }
+    }
+
     render() {
         let items = [], read, unread
         if (ChatStore.msgs[ChatStore.groupId]) {
@@ -36,7 +50,7 @@ export default class MessageList extends React.Component {
         return (
             <ul id="messages" className='message-list'>
                 {messages.length > 0 ? (
-                    <wrapper->
+                    <wrapper- ref="messageWrapper">
                         {messages.reverse().map(message => {
                             return (
                                 <Message message={message} />

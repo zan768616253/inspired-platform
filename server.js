@@ -11,7 +11,6 @@ const moment = require('moment')
 const _ = require('lodash')
 
 const User = require("./server/models/User.js");
-const Friendships = require("./server/models/Friendships.js");
 const Events = require("./server/models/Events.js");
 const rooms = require("./server/models/groupList.js")
 
