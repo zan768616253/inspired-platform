@@ -1771,6 +1771,8 @@ main section:not(.dragging) > input[type='file'] {
   flex: none;
   font-size: 16px;
   padding-top: 1rem; }
+  .message .image-messsage {
+    cursor: pointer; }
 
 .message:not(:last-child) {
   border-top: 1px solid #f2f2f2;
@@ -1835,6 +1837,9 @@ main section:not(.dragging) > input[type='file'] {
   border-top: 1px solid #e0e0e0;
   height: 3.6rem;
   width: 100%; }
+  .create-message-form .favourite-message {
+    width: 30px;
+    height: 30px; }
 
 .create-message-form input:first-child {
   flex: 1 1 100%;
@@ -1846,7 +1851,8 @@ main section:not(.dragging) > input[type='file'] {
   position: relative;
   border: 0;
   background: #fff;
-  padding: 0; }
+  padding: 0;
+  cursor: pointer; }
 
 .create-message-form > * {
   margin-right: 0.62rem; }
@@ -1857,7 +1863,8 @@ main section:not(.dragging) > input[type='file'] {
   fill: #006eff; }
 
 .file-input-container {
-  position: relative; }
+  position: relative;
+  cursor: pointer; }
   .file-input-container > svg.fail {
     fill: red; }
 
@@ -2279,6 +2286,50 @@ main section:not(.dragging) > input[type='file'] {
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%); }
+
+.favourite-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  -webkit-overflow-scrolling: touch;
+  width: 24rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-y: auto; }
+
+.favourite-list > li {
+  flex: none;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.38);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+
+.favourite-list > li:hover {
+  background: rgba(0, 0, 0, 0.015); }
+
+.online::after {
+  display: block;
+  content: '';
+  width: 0.62rem;
+  height: 0.62rem;
+  background: #42b72a;
+  border-radius: 50%;
+  margin-left: auto; }
+
+@media (max-width: 1000px) {
+  .favourite-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18rem;
+    box-shadow: 0 0.38rem 0.62rem rgba(0, 0, 0, 0.1);
+    max-height: 62vh; } }
 
 * {
   box-sizing: border-box;

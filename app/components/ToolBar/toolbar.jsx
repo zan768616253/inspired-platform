@@ -7,7 +7,7 @@ import {
 import { browserHistory } from "react-router";
 import { logout, userProfile } from "../../../auth.js";
 import UserStore from "../../store/UserStore.js";
-import Store from "../../store/UIstore.js";
+import Store from "../../store/UIStore";
 import { observer } from "mobx-react";
 import Dialog from "material-ui/Dialog";
 

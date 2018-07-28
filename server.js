@@ -1111,15 +1111,7 @@ io.on("connection", function (socket) {
             }
         );
     });
-    socket.on("Show Favourites", function (data) {
-        rooms.find({_id: data}, function (err, rooms) {
-            if (err) {
-                console.log(err);
-            } else {
-                socket.emit("returned favs", {msg: rooms[0].conversation});
-            }
-        });
-    });
+
     socket.on("gettingnotes", function (data) {
         rooms.find({_id: data}, function (err, rooms) {
             if (err) {

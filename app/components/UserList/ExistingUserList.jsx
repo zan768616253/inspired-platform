@@ -1,10 +1,7 @@
 import React from 'react'
-import _ from 'lodash'
 import {observer} from "mobx-react/index";
 
 import ChatStore from "../../store/ChatStore.js";
-import UserStore from "../../store/UserStore";
-
 
 @observer
 export default class ExistingUserList extends React.Component {
@@ -48,7 +45,6 @@ export default class ExistingUserList extends React.Component {
                         <li
                             key={user.user_id}
                             className={user.state === 'online' ? 'online' : null}
-                            onClick={e => this.props.createConvo({ user })}
                             style={{ order: user.state === 'online' && -1 }}
                         >
                             <img src={avatar} />

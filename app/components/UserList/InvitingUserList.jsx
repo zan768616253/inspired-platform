@@ -58,7 +58,6 @@ export default class InvitingUserList extends React.Component {
                         <li
                             key={user.user_id}
                             className={user.state === 'online' ? 'online' : null}
-                            onClick={() => this.props.createConvo({ user })}
                             style={{ order: user.state === 'online' && -1 }}
                         >
                             <img src={avatar} />

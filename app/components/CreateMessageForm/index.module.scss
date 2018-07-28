@@ -6,6 +6,11 @@
   border-top: 1px solid #e0e0e0;
   height: 3.6rem;
   width: 100%;
+
+  .favourite-message {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .create-message-form input:first-child {
@@ -20,6 +25,7 @@
   border: 0;
   background: #fff;
   padding: 0;
+  cursor: pointer;
 }
 
 .create-message-form > * {
@@ -34,6 +40,7 @@
 
 .file-input-container {
   position: relative;
+  cursor: pointer;
 
   > svg.fail {
     fill: red

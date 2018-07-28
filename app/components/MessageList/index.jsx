@@ -29,7 +29,7 @@ export default class MessageList extends React.Component {
     scrollToBottom = () => {
         const wrapper = this.refs.messageWrapper
         if (wrapper) {
-            wrapper.scrollIntoView({behavior: "smooth", block: "end"})
+            wrapper.scrollIntoView({behavior: "instant", block: "end"})
         }
     }
 

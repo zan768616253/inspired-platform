@@ -5,7 +5,7 @@ import Toolbar from "../../components/ToolBar/toolbar"
 import Lightbox from "../../components/Lightbox"
 import MainContainer from "./MainContainer"
 import getMuiTheme from "material-ui/styles/getMuiTheme"
-import UIStore from '../../store/UIstore'
+import UIStore from '../../store/UIStore'
 import ChatStore from '../../store/ChatStore'
 import {orange500, red500} from "material-ui/styles/colors";
 

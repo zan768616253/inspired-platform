@@ -15,7 +15,6 @@ class ChatStore {
   @observable unaddedFriends = [];
   @observable individualnote = [];
   @observable individualmsg = [];
-  @observable favourites = [];
   @observable note = [];
   @observable mappingnotes = [];
   @observable readcount;
@@ -35,6 +34,7 @@ class ChatStore {
   @observable roomInfo;
 
   @observable findUsers = [];
+  @observable favourites = []
   @observable updateTime = -1;
 
   @observable initialNotification = true

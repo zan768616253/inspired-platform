@@ -9,10 +9,11 @@ import MessageList from "../../components/MessageList";
 import CreateMessageForm from '../../components/CreateMessageForm'
 import ExistingUserList from '../../components/UserList/ExistingUserList'
 import InvitingUserList from '../../components/UserList/InvitingUserList'
+import FavouriteList from "../../components/FavouriteList";
 
 import UserStore from '../../store/UserStore'
 import ChatStore from "../../store/ChatStore"
-import UIStore from '../../store/UIstore'
+import UIStore from '../../store/UIStore'
 import moment from "moment/moment";
 import _ from "lodash";
 
@@ -57,9 +58,6 @@ export default class MainContainer extends React.Component {
             }
             ChatStore.updateTime = moment()
         });
-        // socket.on("dbnotes", function(data) {
-        //     ChatStore.notes = data.notes;
-        // });
         socket.on("chat msgs", data => {
             const result = _.find(ChatStore.msgs, msg => {
                 return msg.roomId = ChatStore.groupId
@@ -105,9 +103,6 @@ export default class MainContainer extends React.Component {
         })
     }
 
-    createConvo(options) {
-    }
-
     render() {
         const role = UserStore.obj.role
         const isOwner = role === 1
@@ -131,8 +126,9 @@ export default class MainContainer extends React.Component {
                             <MessageList createConvo={this.createConvo}/>
                             <CreateMessageForm />
                         </col->
-                        {UIStore.showParticipants && <ExistingUserList createConvo={this.createConvo} role = {groupRole} />}
-                        {UIStore.showInvites && <InvitingUserList createConvo={this.createConvo} />}
+                        {UIStore.showParticipants && <ExistingUserList role = {groupRole} />}
+                        {UIStore.showInvites && <InvitingUserList />}
+                        {UIStore.showFavourite && <FavouriteList />}
                     </row->
                     }
                 </section>

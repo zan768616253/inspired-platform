@@ -2,7 +2,7 @@ import React from 'react'
 import {observer} from "mobx-react/index";
 
 import ChatStore from "../../store/ChatStore.js";
-import UIStore from '../../store/UIstore'
+import UIStore from '../../store/UIStore'
 
 @observer
 export default class RoomHeader extends React.Component {
@@ -12,22 +12,16 @@ export default class RoomHeader extends React.Component {
     }
 
     handleShowParticipantsButtonOnClick () {
-        UIStore.showInvites = (UIStore.showInvites && !UIStore.showParticipants) ? false : UIStore.showInvites
+        UIStore.showInvites = false
+        UIStore.showFavourite = false
         UIStore.showParticipants = !UIStore.showParticipants
     }
 
     handleShowInvitesButtonOnClick () {
         ChatStore.findUsers = []
-        UIStore.showParticipants = (UIStore.showParticipants && !UIStore.showInvites) ? false : UIStore.showParticipants
+        UIStore.showParticipants = false
+        UIStore.showFavourite = false
         UIStore.showInvites = !UIStore.showInvites
-    }
-
-    handleDeleteButtonOnClick () {
-
-    }
-
-    handleQuitRoomButtonOnClick () {
-
     }
 
     render() {

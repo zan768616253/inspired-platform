@@ -3,6 +3,7 @@ import React from 'react'
 import FileInput from './FileInput'
 import ChatStore from "../../store/ChatStore";
 import UserStore from "../../store/UserStore";
+import UIStore from '../../store/UIStore'
 
 export default class CreateMessageForm extends React.Component {
 
@@ -24,6 +25,12 @@ export default class CreateMessageForm extends React.Component {
     runCommand(message) {
     }
 
+    handleShowFavouriteListButtonOnClick () {
+        UIStore.showInvites = false
+        UIStore.showParticipants = false
+        UIStore.showFavourite = !UIStore.showFavourite
+    }
+
     render () {
         return (
             <form
@@ -37,10 +44,14 @@ export default class CreateMessageForm extends React.Component {
                         : message.length > 0 &&
                         this.sendMessage(message)
                 }}>
+
                 <input
                     placeholder="Type a Message.."
                     ref="messageInput"
                 />
+                <button className='favourite-message' onClick={() => this.handleShowFavouriteListButtonOnClick()}>
+                    <img src='favourite-message.svg' />
+                </button>
                 <FileInput />
                 <button type="submit">
                     <svg>
