@@ -1,18 +1,21 @@
 import React from 'react'
 import Linkify from 'react-linkify'
 import moment from 'moment'
+import ChatStore from "../../store/ChatStore";
+import UIStore from "../../store/UIstore";
 
 const time = string => {
-    console.log(moment(string))
     const date = moment(string).format('YYYY-MM-DD HH:mm:ss')
     return date
 }
 
 class Attachment extends React.Component {
-
     render() {
         return (
-            <img src={this.props.src} />
+            <img src={this.props.src} onClick={() => {
+                ChatStore.images = [this.props.src]
+                UIStore.openLightbox = true
+            }}/>
         )
     }
 }

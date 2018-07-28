@@ -23,8 +23,9 @@ class Store {
   @observable showParticipants = false;
   @observable showInvites = false;
   @observable sidebarOpen = false;
+  @observable openLightbox = false;
 }
 
-var store = (window.store = new Store());
+let store = (window.store = new Store());
 
 export default store;
