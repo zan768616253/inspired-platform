@@ -14,7 +14,7 @@ class Attachment extends React.Component {
         return (
             <img className='image-messsage' src={this.props.src} onClick={() => {
                 ChatStore.images = [this.props.src]
-                UIStore.openLightbox = true
+                // UIStore.openLightbox = true
             }}/>
         )
     }

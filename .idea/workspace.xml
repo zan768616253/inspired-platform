@@ -34,14 +34,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/Dropzone/index.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="289" column="8" selection-start-line="289" selection-start-column="8" selection-end-line="289" selection-end-column="8" />
+            <state relative-caret-position="258">
+              <caret line="291" column="1" lean-forward="true" selection-start-line="291" selection-start-column="1" selection-end-line="291" selection-end-column="1" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#33#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileInput.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/CreateMessageForm/FileInput.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Message.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/components/MessageList/Message.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -155,7 +179,6 @@
         <option value="$PROJECT_DIR$/app/components/FavouriteList/index.module.scss" />
         <option value="$PROJECT_DIR$/app/components/UserList/InvitingUserList.jsx" />
         <option value="$PROJECT_DIR$/app/store/UIstore.js" />
-        <option value="$PROJECT_DIR$/app/components/MessageList/Message.jsx" />
         <option value="$PROJECT_DIR$/app/components/ToolBar/toolbar.jsx" />
         <option value="$PROJECT_DIR$/app/pages/MainPage/main.jsx" />
         <option value="$PROJECT_DIR$/app/pages/MainPage/MainContainer.jsx" />
@@ -170,6 +193,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app/components/Dropzone/utils.js" />
         <option value="$PROJECT_DIR$/app/components/Dropzone/index.jsx" />
+        <option value="$PROJECT_DIR$/app/components/MessageList/Message.jsx" />
       </list>
     </option>
   </component>
@@ -227,21 +251,14 @@
               <item name="kolaboard" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Dropzone" type="462c0819:PsiDirectoryNode" />
+              <item name="CreateMessageForm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kolaboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="kolaboard" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="FavouriteList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kolaboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kolaboard" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="UserList" type="462c0819:PsiDirectoryNode" />
+              <item name="MessageList" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kolaboard" type="b2602c69:ProjectViewProjectNode" />
@@ -352,7 +369,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="349265000" />
+    <option name="totallyTimeSpent" value="349817000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -372,7 +389,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.2547945" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.22465754" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.26027396" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69357497" visible="true" weight="0.25480282" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
@@ -557,16 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/CreateMessageForm/FileInput.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="68" column="20" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Lightbox/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -640,13 +647,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/FavouriteList/Gallery.jsx">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/MessageList/Message.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/ToolBar/toolbar.jsx">
       <provider selected="true" editor-type-id="text-editor">
@@ -810,11 +810,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Dropzone/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="289" column="8" selection-start-line="289" selection-start-column="8" selection-end-line="289" selection-end-column="8" />
+        <state relative-caret-position="258">
+          <caret line="291" column="1" lean-forward="true" selection-start-line="291" selection-start-column="1" selection-end-line="291" selection-end-column="1" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#33#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/CreateMessageForm/FileInput.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/MessageList/Message.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
