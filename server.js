@@ -10,9 +10,9 @@ const EventProxy = require('eventproxy')
 const moment = require('moment')
 const _ = require('lodash')
 
-const User = require("./server/models/User.js");
-const Events = require("./server/models/Events.js");
-const rooms = require("./server/models/groupList.js")
+const User = require("./server/models/User")
+const rooms = require("./server/models/groupList")
+const Gallery = require("./server/models/Gallery")
 
 const GridFsStorage = require('multer-gridfs-storage');
 const Grid = require('gridfs-stream');
@@ -85,7 +85,7 @@ const storage = GridFsStorage({
 
 const upload = multer({
     storage: storage
-}).single('file');
+});
 
 server.listen(PORT);
 
@@ -123,16 +123,6 @@ app.post("/api/user/friendrequest", function (req, res) {
     });
 });
 
-app.post("/api/user/createevent", function (req, res) {
-    var events = new Events(req.body);
-    Events.find({}, function (err, docs) {
-        events.save(function (err) {
-            if (err) {
-                console.log(err);
-            }
-        });
-    });
-});
 
 app.post("/api/user/removefriend", function (req, res) {
     Friendships.findOne(
@@ -143,21 +133,6 @@ app.post("/api/user/removefriend", function (req, res) {
         },
         function (error, friendship) {
             console.log(error);
-        }
-    );
-});
-app.post("/api/deleteEvent", function (req, res) {
-    Events.findOne(
-        {
-            _id: req.body._id
-        },
-        function (error, event) {
-            if (event == null || event == undefined) {
-                console.log(event);
-            } else {
-                console.log(event);
-                event.remove();
-            }
         }
     );
 });
@@ -195,12 +170,35 @@ app.post("/api/user/updateinfo", (req, res) => {
     )
 })
 
-app.post("/api/chat/uploadimage", upload, (req, res) => {
+app.post("/api/gallery/uploadimage", upload.array('files', 99), (req, res) => {
+    const user_id = req.body.user_id
+    const files = req.files
+    const pictures = _.map(files, file => {
+        return file.filename
+    })
+
+    const data = {
+        title: '',
+        user_id: user_id,
+        pictures: pictures
+    }
+
+    const gallery = new Gallery(data);
+
+    gallery.save((err, doc) => {
+        if (err) {
+            console.log(err)
+        }
+        res.send({gallery: doc})
+    })
+})
+
+app.post("/api/chat/uploadimage", upload.single('file'), (req, res) => {
     const fileName = req.file.filename
     res.send({filename: fileName})
 })
 
-app.post("/api/user/updateavatar", upload, (req, res) => {
+app.post("/api/user/updateavatar", upload.single('file'), (req, res) => {
     const fileName = req.file.filename
     const user_id = req.file.originalname
     User.findOneAndUpdate(
@@ -330,14 +328,6 @@ app.get("/api/userall", function (req, res) {
     User.find({}, function (err, users) {
         res.send(users);
     });
-});
-
-app.get("/api/getEvents", function (req, res) {
-    Events.find({})
-        .sort({date: "desc"})
-        .exec(function (err, events) {
-            res.send(events);
-        });
 });
 
 app.get("/api/user/groupList", function (req, res) {

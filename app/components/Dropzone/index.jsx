@@ -11,6 +11,7 @@ import {
     getDataTransferItems,
     isIeOrEdge
 } from './utils'
+import styles from './styles'
 
 class Dropzone extends React.Component {
     constructor(props, context) {
@@ -287,6 +288,313 @@ class Dropzone extends React.Component {
     }
 
     render() {
+        const {
+            accept,
+            acceptClassName,
+            activeClassName,
+            children,
+            disabled,
+            disabledClassName,
+            inputProps,
+            multiple,
+            name,
+            rejectClassName,
+            ...rest
+        } = this.props
 
+        let {
+            acceptStyle,
+            activeStyle,
+            className = '',
+            disabledStyle,
+            rejectStyle,
+            style,
+            ...props // eslint-disable-line prefer-const
+        } = rest
+
+        const { isDragActive, draggedFiles } = this.state
+        const filesCount = draggedFiles.length
+        const isMultipleAllowed = multiple || filesCount <= 1
+        const isDragAccept = filesCount > 0 && allFilesAccepted(draggedFiles, this.props.accept)
+        const isDragReject = filesCount > 0 && (!isDragAccept || !isMultipleAllowed)
+        const noStyles =
+            !className && !style && !activeStyle && !acceptStyle && !rejectStyle && !disabledStyle
+
+        if (isDragActive && activeClassName) {
+            className += ' ' + activeClassName
+        }
+        if (isDragAccept && acceptClassName) {
+            className += ' ' + acceptClassName
+        }
+        if (isDragReject && rejectClassName) {
+            className += ' ' + rejectClassName
+        }
+        if (disabled && disabledClassName) {
+            className += ' ' + disabledClassName
+        }
+
+        if (noStyles) {
+            style = styles.default
+            activeStyle = styles.active
+            acceptStyle = styles.active
+            rejectStyle = styles.rejected
+            disabledStyle = styles.disabled
+        }
+
+        let appliedStyle = { position: 'relative', ...style }
+        if (activeStyle && isDragActive) {
+            appliedStyle = {
+                ...appliedStyle,
+                ...activeStyle
+            }
+        }
+        if (acceptStyle && isDragAccept) {
+            appliedStyle = {
+                ...appliedStyle,
+                ...acceptStyle
+            }
+        }
+        if (rejectStyle && isDragReject) {
+            appliedStyle = {
+                ...appliedStyle,
+                ...rejectStyle
+            }
+        }
+        if (disabledStyle && disabled) {
+            appliedStyle = {
+                ...appliedStyle,
+                ...disabledStyle
+            }
+        }
+
+        const inputAttributes = {
+            accept,
+            disabled,
+            type: 'file',
+            style: {
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                bottom: 0,
+                left: 0,
+                opacity: 0.00001,
+                pointerEvents: 'none',
+                ...inputProps.style
+            },
+            multiple: supportMultiple && multiple,
+            ref: this.setRefs,
+            onChange: this.onDrop,
+            autoComplete: 'off'
+        }
+
+        if (name && name.length) {
+            inputAttributes.name = name
+        }
+
+        // Destructure custom props away from props used for the div element
+        const {
+            acceptedFiles,
+            preventDropOnDocument,
+            disablePreview,
+            disableClick,
+            onDropAccepted,
+            onDropRejected,
+            onFileDialogCancel,
+            maxSize,
+            minSize,
+            ...divProps
+        } = props
+
+        return (
+            <div
+                className={className}
+                style={appliedStyle}
+                {...divProps /* expand user provided props first so event handlers are never overridden */}
+                onClick={this.composeHandlers(this.onClick)}
+                onDragStart={this.composeHandlers(this.onDragStart)}
+                onDragEnter={this.composeHandlers(this.onDragEnter)}
+                onDragOver={this.composeHandlers(this.onDragOver)}
+                onDragLeave={this.composeHandlers(this.onDragLeave)}
+                onDrop={this.composeHandlers(this.onDrop)}
+                ref={this.setRef}
+                aria-disabled={disabled}
+            >
+                {this.renderChildren(children, isDragActive, isDragAccept, isDragReject)}
+                <input
+                    {...inputProps /* expand user provided inputProps first so inputAttributes override them */}
+                    {...inputAttributes}
+                />
+            </div>
+        )
     }
+}
+
+export default Dropzone
+
+Dropzone.propTypes = {
+    /**
+     * Allow specific types of files. See https://github.com/okonet/attr-accept for more information.
+     * Keep in mind that mime type determination is not reliable across platforms. CSV files,
+     * for example, are reported as text/plain under macOS but as application/vnd.ms-excel under
+     * Windows. In some cases there might not be a mime type set at all.
+     * See: https://github.com/react-dropzone/react-dropzone/issues/276
+     */
+    accept: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]),
+
+    /**
+     * Contents of the dropzone
+     */
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+
+    /**
+     * Disallow clicking on the dropzone container to open file dialog
+     */
+    disableClick: PropTypes.bool,
+
+    /**
+     * Enable/disable the dropzone entirely
+     */
+    disabled: PropTypes.bool,
+
+    /**
+     * Enable/disable preview generation
+     */
+    disablePreview: PropTypes.bool,
+
+    /**
+     * If false, allow dropped items to take over the current browser window
+     */
+    preventDropOnDocument: PropTypes.bool,
+
+    /**
+     * Pass additional attributes to the `<input type="file"/>` tag
+     */
+    inputProps: PropTypes.object,
+
+    /**
+     * Allow dropping multiple files
+     */
+    multiple: PropTypes.bool,
+
+    /**
+     * `name` attribute for the input tag
+     */
+    name: PropTypes.string,
+
+    /**
+     * Maximum file size (in bytes)
+     */
+    maxSize: PropTypes.number,
+
+    /**
+     * Minimum file size (in bytes)
+     */
+    minSize: PropTypes.number,
+
+    /**
+     * className
+     */
+    className: PropTypes.string,
+
+    /**
+     * className to apply when drag is active
+     */
+    activeClassName: PropTypes.string,
+
+    /**
+     * className to apply when drop will be accepted
+     */
+    acceptClassName: PropTypes.string,
+
+    /**
+     * className to apply when drop will be rejected
+     */
+    rejectClassName: PropTypes.string,
+
+    /**
+     * className to apply when dropzone is disabled
+     */
+    disabledClassName: PropTypes.string,
+
+    /**
+     * CSS styles to apply
+     */
+    style: PropTypes.object,
+
+    /**
+     * CSS styles to apply when drag is active
+     */
+    activeStyle: PropTypes.object,
+
+    /**
+     * CSS styles to apply when drop will be accepted
+     */
+    acceptStyle: PropTypes.object,
+
+    /**
+     * CSS styles to apply when drop will be rejected
+     */
+    rejectStyle: PropTypes.object,
+
+    /**
+     * CSS styles to apply when dropzone is disabled
+     */
+    disabledStyle: PropTypes.object,
+
+    /**
+     * onClick callback
+     * @param {Event} event
+     */
+    onClick: PropTypes.func,
+
+    /**
+     * onDrop callback
+     */
+    onDrop: PropTypes.func,
+
+    /**
+     * onDropAccepted callback
+     */
+    onDropAccepted: PropTypes.func,
+
+    /**
+     * onDropRejected callback
+     */
+    onDropRejected: PropTypes.func,
+
+    /**
+     * onDragStart callback
+     */
+    onDragStart: PropTypes.func,
+
+    /**
+     * onDragEnter callback
+     */
+    onDragEnter: PropTypes.func,
+
+    /**
+     * onDragOver callback
+     */
+    onDragOver: PropTypes.func,
+
+    /**
+     * onDragLeave callback
+     */
+    onDragLeave: PropTypes.func,
+
+    /**
+     * Provide a callback on clicking the cancel button of the file dialog
+     */
+    onFileDialogCancel: PropTypes.func
+}
+
+Dropzone.defaultProps = {
+    preventDropOnDocument: true,
+    disabled: false,
+    disablePreview: false,
+    disableClick: false,
+    inputProps: {},
+    multiple: true,
+    maxSize: Infinity,
+    minSize: 0
 }

@@ -2302,16 +2302,76 @@ main section:not(.dragging) > input[type='file'] {
 .favourite-list > li {
   flex: none;
   display: flex;
-  align-items: center;
+  align-content: center;
+  justify-content: center;
   color: rgba(0, 0, 0, 0.38);
   font-weight: bold;
   font-size: 1rem;
-  padding: 1rem;
-  cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-
-.favourite-list > li:hover {
-  background: rgba(0, 0, 0, 0.015); }
+  padding: 0.5rem 1rem;
+  cursor: pointer; }
+  .favourite-list > li .favourite-item-plus-container {
+    display: flex;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    border: 2px lightgray dashed;
+    border-radius: 1rem;
+    justify-content: center;
+    align-content: center; }
+    .favourite-list > li .favourite-item-plus-container.standby:hover {
+      border: 2px gray dashed;
+      background: rgba(0, 0, 0, 0.03); }
+    .favourite-list > li .favourite-item-plus-container > svg {
+      width: 1.65rem;
+      height: 1.65rem; }
+  .favourite-list > li .gallery-container {
+    position: relative;
+    display: flex;
+    width: 95%;
+    height: 5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 2px lightgray hidden; }
+    .favourite-list > li .gallery-container:hover .gallery-tools {
+      display: flex; }
+    .favourite-list > li .gallery-container .gallery-thumbnail {
+      display: flex;
+      position: relative;
+      height: 5rem;
+      width: 5rem;
+      align-items: center;
+      justify-items: center;
+      overflow: hidden; }
+      .favourite-list > li .gallery-container .gallery-thumbnail > img {
+        position: relative;
+        height: auto;
+        width: 100%; }
+    .favourite-list > li .gallery-container .gallery-title {
+      padding-left: 0.8rem;
+      margin: auto;
+      text-align: center; }
+    .favourite-list > li .gallery-container .gallery-tools {
+      position: absolute;
+      display: none;
+      flex-direction: row;
+      right: 0;
+      top: 0;
+      height: 1.2rem;
+      width: 3rem; }
+      .favourite-list > li .gallery-container .gallery-tools.display {
+        display: flex; }
+      .favourite-list > li .gallery-container .gallery-tools .gallery-tool {
+        display: block;
+        flex: 1;
+        text-align: center;
+        vertical-align: middle; }
+        .favourite-list > li .gallery-container .gallery-tools .gallery-tool.delete {
+          color: orangered; }
+        .favourite-list > li .gallery-container .gallery-tools .gallery-tool.edit {
+          color: #006eff; }
+        .favourite-list > li .gallery-container .gallery-tools .gallery-tool > i {
+          text-align: center;
+          font-size: 1.2rem; }
 
 .online::after {
   display: block;
