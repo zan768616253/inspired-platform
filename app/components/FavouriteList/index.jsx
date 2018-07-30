@@ -65,10 +65,11 @@ export default class FavouriteList extends React.Component {
                 </li>
                 <li>
                     <Gallery />
+                </li>
+                <li>
                     <Gallery />
-                    <Gallery />
-                    <Gallery />
-                    <Gallery />
+                </li>
+                <li>
                     <Gallery />
                 </li>
                 {/*{*/}
