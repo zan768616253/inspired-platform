@@ -1,14 +1,14 @@
-var React = require("react");
-var ReactDOM = require("react-dom");
-var {
+import React from "react"
+import ReactDOM from "react-dom"
+import {
   Route,
   Router,
   browserHistory,
-} = require("react-router");
+} from "react-router";
 
 import Main from './pages/MainPage/main'
 import injectTapEventPlugin from "react-tap-event-plugin";
-import FirstPage from "./components/firstpage.jsx";
+import FirstPage from "./pages/Landing/firstpage.jsx";
 import Verify from "./components/authentication/verify.jsx";
 import { requireAuth, requireVerification, redirect } from "../auth.js";
 import Profile from "./pages/ProfilePage/profile.jsx";

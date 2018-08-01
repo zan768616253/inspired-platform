@@ -1,11 +1,12 @@
 @import "./rc-cropping";
 @import "./rc-dialog";
 
-@import "../pages/LandingPage/homepage";
-@import "../components/UserHeader/index.module";
-@import "../pages/ProfilePage/index.module";
-@import "../components/RoomList/index.module";
 @import "../pages/MainPage/main";
+@import "../pages/Landing/landing";
+@import "../pages/ProfilePage/index.module";
+
+@import "../components/UserHeader/index.module";
+@import "../components/RoomList/index.module";
 @import "../components/CreateRoomForm/index.module";
 @import "../components/RoomHeader/index.module";
 @import "../components/MessageList/index.module";
@@ -14,6 +15,7 @@
 @import "../components/ToolBar/index.module";
 @import "../components/Lightbox/index.module";
 @import "../components/FavouriteList/index.module";
+
 
 * {
   box-sizing: border-box;
