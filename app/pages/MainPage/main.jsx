@@ -7,26 +7,8 @@ import MainContainer from "./MainContainer"
 import getMuiTheme from "material-ui/styles/getMuiTheme"
 import UIStore from '../../store/UIStore'
 import ChatStore from '../../store/ChatStore'
-import {orange500, red500} from "material-ui/styles/colors";
 
-const muiTheme = getMuiTheme({
-    palette: {
-        primary1Color: orange500,
-        accent1Color: red500
-    },
-    toggle: {
-        thumbOnColor: "yellow",
-        trackOnColor: "red",
-        backgroundColor: "red"
-    },
-    appBar: {
-        height: 50
-    }
-});
-
-const style = {
-  height: "100%"
-};
+const muiTheme = getMuiTheme();
 
 @observer
 export default class Main extends React.Component {
@@ -39,13 +21,17 @@ export default class Main extends React.Component {
       }
   }
 
+  componentWillMount() {
+
+  }
+
   render () {
       const { photoIndex } = this.state;
       const isOpenLghtbox = UIStore.openLightbox
       const images = ChatStore.images || []
       return (
           <MuiThemeProvider muiTheme={muiTheme}>
-              <div style={style}>
+              <div style={{height: "100%"}}>
                   <Toolbar />
                   <div className='main-body'>
                       <MainContainer />
@@ -69,7 +55,6 @@ export default class Main extends React.Component {
                       />
                   )}
               </div>
-
           </MuiThemeProvider>
       )
   }

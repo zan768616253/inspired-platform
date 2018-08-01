@@ -54,7 +54,7 @@ export default class ToolbarExamplesSimple extends React.Component {
     }
 
     componentDidMount() {
-        var profile = JSON.parse(localStorage.getItem("profile"))
+        const profile = JSON.parse(localStorage.getItem("profile"))
 
         $.ajax({
             type: "POST",

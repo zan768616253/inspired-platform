@@ -1,5 +1,5 @@
 import React from 'react'
-import {orange500} from "material-ui/styles/colors";
+import {orange500} from "material-ui/styles/colors"
 
 export default class NewNav extends React.Component {
   constructor(props) {
@@ -17,11 +17,12 @@ export default class NewNav extends React.Component {
         logo: "inspired_logo_big.png",
         primaryColor: orange500
       },
-        auth: {
-            params: {
-                scope: 'openid profile email'
-            }
-        }
+      auth: {
+          params: {
+              scope: 'openid profile email'
+          }
+      },
+      allowedConnections: ['google-oauth2', 'facebook']
     };
 
     const optionsSignup = {
@@ -35,21 +36,22 @@ export default class NewNav extends React.Component {
         logo: "inspired_logo_big.png",
         primaryColor: orange500
       },
-        auth: {
-            params: {
-                scope: 'openid profile email'
-            }
-        }
+      auth: {
+          params: {
+              scope: 'openid profile email'
+          }
+      },
+      allowedConnections: ['google-oauth2', 'facebook']
     };
 
     this.lockLogin = new Auth0Lock(
-        "g0q1IC0FNMWQRnoT2KoRB6k4prFoKY4S",
-        "inspireducation.auth0.com",
+      "g0q1IC0FNMWQRnoT2KoRB6k4prFoKY4S",
+      "inspireducation.auth0.com",
       optionsLogin
     );
     this.lockSignup = new Auth0Lock(
-        "g0q1IC0FNMWQRnoT2KoRB6k4prFoKY4S",
-        "inspireducation.auth0.com",
+      "g0q1IC0FNMWQRnoT2KoRB6k4prFoKY4S",
+      "inspireducation.auth0.com",
       optionsSignup
     );
   }

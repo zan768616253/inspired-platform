@@ -1924,7 +1924,7 @@ main section:not(.dragging) > input[type='file'] {
   border-radius: 50%;
   margin-left: auto; }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
   .user-list {
     position: absolute;
     top: 0;
@@ -2373,7 +2373,7 @@ main section:not(.dragging) > input[type='file'] {
   border-radius: 50%;
   margin-left: auto; }
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
   .favourite-list {
     position: absolute;
     top: 0;
