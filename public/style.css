@@ -2396,7 +2396,8 @@ body {
   font-weight: 400;
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  background: lightgray; }
 
 .text--display1, .text--display2, .text--display3, h1, h2, h3 {
   stroke: transparent;
@@ -2435,4 +2436,8 @@ main {
   border-bottom: 1px solid lightgrey; }
 
 .main-body {
-  height: calc(100vh - 56px); }
+  height: calc(100vh - 76px); }
+
+@media (max-width: 640px) {
+  .main-body {
+    height: calc(100vh - 56px); } }

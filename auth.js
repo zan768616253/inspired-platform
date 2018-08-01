@@ -27,12 +27,12 @@ lock.on("authenticated", authResult => {
       // Handle error
       return;
     }
-    localStorage.setItem("accessToken", authResult.accessToken);
-    localStorage.setItem("profile", JSON.stringify(profile));
+    localStorage.setItem("accessToken", authResult.accessToken)
+    localStorage.setItem("profile", JSON.stringify(profile))
     userstore.obj = JSON.stringify(profile);
 
-    user_id = profile["user_id"] = profile['sub'];
-    emailverified = profile["email_verified"];
+    user_id = profile["user_id"] = profile['sub']
+    emailverified = profile["email_verified"]
     picture = profile["picture"];
 
     const providerInfos = profile.sub.split('|')
@@ -54,7 +54,7 @@ lock.on("authenticated", authResult => {
       browserHistory.push("/app")
       window.location.reload()
     } else {
-      browserHistory.push("/verify");
+      browserHistory.push("/verify")
     }
   });
 
@@ -64,7 +64,7 @@ lock.on("authenticated", authResult => {
 export function logout() {
   clearIdToken();
   clearLocalStorage();
-  browserHistory.replace("/");
+  browserHistory.replace("/")
   location.reload();
 }
 
