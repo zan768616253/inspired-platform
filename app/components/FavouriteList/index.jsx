@@ -1,13 +1,16 @@
 import _ from 'lodash'
 import React from 'react'
-import Dropzone from '../Dropzone'
+import {observer} from "mobx-react/index";
 
+import Dropzone from '../Dropzone'
 import Gallery from './Gallery'
 
 import ChatStore from "../../store/ChatStore";
 import EventProxy from "eventproxy/index";
 import UserStore from "../../store/UserStore";
 
+
+@observer
 export default class FavouriteList extends React.Component {
     constructor(props) {
         super(props);
@@ -16,6 +19,10 @@ export default class FavouriteList extends React.Component {
             dropzoneActive: false
         }
         this.dropzoneRef = null
+    }
+
+    componentDidMount() {
+        socket.emit('retrieve favourite messages', null)
     }
 
     onDrop(accepted, rejected){
@@ -41,20 +48,16 @@ export default class FavouriteList extends React.Component {
             }
         })
 
-        ep.all('gallery_upload', gallery => {
-            console.log(gallery)
+        ep.all('gallery_upload', data => {
+            ChatStore.favourites.unshift(data.gallery)
         })
     }
 
     render() {
         const favouriteList = ChatStore.favourites ? ChatStore.favourites : []
-        const plusContainerClass = 'standby'
         return (
             <ul className='favourite-list'>
                 <li className='favourite-item'>
-                    {/*<div className={'favourite-item-plus-container standby'}>*/}
-                        {/*<i className="fa fa-plus" />*/}
-                    {/*</div>*/}
                     <Dropzone
                         accept="image/jpeg, image/png"
                         className={'favourite-item-plus-container standby'}
@@ -63,20 +66,13 @@ export default class FavouriteList extends React.Component {
                         <i className="fa fa-plus" />
                     </Dropzone>
                 </li>
-                <li>
-                    <Gallery />
-                </li>
-                <li>
-                    <Gallery />
-                </li>
-                <li>
-                    <Gallery />
-                </li>
-                {/*{*/}
-                    {/*favouriteList.map(favourite => {*/}
-
-                    {/*})*/}
-                {/*}*/}
+                {
+                    favouriteList.map(favourite => {
+                        return(
+                            <Gallery data={favourite}/>
+                        )
+                    })
+                }
             </ul>
         )
     }

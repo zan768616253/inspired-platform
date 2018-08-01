@@ -20,6 +20,34 @@ class Attachment extends React.Component {
     }
 }
 
+class Gallery extends React.Component {
+
+    handleGalleryOnClick(pictures) {
+        ChatStore.images = pictures
+        UIStore.openLightbox = true
+    }
+
+    render() {
+        const gallery = this.props.gallery
+        const pictures = gallery.pictures.map(p => {
+            return '/api/message/image/' + p
+        })
+        const previews = pictures.slice(0, 3)
+        return (
+            <div className='gallery-message' onClick={() => {this.handleGalleryOnClick(pictures)}}>
+                <div className='gallery-title'>{gallery.title}</div>
+                <div className='gallery-pictures'>
+                    {previews.map(preview => {
+                        return (
+                            <img src={preview} className='gallery-preview'/>
+                        )
+                    })}
+                </div>
+            </div>
+        )
+    }
+}
+
 export default class Message extends React.Component {
 
     render () {
@@ -35,13 +63,9 @@ export default class Message extends React.Component {
                 />
                 <div>
                     <span className=''>{`${message.user_name} | ${time(message.time)}`}</span>
-                    {message.attachment ? (
-                        <Attachment
-                            src={message.attachment}
-                        />
-                    ) : <p>
-                        <Linkify properties={{ target: '_blank' }}>{this.props.message.message}</Linkify>
-                    </p>}
+                    {message.attachment &&  <Attachment src={message.attachment} />}
+                    {message.message && <p> <Linkify properties={{ target: '_blank' }}>{message.message}</Linkify></p>}
+                    {message.gallery && <Gallery gallery={message.gallery} />}
                 </div>
             </li>
         )

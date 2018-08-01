@@ -31,9 +31,7 @@ export default class RoomHeader extends React.Component {
         return (
             <header className='room-header'>
                 <button onClick={() => {
-                    console.log(UIStore.sidebarOpen)
                     UIStore.sidebarOpen = !UIStore.sidebarOpen
-                    console.log(UIStore.sidebarOpen)
                 }}>
                     <svg>
                         <use xlinkHref="index.svg#menu" />

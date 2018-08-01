@@ -23,13 +23,15 @@ var roomsSchema = new Schema({
 
   conversation: [
     {
+      roomId: String,
       from: String,
       user_name: String,
       message: String,
       favourite: Boolean,
       time: { type : Date, default : Date.now },
       picture: String,
-      attachment: { type : String, default : '' }
+      attachment: { type : String, default : '' },
+      gallery: {type: Schema.Types.ObjectId, ref: 'Gallery'}
     }
   ],
   notes: [

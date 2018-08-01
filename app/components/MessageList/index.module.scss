@@ -46,6 +46,52 @@
   .image-messsage {
     cursor: pointer;
   }
+
+  .gallery-message {
+    width: 30rem;
+    max-width: 100%;
+    margin-top: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    min-width: 0;
+    padding: 1em;
+    cursor: pointer;
+
+    .gallery-title {
+      text-align: center;
+      margin: 0 15px 15px;
+    }
+
+    .gallery-pictures {
+      display: grid;
+      grid-template-columns: 3fr 2fr 1fr 2fr 3fr;
+      grid-template-rows: 1fr 1fr 10fr 1fr 1fr;
+
+      > img {
+        cursor: pointer;
+        //box-shadow: 0 0 2px #000;
+        border-radius: 3px;
+        border: 1px solid lightgray;
+        max-width: 100%;
+        height: auto;
+
+        &:nth-of-type(1) {
+          grid-row: 1 / span 3;
+          grid-column: 1 / span 2;
+        }
+
+        &:nth-of-type(2) {
+          grid-row: 2 / span 3;
+          grid-column: 2 / span 3;
+        }
+
+        &:nth-of-type(3) {
+          grid-row: 3 / span 3;
+          grid-column: 4 / span 2;
+        }
+      }
+    }
+  }
+
 }
 
 .message:not(:last-child) {

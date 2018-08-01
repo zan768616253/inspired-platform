@@ -75,8 +75,11 @@ export default class MainContainer extends React.Component {
             ChatStore.updateTime = moment()
         })
 
-        socket.on("chat message", function(message) {
+        socket.on("chat message", message => {
             const result = ChatStore.msgs[message.roomId]
+
+            console.log(ChatStore.groupId)
+            console.log(message.roomId)
 
             if (message.roomId === ChatStore.groupId) {
 
@@ -100,6 +103,10 @@ export default class MainContainer extends React.Component {
             }
 
             ChatStore.updateTime = moment()
+        })
+
+        socket.on('favourite messages', data => {
+            ChatStore.favourites = data.reverse()
         })
     }
 

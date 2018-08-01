@@ -1773,6 +1773,36 @@ main section:not(.dragging) > input[type='file'] {
   padding-top: 1rem; }
   .message .image-messsage {
     cursor: pointer; }
+  .message .gallery-message {
+    width: 30rem;
+    max-width: 100%;
+    margin-top: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    min-width: 0;
+    padding: 1em;
+    cursor: pointer; }
+    .message .gallery-message .gallery-title {
+      text-align: center;
+      margin: 0 15px 15px; }
+    .message .gallery-message .gallery-pictures {
+      display: grid;
+      grid-template-columns: 3fr 2fr 1fr 2fr 3fr;
+      grid-template-rows: 1fr 1fr 10fr 1fr 1fr; }
+      .message .gallery-message .gallery-pictures > img {
+        cursor: pointer;
+        border-radius: 3px;
+        border: 1px solid lightgray;
+        max-width: 100%;
+        height: auto; }
+        .message .gallery-message .gallery-pictures > img:nth-of-type(1) {
+          grid-row: 1 / span 3;
+          grid-column: 1 / span 2; }
+        .message .gallery-message .gallery-pictures > img:nth-of-type(2) {
+          grid-row: 2 / span 3;
+          grid-column: 2 / span 3; }
+        .message .gallery-message .gallery-pictures > img:nth-of-type(3) {
+          grid-row: 3 / span 3;
+          grid-column: 4 / span 2; }
 
 .message:not(:last-child) {
   border-top: 1px solid #f2f2f2;
@@ -2328,17 +2358,16 @@ main section:not(.dragging) > input[type='file'] {
     position: relative;
     display: flex;
     width: 95%;
-    height: 5rem;
+    height: 4rem;
     border-radius: 1rem;
-    overflow: hidden;
     border: 2px lightgray hidden; }
     .favourite-list > li .gallery-container:hover .gallery-tools {
       display: flex; }
     .favourite-list > li .gallery-container .gallery-thumbnail {
       display: flex;
       position: relative;
-      height: 5rem;
-      width: 5rem;
+      height: 4rem;
+      width: 4rem;
       align-items: center;
       justify-items: center;
       overflow: hidden; }
@@ -2347,17 +2376,22 @@ main section:not(.dragging) > input[type='file'] {
         height: auto;
         width: 100%; }
     .favourite-list > li .gallery-container .gallery-title {
+      max-height: 4rem;
+      max-width: 10rem;
       padding-left: 0.8rem;
       margin: auto;
-      text-align: center; }
+      text-align: center;
+      outline: 0 solid transparent;
+      overflow-y: hidden;
+      overflow-x: hidden; }
     .favourite-list > li .gallery-container .gallery-tools {
       position: absolute;
       display: none;
       flex-direction: row;
       right: 0;
-      top: 0;
+      top: -1.2rem;
       height: 1.2rem;
-      width: 3rem; }
+      width: 4.5rem; }
       .favourite-list > li .gallery-container .gallery-tools.display {
         display: flex; }
       .favourite-list > li .gallery-container .gallery-tools .gallery-tool {
@@ -2365,6 +2399,8 @@ main section:not(.dragging) > input[type='file'] {
         flex: 1;
         text-align: center;
         vertical-align: middle; }
+        .favourite-list > li .gallery-container .gallery-tools .gallery-tool.send {
+          color: green; }
         .favourite-list > li .gallery-container .gallery-tools .gallery-tool.delete {
           color: orangered; }
         .favourite-list > li .gallery-container .gallery-tools .gallery-tool.edit {

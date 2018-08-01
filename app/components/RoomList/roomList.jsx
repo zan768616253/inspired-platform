@@ -39,8 +39,6 @@ export default class RoomList extends React.Component {
 
                 ChatStore.updateTime = moment()
             })
-
-
         })
         .fail(function(jqXhr) {
         })
@@ -59,7 +57,6 @@ export default class RoomList extends React.Component {
             ChatStore.totalmsgscount = Users.total_count2;
             ChatStore.totalnotescount = Users.total_notes_count;
 
-            socket.emit("Join room", ChatStore.groupname)
             socket.emit("note map", roomId)
 
             socket.on('recieving listchat rooms', (data) => {
