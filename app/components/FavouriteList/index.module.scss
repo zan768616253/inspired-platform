@@ -9,6 +9,7 @@
   width: 24rem;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .favourite-list > li {
@@ -144,5 +145,6 @@
     width: 18rem;
     box-shadow: 0 0.38rem 0.62rem rgba(0, 0, 0, 0.1);
     max-height: 62vh;
+    overflow-x: hidden;
   }
 }
