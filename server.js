@@ -691,7 +691,7 @@ io.on("connection", function (socket) {
     });
 
     socket.on("retrieve favourite messages", function () {
-        Gallery.find({})
+        Gallery.find({isActive: true})
             .then(docs => {
                 socket.emit('favourite messages', docs)
             }).catch(err => {
@@ -1080,6 +1080,25 @@ io.on("connection", function (socket) {
         }).catch(err => {
             console.log(err.stack)
         })
+    })
+
+    socket.on('disable gallery message', data => {
+        Gallery.update(
+            {_id: data.gallery},
+            {$set: {isActive: false}},
+            (err, doc) => {
+                if(err) {
+                    console.log(err.stack)
+                } else {
+                    Gallery.find({isActive: true})
+                        .then(docs => {
+                            socket.emit('favourite messages', docs)
+                        }).catch(err => {
+                            console.log(err.stack)
+                        })
+                }
+            }
+        )
     })
 })
 

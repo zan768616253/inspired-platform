@@ -10,7 +10,8 @@ const GallerySchema = new Schema({
         type: String,
         default: ""
     },
-    pictures: []
+    pictures: [],
+    isActive: {type: Boolean, default: true}
 })
 
 module.exports = mongoose.model("Gallery", GallerySchema);

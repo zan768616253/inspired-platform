@@ -49,6 +49,12 @@ export default class Gallery extends React.Component {
         UIStore.openLightbox = true
     }
 
+    handleDeleteButtonOnClick() {
+        socket.emit('disable gallery message', {
+            gallery: this._id
+        })
+    }
+
     render () {
         const galleryToolClass = this.state.isEdit ? ' display' : ''
         const {pictures, title, _id} = this.props.data
@@ -72,7 +78,7 @@ export default class Gallery extends React.Component {
                                 <i className="fa fa-pencil" aria-hidden="true"/>
                             }
                         </a>
-                        <a className='gallery-tool delete'>
+                        <a className='gallery-tool delete' onClick={() => this.handleDeleteButtonOnClick()}>
                             <i className="fa fa-minus-circle" aria-hidden="true" />
                         </a>
                     </div>
