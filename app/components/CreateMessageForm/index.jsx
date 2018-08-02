@@ -58,7 +58,7 @@ export default class CreateMessageForm extends React.Component {
                     {/*<svg>*/}
                         {/*<use xlinkHref="index.svg#send" />*/}
                     {/*</svg>*/}
-                    Send
+                    send
                 </button>
             </form>
         )

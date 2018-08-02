@@ -4,7 +4,6 @@ import moment from 'moment'
 
 import UserStore from "../../store/UserStore.js";
 import ChatStore from "../../store/ChatStore.js";
-import FriendshipStore from "../../store/FriendshipsStore";
 
 @observer
 export default class RoomList extends React.Component {
