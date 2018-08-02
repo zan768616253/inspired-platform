@@ -38,7 +38,7 @@ export default class MainContainer extends React.Component {
             }
         })
         socket.on("returning message group for target", data => {
-            if (data.user_id) {
+            if (data.user_id === UserStore.obj.user_id) {
                 UserStore.obj.rooms = data.rooms
             }
         })
