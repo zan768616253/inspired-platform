@@ -111,13 +111,13 @@ export default class ToolbarExamplesSimple extends React.Component {
                         <ToolbarGroup firstChild={true}>
                             <div className='tootlebar-right-container'>
                                 <a className='tootlebar-right-link' onClick={this.platform}>
-                                    <img src='/icons-home.png' />
+                                    <img src='/inspired_message_icon.png' />
                                 </a>
                                 <a className='tootlebar-right-link' onClick={this.profile} >
-                                    <img src='/icons-user.png' />
+                                    <img src='/inspired_profile_icon.png' />
                                 </a>
                                 <a className='tootlebar-right-link' onClick={this.logmeout}>
-                                    <img src='/icons-exit.png' className='exit'/>
+                                    <img src='/inspired_logout_icon.png' className='exit'/>
                                 </a>
                             </div>
                         </ToolbarGroup>

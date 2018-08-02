@@ -51,7 +51,8 @@ export default class RoomHeader extends React.Component {
                 </div>}
                 {(roomName && participants && this.props.role < 3) && (
                     <div className='room-invite-container' onClick={() => this.handleShowInvitesButtonOnClick()}>
-                        <i className="fa fa-plus" aria-hidden="true" />
+                        {/*<i className="fa fa-plus" aria-hidden="true" />*/}
+                        <img src='inspired_add_member_icon.png' />
                     </div>
                 )}
                 {/*{(roomName && participants) && (*/}
