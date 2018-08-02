@@ -17,11 +17,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.module.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.module.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/components/RoomHeader/index.module.scss">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="toolbar.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/components/ToolBar/toolbar.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="89" column="25" lean-forward="true" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.module.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/components/ToolBar/index.module.scss">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -38,10 +59,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>room-header</find>
-      <find>user-header</find>
-      <find>inspired_attach_icon.png</find>
-      <find>file-input-container</find>
       <find>create-room-form'</find>
       <find>.room-list</find>
       <find>favourite-message</find>
@@ -68,6 +85,10 @@
       <find>Digital Photography · Agile Project Management · JavaScript</find>
       <find>tootlebar-right-link</find>
       <find>room-invite-container</find>
+      <find>inspired_logo_big.png</find>
+      <find>main-logo</find>
+      <find>opacity: 0.6;</find>
+      <find>homeNavBar</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/server</dir>
@@ -85,7 +106,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/components/UserList/InvitingUserList.jsx" />
         <option value="$PROJECT_DIR$/app/store/UIstore.js" />
         <option value="$PROJECT_DIR$/app/components/UserList/ExistingUserList.jsx" />
         <option value="$PROJECT_DIR$/app/components/MessageList/index.jsx" />
@@ -133,9 +153,10 @@
         <option value="$PROJECT_DIR$/app/pages/ProfilePage/index.module.scss" />
         <option value="$PROJECT_DIR$/server/models/User.js" />
         <option value="$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx" />
-        <option value="$PROJECT_DIR$/app/components/ToolBar/toolbar.jsx" />
         <option value="$PROJECT_DIR$/app/components/RoomHeader/index.jsx" />
         <option value="$PROJECT_DIR$/app/components/RoomHeader/index.module.scss" />
+        <option value="$PROJECT_DIR$/app/components/ToolBar/toolbar.jsx" />
+        <option value="$PROJECT_DIR$/app/components/ToolBar/index.module.scss" />
       </list>
     </option>
   </component>
@@ -160,9 +181,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="768" />
+    <option name="x" value="633" />
     <option name="y" value="24" />
-    <option name="width" value="822" />
+    <option name="width" value="957" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -333,12 +354,12 @@
       <workItem from="1532648454884" duration="26464000" />
       <workItem from="1532741853213" duration="6139000" />
       <workItem from="1533175469782" duration="12682000" />
-      <workItem from="1533198048190" duration="2782000" />
+      <workItem from="1533198048190" duration="3125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="431614000" />
+    <option name="totallyTimeSpent" value="431957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -350,10 +371,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="768" y="24" width="822" height="876" extended-state="4" />
+    <frame x="633" y="24" width="957" height="876" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69357497" visible="true" weight="0.37797245" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69357497" visible="true" weight="0.32334048" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -737,13 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/ToolBar/index.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/CreateMessageForm/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="455">
@@ -768,16 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/ToolBar/toolbar.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="107" column="26" lean-forward="true" selection-start-line="107" selection-start-column="26" selection-end-line="107" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/RoomHeader/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -795,10 +799,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/ToolBar/toolbar.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="89" column="25" lean-forward="true" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/RoomHeader/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/ToolBar/index.module.scss">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
         </state>
       </provider>
     </entry>

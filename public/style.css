@@ -1962,7 +1962,7 @@ main section:not(.dragging) > input[type='file'] {
     max-height: 62vh; } }
 
 .homeNavBar {
-  padding: 18px; }
+  padding: 0 10px !important; }
   .homeNavBar .tootlebar-right-container {
     display: flex;
     align-items: center; }
@@ -1976,14 +1976,13 @@ main section:not(.dragging) > input[type='file'] {
         position: relative;
         height: 30px;
         width: 30px;
-        margin: 0 8px;
-        opacity: 0.6; }
+        margin: 0 8px; }
         .homeNavBar .tootlebar-right-container .tootlebar-right-link > img.exit {
           height: 28px;
           width: 28px; }
   .homeNavBar .main-logo {
     display: block;
-    height: 45px;
+    height: 52px;
     width: auto; }
   .homeNavBar .small-logo {
     display: none;

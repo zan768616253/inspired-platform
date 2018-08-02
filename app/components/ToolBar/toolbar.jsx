@@ -99,7 +99,7 @@ export default class ToolbarExamplesSimple extends React.Component {
                 <Toolbar className='homeNavBar'>
                     <ToolbarGroup>
                         <img
-                            src="inspired_logo_big.png"
+                            src="inspired_logo_zone.png"
                             className='main-logo'
                         />
                         <img

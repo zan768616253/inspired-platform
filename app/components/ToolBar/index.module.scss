@@ -1,5 +1,5 @@
 .homeNavBar {
-  padding: 18px;
+  padding: 0 10px !important;
 
   .tootlebar-right-container {
     display: flex;
@@ -17,7 +17,6 @@
         height: 30px;
         width: 30px;
         margin: 0 8px;
-        opacity: 0.6;
 
         &.exit {
           height: 28px;
@@ -29,7 +28,7 @@
 
   .main-logo {
     display: block;
-    height: 45px;
+    height: 52px;
     width: auto;
   }
 
