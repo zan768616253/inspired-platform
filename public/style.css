@@ -1436,7 +1436,8 @@ main section:not(.dragging) > input[type='file'] {
               min-width: 240px;
               text-align: center;
               overflow: hidden;
-              position: relative; }
+              position: relative;
+              cursor: pointer; }
               .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--rcol .profileImageContainer a {
                 display: inline-block;
                 min-width: 240px; }
@@ -1934,7 +1935,7 @@ main section:not(.dragging) > input[type='file'] {
       border: 0;
       padding: 0 0.8rem;
       height: 3.4rem;
-      width: 100%;
+      width: calc(100% - 30px);
       box-sizing: border-box; }
   .user-list > li > a {
     position: relative;
@@ -1995,11 +1996,13 @@ main section:not(.dragging) > input[type='file'] {
   .homeNavBar .main-logo {
     display: block;
     height: 52px;
-    width: auto; }
+    width: auto;
+    cursor: pointer; }
   .homeNavBar .small-logo {
     display: none;
     height: 45px;
-    width: auto; }
+    width: auto;
+    cursor: pointer; }
 
 @media (max-width: 640px) {
   .homeNavBar .main-logo {

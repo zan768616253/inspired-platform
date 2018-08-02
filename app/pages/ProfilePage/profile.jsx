@@ -73,10 +73,10 @@ export default class Profile extends React.Component {
         this.updateUserProfile().then(response => {
             UserStore.obj.phone = response.phone
             UserStore.obj.childrennumber = response.childrennumber
-            UserStore.obj.hometown = response.hometown
+            UserStore.obj.childrenage = response.childrenage
             UserStore.obj.expertise = response.expertise
             UserStore.obj.culture = response.culture
-            UserStore.obj.belief = response.belief
+            UserStore.obj.location = response.location
             UserStore.obj.bio = response.bio
             UserStore.obj.desc = response.desc
             this.setState({ isEdit: false })
@@ -92,10 +92,10 @@ export default class Profile extends React.Component {
         const user_id = UserStore.obj.user_id
         const phone = this.refs.phone.textContent
         const childrennumber = this.refs.childrennumber.textContent
-        const hometown = this.refs.hometown.textContent
+        const childrenage = this.refs.childrenage.textContent
         const expertise = this.refs.expertise.textContent
         const culture = this.refs.culture.textContent
-        const belief = this.refs.belief.textContent
+        const location = this.refs.location.textContent
         const bio = this.refs.bio.textContent
         const desc = this.refs.desc.textContent
 
@@ -103,10 +103,10 @@ export default class Profile extends React.Component {
             user_id: user_id,
             phone: phone,
             childrennumber: childrennumber,
-            hometown: hometown,
+            childrenage: childrenage,
             expertise: expertise,
             culture: culture,
-            belief: belief,
+            location: location,
             bio: bio,
             desc: desc
         }
@@ -194,34 +194,34 @@ export default class Profile extends React.Component {
                             </div>
                             <div className='unit size1of3'>
                                 <div className='profile-content-item'>
-                                    <h4 className='flush--bottom'>Number of Child:</h4>
+                                    <h4 className='flush--bottom'>Number of Children:</h4>
                                     <p contentEditable={this.state.isEdit} className={pClassName} ref="childrennumber">{UserStore.obj.childrennumber}</p>
                                 </div>
                             </div>
                             <div className='size1of3 lastUnit'>
                                 <div className='profile-content-item'>
-                                    <h4 className='flush--bottom'>Hometown:</h4>
-                                    <p contentEditable={this.state.isEdit} className={pClassName} ref="hometown">{UserStore.obj.hometown}</p>
+                                    <h4 className='flush--bottom'>Age of Children:</h4>
+                                    <p contentEditable={this.state.isEdit} className={pClassName} ref="childrenage">{UserStore.obj.childrenage}</p>
                                 </div>
                             </div>
                           </div>
                           <div className='profileQuestionsSection'>
                               <div className='unit size1of3'>
                                   <div className='profile-content-item'>
-                                      <h4 className='flush--bottom'>Expertise:</h4>
+                                      <h4 className='flush--bottom'>Profession:</h4>
                                       <p contentEditable={this.state.isEdit} className={pClassName} ref="expertise">{UserStore.obj.expertise}</p>
                                   </div>
                               </div>
                               <div className='unit size1of3'>
                                   <div className='profile-content-item'>
-                                      <h4 className='flush--bottom'>Culture:</h4>
+                                      <h4 className='flush--bottom'>Culture/Belief:</h4>
                                       <p contentEditable={this.state.isEdit} className={pClassName} ref="culture">{UserStore.obj.culture}</p>
                                   </div>
                               </div>
                               <div className='size1of3 lastUnit'>
                                   <div className='profile-content-item'>
-                                      <h4 className='flush--bottom'>Belief:</h4>
-                                      <p contentEditable={this.state.isEdit} className={pClassName} ref="belief">{UserStore.obj.belief}</p>
+                                      <h4 className='flush--bottom'>Town/Suburb/City:</h4>
+                                      <p contentEditable={this.state.isEdit} className={pClassName} ref="location">{UserStore.obj.location}</p>
                                   </div>
                               </div>
                           </div>
@@ -230,11 +230,11 @@ export default class Profile extends React.Component {
                               <p className={pClassName} ref="email">{UserStore.obj.email}</p>
                           </div>
                           <div className='profile-content-item'>
-                              <h4 className='flush--bottom'>Biography:</h4>
+                              <h4 className='flush--bottom'>Family Interests:</h4>
                               <p contentEditable={this.state.isEdit} className={pClassName} ref="bio">{UserStore.obj.bio}</p>
                           </div>
                           <div className='profile-content-item'>
-                              <h4 className='flush--bottom'>Description:</h4>
+                              <h4 className='flush--bottom'>Children Interests:</h4>
                               <p contentEditable={this.state.isEdit} className={pClassName} ref="desc">{UserStore.obj.desc}</p>
                           </div>
                         </div>

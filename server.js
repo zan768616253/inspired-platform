@@ -140,20 +140,20 @@ app.post("/api/user/removefriend", function (req, res) {
 app.post("/api/user/updateinfo", (req, res) => {
     const phone = req.body.phone
     const childrennumber = req.body.childrennumber
-    const hometown = req.body.hometown
+    const childrenage = req.body.childrenage
     const expertise = req.body.expertise
     const culture = req.body.culture
-    const belief = req.body.belief
+    const location = req.body.location
     const bio = req.body.bio
     const desc = req.body.desc
 
     const set = {
         phone: phone,
         childrennumber: childrennumber,
-        hometown: hometown,
+        childrenage: childrenage,
         expertise: expertise,
         culture: culture,
-        belief: belief,
+        location: location,
         bio: bio,
         desc: desc
     }

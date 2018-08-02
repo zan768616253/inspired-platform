@@ -15,10 +15,16 @@ export default class InvitingUserList extends React.Component {
         })
     }
 
+    goSearch() {
+        const email = this.refs.queryInput.value.trim()
+        if (email) {
+            socket.emit('search users', email)
+        }
+    }
+
     handleSearchInputKeypress(e) {
         if (e.key === 'Enter') {
-            const email = this.refs.queryInput.value.trim()
-            socket.emit('search users', email)
+            this.goSearch()
         }
     }
 
@@ -49,7 +55,9 @@ export default class InvitingUserList extends React.Component {
                         ref='queryInput'
                         onKeyPress={e => {this.handleSearchInputKeypress(e)}}
                     />
-
+                    <span onClick={() => this.goSearch()}>
+                        <i className="fa fa-search" aria-hidden="true"></i>
+                    </span>
                 </li>
                 {userList.map(user => {
                     const isInGroup = !!ChatStore.participants.find(participant => participant.user_id === user.user_id)

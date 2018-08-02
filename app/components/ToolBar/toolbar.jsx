@@ -52,6 +52,9 @@ export default class ToolbarExamplesSimple extends React.Component {
         Store.dashboard = false;
         browserHistory.replace("/app");
     }
+    goHome() {
+        browserHistory.replace("/app")
+    }
 
     componentDidMount() {
         const profile = JSON.parse(localStorage.getItem("profile"))
@@ -101,10 +104,12 @@ export default class ToolbarExamplesSimple extends React.Component {
                         <img
                             src="inspired_logo_zone.png"
                             className='main-logo'
+                            onClick={() => this.goHome()}
                         />
                         <img
                             src="inspired_logo_small.png"
                             className='small-logo'
+                            onClick={() => this.goHome()}
                         />
                     </ToolbarGroup>
                     <ToolbarGroup>

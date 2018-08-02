@@ -76,6 +76,16 @@ var UserSchema = new Schema({
         type: Number,
         default: 1
     },
+    childrenage: {
+        type: String,
+        default: "",
+        trim: true
+    },
+    childrengender: {
+        type: String,
+        default: "",
+        trim: true
+    },
     hometown: {
         type: String,
         default: "",
@@ -92,6 +102,11 @@ var UserSchema = new Schema({
         trim: true
     },
     belief: {
+        type: String,
+        default: "",
+        trim: true
+    },
+    location: {
         type: String,
         default: "",
         trim: true
