@@ -65,10 +65,11 @@ export default class FileInput extends React.Component {
     render() {
         const attachmentIconClass = this.state.isAttachmentValid ? '' : 'fail'
         return(
-            <div className='file-input-container'>
-                <svg className={attachmentIconClass}>
-                    <use xlinkHref="index.svg#attach" />
-                </svg>
+            <div className='file-input-container' title='attachment'>
+                {/*<svg className={attachmentIconClass}>*/}
+                    {/*<use xlinkHref="index.svg#attach" />*/}
+                {/*</svg>*/}
+                <img src='inspired_attach_icon.png' />
                 <input
                     className='file-input' type="file"
                     onChange={e => {

@@ -128,7 +128,7 @@ export default class MainContainer extends React.Component {
                     {ChatStore.groupId && <row->
                         <col->
                             <MessageList createConvo={this.createConvo}/>
-                            <CreateMessageForm />
+                            <CreateMessageForm role = {groupRole} />
                         </col->
                         {UIStore.showParticipants && <ExistingUserList role = {groupRole} />}
                         {UIStore.showInvites && <InvitingUserList />}

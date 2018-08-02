@@ -3,7 +3,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid $inspired-orange;
   height: 3.6rem;
   display: flex;
   width: 100%;
@@ -39,6 +39,12 @@
   border: 0;
   padding: 0;
   background: #fff;
+  cursor: pointer;
+
+  >img{
+    height: 34px;
+    width: 34px;
+  }
 }
 
 .create-room-form svg {

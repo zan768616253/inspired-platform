@@ -4,7 +4,6 @@ import IconButton from "material-ui/IconButton";
 import Toolbar from "../../components/ToolBar/toolbar.jsx";
 import { Scrollbars } from "react-custom-scrollbars";
 import Avatar from "material-ui/Avatar";
-import {orange500, red500} from "material-ui/styles/colors";
 import getMuiTheme from "material-ui/styles/getMuiTheme";
 import UserStore from "../../store/UserStore.js";
 import { observer } from "mobx-react"
@@ -15,13 +14,13 @@ import Upload from 'rc-upload';
 
 const muiTheme = getMuiTheme({
   palette: {
-    primary1Color: orange500,
-    accent1Color: red500
+    primary1Color: '#f39312',
+    accent1Color: '#e9423b'
   },
   toggle: {
     thumbOnColor: "yellow",
-    trackOnColor: "red",
-    backgroundColor: "red"
+    trackOnColor: "#e9423b",
+    backgroundColor: "#e9423b"
   },
   appBar: {
     height: 50

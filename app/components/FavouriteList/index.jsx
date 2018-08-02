@@ -55,9 +55,10 @@ export default class FavouriteList extends React.Component {
 
     render() {
         const favouriteList = ChatStore.favourites ? ChatStore.favourites : []
+        const userRole = UserStore.obj.role
         return (
             <ul className='favourite-list'>
-                <li className='favourite-item'>
+                {userRole === 1 && <li className='favourite-item'>
                     <Dropzone
                         accept="image/jpeg, image/png"
                         className={'favourite-item-plus-container standby'}
@@ -65,11 +66,11 @@ export default class FavouriteList extends React.Component {
                         onDrop={this.onDrop.bind(this)}>
                         <i className="fa fa-plus" />
                     </Dropzone>
-                </li>
+                </li>}
                 {
                     favouriteList.map(favourite => {
                         return(
-                            <Gallery data={favourite}/>
+                            <Gallery data={favourite} userRole={userRole}/>
                         )
                     })
                 }

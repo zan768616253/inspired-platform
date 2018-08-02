@@ -71,16 +71,17 @@ export default class CreateRoomForm extends React.Component {
                         create_room: true
                     })
                 }}/>
-                <button>
-                    <input type="checkbox" />
-                    <svg>
-                        <use xlinkHref="index.svg#lock" />
-                    </svg>
-                </button>
-                <button type="submit">
-                    <svg className={svgClassName}>
-                        <use xlinkHref="index.svg#add" />
-                    </svg>
+                {/*<button>*/}
+                    {/*<input type="checkbox" />*/}
+                    {/*<svg>*/}
+                        {/*<use xlinkHref="index.svg#lock" />*/}
+                    {/*</svg>*/}
+                {/*</button>*/}
+                <button type="submit" title='create'>
+                    {/*<svg className={svgClassName}>*/}
+                        {/*<use xlinkHref="index.svg#add" />*/}
+                    {/*</svg>*/}
+                    <img src='inspired_create_icon.png' />
                 </button>
             </form>
         )

@@ -49,14 +49,16 @@ export default class CreateMessageForm extends React.Component {
                     placeholder="Type a Message.."
                     ref="messageInput"
                 />
-                <button className='favourite-message' onClick={() => this.handleShowFavouriteListButtonOnClick()}>
-                    <img src='favourite-message.svg' />
-                </button>
+                {this.props.role < 3 && <button className='favourite-message' title='favourites' onClick={() => this.handleShowFavouriteListButtonOnClick()}>
+                    <img src='inspired_library_icon.png' />
+                </button>}
+
                 <FileInput />
-                <button type="submit">
-                    <svg>
-                        <use xlinkHref="index.svg#send" />
-                    </svg>
+                <button className='submit-button' type="submit" title='send' >
+                    {/*<svg>*/}
+                        {/*<use xlinkHref="index.svg#send" />*/}
+                    {/*</svg>*/}
+                    Send
                 </button>
             </form>
         )

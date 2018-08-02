@@ -1,5 +1,4 @@
 import React from 'react'
-import {orange500} from "material-ui/styles/colors"
 
 export default class NewNav extends React.Component {
   constructor(props) {
@@ -15,7 +14,7 @@ export default class NewNav extends React.Component {
       allowSignUp: false,
       theme: {
         logo: "inspired_logo_big.png",
-        primaryColor: orange500
+        primaryColor: '#f39312'
       },
       auth: {
           params: {
@@ -34,7 +33,7 @@ export default class NewNav extends React.Component {
 
       theme: {
         logo: "inspired_logo_big.png",
-        primaryColor: orange500
+        primaryColor: '#f39312'
       },
       auth: {
           params: {

@@ -63,7 +63,7 @@ export default class Gallery extends React.Component {
         })
         const previewPicture = ps.length ? ps[0] : ''
         this._id = _id
-
+        const userRole = this.props.userRole
         return (
             <li>
                 <div className='gallery-container' key={_id}>
@@ -71,16 +71,16 @@ export default class Gallery extends React.Component {
                         <a className='gallery-tool send' onClick={() => this.handleSendButtonOnClick()}>
                             <i className="fa fa-envelope" aria-hidden="true" />
                         </a>
-                        <a className='gallery-tool edit' onClick={() =>
+                        {userRole === 1 &&  <a className='gallery-tool edit' onClick={() =>
                             this.handleEditButtonOnClick()}>
                             {this.state.isEdit ?
                                 <i className="fa fa-floppy-o" aria-hidden="true"/>:
                                 <i className="fa fa-pencil" aria-hidden="true"/>
                             }
-                        </a>
-                        <a className='gallery-tool delete' onClick={() => this.handleDeleteButtonOnClick()}>
+                        </a>}
+                        {userRole === 1 && <a className='gallery-tool delete' onClick={() => this.handleDeleteButtonOnClick()}>
                             <i className="fa fa-minus-circle" aria-hidden="true" />
-                        </a>
+                        </a>}
                     </div>
                     <div className='gallery-thumbnail' onClick={() => this.handleThumbnailOnClick(ps)}>
                         <img src={previewPicture} />

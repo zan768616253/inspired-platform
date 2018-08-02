@@ -6,12 +6,6 @@ import UserStore from "../../store/UserStore.js";
 import ChatStore from "../../store/ChatStore.js";
 import FriendshipStore from "../../store/FriendshipsStore";
 
-const Icon = () => (
-    <svg>
-        <use xlinkHref={`index.svg#public`} />
-    </svg>
-)
-
 @observer
 export default class RoomList extends React.Component {
 
@@ -101,7 +95,7 @@ export default class RoomList extends React.Component {
                             disabled={room.roomId === ChatStore.groupId}
                             onClick={() => this.handleRoomOnClick(room)}
                         >
-                            {Icon()}
+                            <img src='inspired_group_icon.png' />
                             <col->
                                 <p>{room.roomName}</p>
                                 <span>{'this is the last message'}</span>
