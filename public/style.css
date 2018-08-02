@@ -1435,7 +1435,8 @@ main section:not(.dragging) > input[type='file'] {
             .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--rcol .profileImageContainer {
               min-width: 240px;
               text-align: center;
-              overflow: hidden; }
+              overflow: hidden;
+              position: relative; }
               .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--rcol .profileImageContainer a {
                 display: inline-block;
                 min-width: 240px; }
@@ -1445,6 +1446,17 @@ main section:not(.dragging) > input[type='file'] {
                   padding: 0;
                   border: 0;
                   line-height: 0; }
+              .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--rcol .profileImageContainer .profileImageUploadContainer {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0; }
+                .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--rcol .profileImageContainer .profileImageUploadContainer > span {
+                  position: relative;
+                  width: 100%;
+                  height: 100%;
+                  display: block; }
             .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--rcol .interest-topics {
               border-top: none;
               margin: 24px 0 0;

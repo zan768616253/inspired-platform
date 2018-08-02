@@ -17,20 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.module.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/RoomHeader/index.module.scss">
+      <file leaf-file-name="profile.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolbar.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/ToolBar/toolbar.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="89" column="25" lean-forward="true" selection-start-line="89" selection-start-column="25" selection-end-line="89" selection-end-column="25" />
+            <state relative-caret-position="151">
+              <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -38,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.module.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/components/ToolBar/index.module.scss">
+      <file leaf-file-name="index.module.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pages/ProfilePage/index.module.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="151">
+              <caret line="38" column="19" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -59,12 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>create-room-form'</find>
-      <find>.room-list</find>
-      <find>favourite-message</find>
-      <find>title='favourites'</find>
-      <find>cr</find>
-      <find>create</find>
       <find>color</find>
       <find>orange</find>
       <find>col-</find>
@@ -89,6 +74,12 @@
       <find>main-logo</find>
       <find>opacity: 0.6;</find>
       <find>homeNavBar</find>
+      <find>favourites</find>
+      <find>change pho</find>
+      <find>change your photo</find>
+      <find>profileImageContainer</find>
+      <find>change</find>
+      <find>profileContainer</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/server</dir>
@@ -96,8 +87,8 @@
       <dir>$PROJECT_DIR$/node_modules/rc-cropping</dir>
       <dir>$PROJECT_DIR$/server/models</dir>
       <dir>$PROJECT_DIR$/app/components</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/app</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -149,14 +140,14 @@
         <option value="$PROJECT_DIR$/app/components/UserHeader/index.module.scss" />
         <option value="$PROJECT_DIR$/app/components/CreateMessageForm/index.module.scss" />
         <option value="$PROJECT_DIR$/app/components/RoomList/roomList.jsx" />
-        <option value="$PROJECT_DIR$/app/components/CreateMessageForm/index.jsx" />
-        <option value="$PROJECT_DIR$/app/pages/ProfilePage/index.module.scss" />
         <option value="$PROJECT_DIR$/server/models/User.js" />
-        <option value="$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx" />
         <option value="$PROJECT_DIR$/app/components/RoomHeader/index.jsx" />
         <option value="$PROJECT_DIR$/app/components/RoomHeader/index.module.scss" />
         <option value="$PROJECT_DIR$/app/components/ToolBar/toolbar.jsx" />
         <option value="$PROJECT_DIR$/app/components/ToolBar/index.module.scss" />
+        <option value="$PROJECT_DIR$/app/components/CreateMessageForm/index.jsx" />
+        <option value="$PROJECT_DIR$/app/pages/ProfilePage/index.module.scss" />
+        <option value="$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx" />
       </list>
     </option>
   </component>
@@ -181,9 +172,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="633" />
+    <option name="x" value="308" />
     <option name="y" value="24" />
-    <option name="width" value="957" />
+    <option name="width" value="1282" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -354,12 +345,12 @@
       <workItem from="1532648454884" duration="26464000" />
       <workItem from="1532741853213" duration="6139000" />
       <workItem from="1533175469782" duration="12682000" />
-      <workItem from="1533198048190" duration="3125000" />
+      <workItem from="1533198048190" duration="5018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="431957000" />
+    <option name="totallyTimeSpent" value="433850000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -371,25 +362,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="633" y="24" width="957" height="876" extended-state="4" />
+    <frame x="308" y="24" width="1282" height="876" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69357497" visible="true" weight="0.32334048" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2369863" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Structure" order="1" sideWeight="0.30642503" side_tool="true" weight="0.32068545" />
       <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24520548" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69357497" visible="true" weight="0.20333599" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3" />
+      <window_info id="Structure" order="1" sideWeight="0.30642503" side_tool="true" weight="0.32068545" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28767124" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -734,16 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/CreateMessageForm/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/UserHeader/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-350">
@@ -772,16 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="278" column="70" selection-start-line="278" selection-start-column="70" selection-end-line="278" selection-end-column="70" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/RoomHeader/index.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
@@ -789,13 +760,6 @@
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/ProfilePage/index.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="103" column="21" lean-forward="true" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -818,8 +782,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/ToolBar/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        <state relative-caret-position="374">
+          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/CreateMessageForm/index.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="44" column="49" lean-forward="true" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/ProfilePage/index.module.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="3" selection-end-line="38" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="166" column="46" selection-start-line="166" selection-start-column="46" selection-end-line="166" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

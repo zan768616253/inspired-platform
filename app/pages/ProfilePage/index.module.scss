@@ -251,6 +251,7 @@
               min-width: 240px;
               text-align: center;
               overflow: hidden;
+              position: relative;
 
               a {
                 display: inline-block;
@@ -262,6 +263,21 @@
                   padding: 0;
                   border: 0;
                   line-height: 0;
+                }
+              }
+
+              .profileImageUploadContainer {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+
+                > span {
+                  position: relative;
+                  width: 100%;
+                  height: 100%;
+                  display: block;
                 }
               }
             }

@@ -49,7 +49,7 @@ export default class CreateMessageForm extends React.Component {
                     placeholder="Type a Message.."
                     ref="messageInput"
                 />
-                {this.props.role < 3 && <button className='favourite-message' title='favourites' onClick={() => this.handleShowFavouriteListButtonOnClick()}>
+                {this.props.role < 3 && <button className='favourite-message' title='Ed Library' onClick={() => this.handleShowFavouriteListButtonOnClick()}>
                     <img src='inspired_library_icon.png' />
                 </button>}
 

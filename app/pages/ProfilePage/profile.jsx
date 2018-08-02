@@ -165,7 +165,6 @@ export default class Profile extends React.Component {
             thumbMinSize={50}
           >
             <div className='profileContainer'>
-              <Avatar size={100} src={UserStore.obj.avatar ? '/api/user/avatar/' + UserStore.obj.avatar : UserStore.obj.picture} />
               <h3>{UserStore.obj.nickname}</h3>
               <div className='profile-edit-container'>
                 <h3>
@@ -255,21 +254,20 @@ export default class Profile extends React.Component {
                         <div className='docSection padding-bottom'>
                           <div className='profileImageContainer rounded-corner-top '>
                             <span>
-                              <a href={UserStore.obj.picture} target='_new'>
+                              <a>
                                 <img src={UserStore.obj.avatar ? '/api/user/avatar/' + UserStore.obj.avatar : UserStore.obj.picture} />
                               </a>
                             </span>
-                            <div>
-                                {/*<a className="small">Change your photo</a>*/}
-                                <Upload type="drag" beforeUpload={this.beforeUpload} ><a>Change your photo</a></Upload>
-                                <CropViewer
-                                    getSpinContent={() => <span>loading...</span> }
-                                    renderModal={() => <Dialog />}
-                                    locale="en-US"
-                                    ref={ele => this.cropper = ele}
-                                    square
-                                />
-                            </div>
+                              <div className='profileImageUploadContainer'>
+                                  <Upload type="drag" beforeUpload={this.beforeUpload} />
+                                  <CropViewer
+                                      getSpinContent={() => <span>loading...</span> }
+                                      renderModal={() => <Dialog />}
+                                      locale="en-US"
+                                      ref={ele => this.cropper = ele}
+                                      square
+                                  />
+                              </div>
                           </div>
                           <ul className='photo-nav-links pipeList rounded-corner-bottom'>
                           </ul>
