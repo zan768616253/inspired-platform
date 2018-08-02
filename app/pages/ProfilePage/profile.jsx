@@ -282,11 +282,6 @@ export default class Profile extends React.Component {
                                 </li>
                               </ul>
                             </div>
-                            <ul className='resetList D_narrow padding-bottom topic-widget-root'>
-                              <li className='small'>
-                                <a>Digital Photography · Agile Project Management · JavaScript</a>
-                              </li>
-                            </ul>
                           </div>
                         </div>
                     </div>

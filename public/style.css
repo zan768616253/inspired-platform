@@ -1359,7 +1359,8 @@ main section:not(.dragging) > input[type='file'] {
                   height: 1.5rem; }
                 .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--lcol .inner-col .profile-content-item .editable {
                   font-style: italic;
-                  color: grey; }
+                  color: grey;
+                  outline: 0 solid transparent; }
               .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--lcol .inner-col .profileQuestionsSection {
                 padding: 0 0 4px; }
                 .profilePage .profile-row-section .profile-body .profile-context .profile-box .profile-box--lcol .inner-col .profileQuestionsSection .unit {
