@@ -1937,6 +1937,12 @@ main section:not(.dragging) > input[type='file'] {
       height: 3.4rem;
       width: calc(100% - 30px);
       box-sizing: border-box; }
+    .user-list > li.search-bar > span {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      height: 3.4rem;
+      width: 2rem; }
   .user-list > li > a {
     position: relative;
     display: block;
