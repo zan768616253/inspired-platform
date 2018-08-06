@@ -12,9 +12,9 @@ let config = {
             filename:'style.css',
             allChunks: true
         }),
-        new BundleAnalyzerPlugin(),
+        // new BundleAnalyzerPlugin(),
         new CompressionPlugin({
-            asset: "[path].gz[query]",
+            asset: "[file]",
             algorithm: "gzip",
             test: /\.js$|\.css$|\.html$|\.jsx$|\.scss$|/,
             threshold: 10240,

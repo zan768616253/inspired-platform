@@ -34,7 +34,7 @@ const gfs = Grid(mongoose.connection.db, mongoose.mongo);
 // app.use(compression());
 
 app.get('/bundle.js', function (req, res, next) {
-    req.url = req.url + '.gz';
+    // req.url = req.url + '.gz';
     res.set('Content-Encoding', 'gzip');
     next();
 });
