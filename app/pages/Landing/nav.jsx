@@ -1,4 +1,5 @@
 import React from 'react'
+import Auth0Lock from "auth0-lock";
 
 export default class NewNav extends React.Component {
   constructor(props) {
