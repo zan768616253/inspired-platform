@@ -120,3 +120,11 @@ function isTokenExpired(token) {
   const expirationDate = getTokenExpirationDate(token);
   return expirationDate < new Date();
 }
+
+export function requireVerification(nextState, replace) {
+    emailverified = localStorage.getItem("ev");
+
+    if (!isLoggedIn()) {
+        replace({ pathname: "/" });
+    }
+}
