@@ -214,7 +214,7 @@ export default class Profile extends React.Component {
                               </div>
                               <div className='unit size1of3'>
                                   <div className='profile-content-item'>
-                                      <h4 className='flush--bottom'>Culture/Belief:</h4>
+                                      <h4 className='flush--bottom'>Background:</h4>
                                       <p contentEditable={this.state.isEdit} className={pClassName} ref="culture">{UserStore.obj.culture}</p>
                                   </div>
                               </div>

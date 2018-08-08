@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="25e3038d-d1d9-433c-8901-432192ff4bee" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style.css.gz" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +29,7 @@
       <file leaf-file-name="nav.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/Landing/nav.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
+            <state relative-caret-position="34">
               <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
@@ -39,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+            <state relative-caret-position="255">
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -51,10 +50,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="profile.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="204" column="38" lean-forward="true" selection-start-line="204" selection-start-column="38" selection-end-line="204" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
+            <state relative-caret-position="2023">
               <caret line="121" column="1" lean-forward="true" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -93,7 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>room-invite-container</find>
       <find>inspired_logo_big.png</find>
       <find>opacity: 0.6;</find>
       <find>homeNavBar</find>
@@ -123,6 +130,7 @@
       <find>auth</find>
       <find>import Auth0Lock from &quot;auth0-lock&quot;;</find>
       <find>Auth0Lock</find>
+      <find>culture/</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -185,7 +193,6 @@
         <option value="$PROJECT_DIR$/app/pages/ProfilePage/index.module.scss" />
         <option value="$PROJECT_DIR$/app/components/UserList/InvitingUserList.jsx" />
         <option value="$PROJECT_DIR$/server/models/User.js" />
-        <option value="$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx" />
         <option value="$PROJECT_DIR$/app/components/UserList/index.module.scss" />
         <option value="$PROJECT_DIR$/app/pages/MainPage/MainContainer.jsx" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
@@ -194,6 +201,7 @@
         <option value="$PROJECT_DIR$/app/pages/Landing/nav.jsx" />
         <option value="$PROJECT_DIR$/auth.js" />
         <option value="$PROJECT_DIR$/app/app.jsx" />
+        <option value="$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx" />
       </list>
     </option>
   </component>
@@ -218,9 +226,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="569" />
+    <option name="x" value="175" />
     <option name="y" value="24" />
-    <option name="width" value="1021" />
+    <option name="width" value="1415" />
     <option name="height" value="876" />
   </component>
   <component name="ProjectView">
@@ -336,12 +344,13 @@
       <workItem from="1533208771969" duration="6773000" />
       <workItem from="1533530274984" duration="177000" />
       <workItem from="1533545370427" duration="3291000" />
-      <workItem from="1533597331235" duration="1381000" />
+      <workItem from="1533597331235" duration="3200000" />
+      <workItem from="1533719379251" duration="626000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="445472000" />
+    <option name="totallyTimeSpent" value="447917000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,19 +362,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="569" y="24" width="1021" height="876" extended-state="4" />
+    <frame x="175" y="24" width="1415" height="876" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69357497" visible="true" weight="0.25651303" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69357497" visible="true" weight="0.18390805" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2369863" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2369863" />
       <window_info id="Structure" order="1" sideWeight="0.30642503" side_tool="true" weight="0.32068545" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2431694" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.24246575" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28767124" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
@@ -377,24 +386,24 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2369863" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.69357497" visible="true" weight="0.26867118" />
       <window_info id="Structure" order="1" sideWeight="0.30642503" side_tool="true" weight="0.32068545" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.28356165" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28767124" />
       <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2479452" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.28356165" />
       <window_info id="Favorites" order="3" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -410,6 +419,16 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/app.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/store/ChatStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
@@ -645,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="233" column="70" selection-start-line="233" selection-start-column="70" selection-end-line="233" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/UserList/index.module.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="419">
@@ -722,12 +734,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/Landing/nav.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
+        <state relative-caret-position="34">
           <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
@@ -737,7 +746,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="2023">
           <caret line="121" column="1" lean-forward="true" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -747,11 +756,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/app.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        <state relative-caret-position="255">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/ProfilePage/profile.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="204" column="38" lean-forward="true" selection-start-line="204" selection-start-column="38" selection-end-line="204" selection-end-column="38" />
         </state>
       </provider>
     </entry>
